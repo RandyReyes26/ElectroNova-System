@@ -1,0 +1,11 @@
+C:\Users\randy\OneDrive\Escritorio\ElectroNova\ElectroNova\bin\Debug\ElectroNova.exe.config
+C:\Users\randy\OneDrive\Escritorio\ElectroNova\ElectroNova\bin\Debug\ElectroNova.exe
+C:\Users\randy\OneDrive\Escritorio\ElectroNova\ElectroNova\bin\Debug\ElectroNova.pdb
+C:\Users\randy\OneDrive\Escritorio\ElectroNova\ElectroNova\obj\Debug\ElectroNova.csproj.AssemblyReference.cache
+C:\Users\randy\OneDrive\Escritorio\ElectroNova\ElectroNova\obj\Debug\ElectroNova.frmLogin.resources
+C:\Users\randy\OneDrive\Escritorio\ElectroNova\ElectroNova\obj\Debug\ElectroNova.Properties.Resources.resources
+C:\Users\randy\OneDrive\Escritorio\ElectroNova\ElectroNova\obj\Debug\ElectroNova.csproj.GenerateResource.cache
+C:\Users\randy\OneDrive\Escritorio\ElectroNova\ElectroNova\obj\Debug\ElectroNova.csproj.CoreCompileInputs.cache
+C:\Users\randy\OneDrive\Escritorio\ElectroNova\ElectroNova\obj\Debug\ElectroNova.exe
+C:\Users\randy\OneDrive\Escritorio\ElectroNova\ElectroNova\obj\Debug\ElectroNova.pdb
+C:\Users\randy\OneDrive\Escritorio\ElectroNova\ElectroNova\obj\Debug\ElectroNova.Layers.UI.frmMenuPrincipal.resources
