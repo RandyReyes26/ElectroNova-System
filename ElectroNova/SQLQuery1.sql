@@ -71,5 +71,16 @@ CREATE TABLE Marca (
     Descripcion NVARCHAR(200),
     Estado BIT
 );
+sp_helptext usp_INSERT_Marca
 
 select * from Marca
+
+/* ================================
+   TABLA MODELO
+================================ */
+CREATE TABLE Modelo (
+    ID_Modelo INT IDENTITY(1,1) PRIMARY KEY,
+    Codigo_Modelo NVARCHAR(50) NOT NULL,
+    Descripcion NVARCHAR(150) NOT NULL,
+    Estado BIT 
+);

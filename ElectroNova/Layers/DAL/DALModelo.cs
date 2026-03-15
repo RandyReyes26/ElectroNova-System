@@ -11,23 +11,26 @@ using System.Threading.Tasks;
 
 namespace ElectroNova.Layers.DAL
 {
-    class DALMarca : IDALMarca
+    class DALModelo : IDALModelo
     {
         private static readonly ILog _MyLogControlEventos = log4net.LogManager.GetLogger("MyControlEventos");
-        public async Task<Marca> ActualizarMarca(Marca pMarca)
+        public async Task<Modelo> ActualizarModelo(Modelo pModelo)
         {
             double row = 0;
             SqlCommand command = new SqlCommand();
 
-            Marca oMarca = new Marca();
+            Modelo oModelo = new Modelo();
             try
             {
-                command.Parameters.AddWithValue("@ID_Marca", pMarca.ID_Marca);
-                command.Parameters.AddWithValue("@Nombre_Marca", pMarca.Nombre_Marca);
-                command.Parameters.AddWithValue("@Descripcion", pMarca.Descripcion);
-                command.Parameters.AddWithValue("@Estado", pMarca.Estado);
+                command.Parameters.AddWithValue("@Codigo_Modelo", pModelo.Codigo_Modelo);
+                command.Parameters.AddWithValue("@Descripcion", pModelo.Descripcion);
+                command.Parameters.AddWithValue("@Estado", pModelo.Estado);
+
+
+
+
                 command.CommandType = System.Data.CommandType.StoredProcedure;
-                command.CommandText = "usp_UPDATE_Marca";
+                command.CommandText = "usp_UPDATE_Motocicleta";
 
                 using (IDataBase db = FactoryDatabase.CreateDataBase(FactoryConexion.CreateConnection()))
                 {
@@ -36,9 +39,9 @@ namespace ElectroNova.Layers.DAL
 
                 // Si devuelve filas quiere decir que se salvo entonces extraerlo
                 if (row > 0)
-                    oMarca = this.ObtenerMarcaPorId(pMarca.ID_Marca);
+                    oModelo = this.ObtenerModeloPorId(pModelo.ID_Modelo);
 
-                return oMarca;
+                return oModelo;
 
             }
             catch (Exception ex)
@@ -48,7 +51,7 @@ namespace ElectroNova.Layers.DAL
             }
         }
 
-        public async Task<bool> BorrarMarca(int pId_Marca)
+        public async Task<bool> BorrarModelo(int pId_Modelo)
         {
             bool retorno = false;
             double row = 0d;
@@ -58,8 +61,8 @@ namespace ElectroNova.Layers.DAL
 
 
                 command.CommandType = System.Data.CommandType.StoredProcedure;
-                command.CommandText = "usp_DELETE_Marca_ByID";
-                command.Parameters.AddWithValue("@ID_Marca", pId_Marca);
+                command.CommandText = "usp_DELETE_Motocicleta_ByID";
+                command.Parameters.AddWithValue("@ID_Motocicleta", pId_Modelo);
 
                 using (IDataBase db = FactoryDatabase.CreateDataBase(FactoryConexion.CreateConnection()))
                 {
@@ -79,22 +82,21 @@ namespace ElectroNova.Layers.DAL
             }
         }
 
-        public async Task<Marca> GuardarMarca(Marca pMarca)
+        public async Task<Modelo> GuardarModelo(Modelo pModelo)
         {
             SqlCommand command = new SqlCommand();
-            Marca oMarca = null;
+            Modelo oModelo = null;
 
 
             double row = 0;
             try
             {
-                command.Parameters.AddWithValue("@Nombre_Marca", pMarca.Nombre_Marca);
-                command.Parameters.AddWithValue("@Descripcion", pMarca.Descripcion);
-                command.Parameters.AddWithValue("@Estado", pMarca.Estado);
-
+                command.Parameters.AddWithValue("@Codigo_Modelo", pModelo.Codigo_Modelo);
+                command.Parameters.AddWithValue("@Descripcion", pModelo.Descripcion);
+                command.Parameters.AddWithValue("@Estado", pModelo.Estado);
 
                 command.CommandType = System.Data.CommandType.StoredProcedure;
-                command.CommandText = "usp_INSERT_Marca";
+                command.CommandText = "usp_INSERT_Motocicleta";
 
 
                 using (IDataBase db = FactoryDatabase.CreateDataBase(FactoryConexion.CreateConnection()))
@@ -103,9 +105,9 @@ namespace ElectroNova.Layers.DAL
                 }
 
                 if (row > 0)
-                    oMarca = this.ObtenerMarcaPorId(pMarca.ID_Marca);
+                    oModelo = this.ObtenerModeloPorId(pModelo.ID_Modelo);
 
-                return oMarca;
+                return oModelo;
             }
             catch (Exception ex)
             {
@@ -114,14 +116,14 @@ namespace ElectroNova.Layers.DAL
             }
         }
 
-        public async Task<IEnumerable<Marca>> ObtenerMarca()
+        public async Task<IEnumerable<Modelo>> ObtenerModelo()
         {
-            IList<Marca> lista = new List<Marca>();
+            IList<Modelo> lista = new List<Modelo>();
 
             using (SqlCommand command = new SqlCommand())
             {
                 command.CommandType = System.Data.CommandType.StoredProcedure;
-                command.CommandText = "usp_SELECT_Marca_All";
+                command.CommandText = "usp_SELECT_Motocicleta_All";
 
                 try
                 {
@@ -131,27 +133,27 @@ namespace ElectroNova.Layers.DAL
                         {
                             while (reader.Read())
                             {
-                                Marca oMarca = new Marca();
+                                Modelo oModelo = new Modelo();
                                 try
                                 {
-                                    oMarca.ID_Marca = int.Parse(reader["ID_Marca"].ToString());
-                                    oMarca.Nombre_Marca = reader["Nombre_Marca"].ToString();
-                                    oMarca.Descripcion = reader["Descripcion"].ToString();
-                                    oMarca.Estado = bool.Parse(reader["Estado"].ToString());
+                                    oModelo.ID_Modelo = int.Parse(reader["ID_Modelo"].ToString());
+                                    oModelo.Codigo_Modelo = reader["Codigo_Modelo"].ToString();
+                                    oModelo.Descripcion = reader["Descripcion"].ToString();
+                                    oModelo.Estado = bool.Parse(reader["Estado"].ToString());
 
 
                                     // Usar TryParse para evitar la excepción si el valor no es un bool válido
                                     bool estado;
                                     if (reader["Estado"] != DBNull.Value && bool.TryParse(reader["Estado"].ToString(), out estado))
                                     {
-                                        oMarca.Estado = estado;
+                                        oModelo.Estado = estado;
                                     }
                                     else
                                     {
-                                        oMarca.Estado = false;  // Valor por defecto si la conversión falla
+                                        oModelo.Estado = false;  // Valor por defecto si la conversión falla
                                     }
 
-                                    oMarca.ID_Marca = int.Parse(reader["ID_Marca"].ToString());
+                                    oModelo.ID_Modelo = int.Parse(reader["ID_Cliente"].ToString());
                                 }
                                 catch (Exception ex)
                                 {
@@ -159,7 +161,7 @@ namespace ElectroNova.Layers.DAL
                                     continue;  // Si hay un error al leer un registro, lo omite y continúa con el siguiente
                                 }
 
-                                lista.Add(oMarca);
+                                lista.Add(oModelo);
                             }
                         }
                     }
@@ -174,19 +176,19 @@ namespace ElectroNova.Layers.DAL
             return lista;
         }
 
-        public Marca ObtenerMarcaPorId(int pId_Marca)
+        public Modelo ObtenerModeloPorId(int pId_Modelo)
         {
             SqlCommand command = new SqlCommand();
             IDataReader reader = null;
-            Marca oMarca = null;
+            Modelo oModelo = null;
 
             try
             {
 
-                command.Parameters.AddWithValue("@ID_Marca", pId_Marca);
+                command.Parameters.AddWithValue("@ID_Motocicleta", pId_Modelo);
 
                 command.CommandType = System.Data.CommandType.StoredProcedure;
-                command.CommandText = "usp_SELECT_Marca_ByID";
+                command.CommandText = "usp_SELECT_Motocicleta_ByID";
 
 
                 using (IDataBase db = FactoryDatabase.CreateDataBase(FactoryConexion.CreateConnection()))
@@ -195,29 +197,29 @@ namespace ElectroNova.Layers.DAL
 
                     if (reader.Read())
                     {
-                        oMarca = new Marca();
+                        oModelo = new Modelo();
                         {
-                            oMarca.ID_Marca = int.Parse(reader["ID_Marca"].ToString());
-                            oMarca.Nombre_Marca = reader["Nombre_Marca"].ToString();
-                            oMarca.Descripcion = reader["Descripcion"].ToString();
-                            oMarca.Estado = bool.Parse(reader["Estado"].ToString());
+                            oModelo.ID_Modelo = int.Parse(reader["ID_Modelo"].ToString());
+                            oModelo.Codigo_Modelo = reader["Codigo_Modelo"].ToString();
+                            oModelo.Descripcion = reader["Descripcion"].ToString();
+                            oModelo.Estado = bool.Parse(reader["Estado"].ToString());
                             // Usar TryParse para evitar la excepción si el valor no es un bool válido
                             bool estado;
                             if (reader["Estado"] != DBNull.Value && bool.TryParse(reader["Estado"].ToString(), out estado))
                             {
-                                oMarca.Estado = estado;
+                                oModelo.Estado = estado;
                             }
                             else
                             {
-                                oMarca.Estado = false;  // Valor por defecto si la conversión falla
+                                oModelo.Estado = false;  // Valor por defecto si la conversión falla
                             }
-                            oMarca.ID_Marca = int.Parse(reader["ID_Marca"].ToString());
+                            oModelo.ID_Modelo = int.Parse(reader["ID_Cliente"].ToString());
 
 
                         };
                     }
                 }
-                return oMarca;
+                return oModelo;
             }
             catch (Exception ex)
             {

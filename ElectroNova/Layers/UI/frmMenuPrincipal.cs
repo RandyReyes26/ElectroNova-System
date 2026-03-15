@@ -165,5 +165,21 @@ namespace ElectroNova.Layers.UI
                 AbrirFormulario((ToolStripMenuItem)sender, new frmClientes());
             }
         }
+
+        private void MarcaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (formularioActivo == null || !(formularioActivo is frmMarcas))
+            {
+
+                if (formularioActivo != null)
+                {
+                    CerrarFormulario(formularioActivo);
+                }
+
+
+                AbrirFormulario((ToolStripMenuItem)sender, new frmMarcas());
+            }
+
+        }
     }
 }
