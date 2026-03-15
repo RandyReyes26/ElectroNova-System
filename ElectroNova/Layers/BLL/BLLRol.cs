@@ -1,4 +1,5 @@
 ﻿using ElectroNova.Interfaces;
+using ElectroNova.Layers.DAL;
 using ElectroNova.Layers.Entities;
 using System;
 using System.Collections.Generic;
@@ -12,7 +13,8 @@ namespace ElectroNova.Layers.BLL
     {
         public List<Rol> ObtenerTodos()
         {
-            throw new NotImplementedException();
+            IDALRol rol = new DALRol();
+            return rol.ObtenerTodosRol();
         }
     }
 }

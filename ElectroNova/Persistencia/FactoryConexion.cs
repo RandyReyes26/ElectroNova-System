@@ -8,7 +8,7 @@ class FactoryConexion
     public static string CreateConnection()
     {
         // Lee la conexion default
-        return ConfigurationManager.ConnectionStrings["ElectroNova.Properties.Settings.Cadena"].ConnectionString;
+        return ConfigurationManager.ConnectionStrings["ElectroNova.Properties.Settings.Conexion"].ConnectionString;
       
     }
 

@@ -6,10 +6,12 @@ using System.Threading.Tasks;
 
 namespace ElectroNova.Layers.Entities
 {
-    class Rol
+    public class Rol
     {
         public int ID_Rol { set; get; }
         public string Nombre_Rol { set; get; }
+
+        public override string ToString() => $"{ID_Rol}-{Nombre_Rol}";
 
     }
 }

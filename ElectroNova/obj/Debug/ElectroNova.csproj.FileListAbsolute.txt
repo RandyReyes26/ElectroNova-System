@@ -9,3 +9,14 @@ C:\Users\randy\OneDrive\Escritorio\ElectroNova\ElectroNova\obj\Debug\ElectroNova
 C:\Users\randy\OneDrive\Escritorio\ElectroNova\ElectroNova\obj\Debug\ElectroNova.exe
 C:\Users\randy\OneDrive\Escritorio\ElectroNova\ElectroNova\obj\Debug\ElectroNova.pdb
 C:\Users\randy\OneDrive\Escritorio\ElectroNova\ElectroNova\obj\Debug\ElectroNova.Layers.UI.frmMenuPrincipal.resources
+C:\Users\randy\OneDrive\Escritorio\ElectroNova\ElectroNova\bin\Debug\log4net.dll
+C:\Users\randy\OneDrive\Escritorio\ElectroNova\ElectroNova\bin\Debug\Newtonsoft.Json.dll
+C:\Users\randy\OneDrive\Escritorio\ElectroNova\ElectroNova\bin\Debug\log4net.pdb
+C:\Users\randy\OneDrive\Escritorio\ElectroNova\ElectroNova\bin\Debug\log4net.xml
+C:\Users\randy\OneDrive\Escritorio\ElectroNova\ElectroNova\bin\Debug\Newtonsoft.Json.xml
+C:\Users\randy\OneDrive\Escritorio\ElectroNova\ElectroNova\obj\Debug\ElectroNova.Layers.UI.frmAdministracion.resources
+C:\Users\randy\OneDrive\Escritorio\ElectroNova\ElectroNova\obj\Debug\ElectroNova.Layers.UI.frmClientes.resources
+C:\Users\randy\OneDrive\Escritorio\ElectroNova\ElectroNova\obj\Debug\ElectroNova.Layers.UI.frmMarcas.resources
+C:\Users\randy\OneDrive\Escritorio\ElectroNova\ElectroNova\obj\Debug\ElectroNova.Layers.UI.frmModelos.resources
+C:\Users\randy\OneDrive\Escritorio\ElectroNova\ElectroNova\obj\Debug\ElectroNova.Layers.UI.frmTipoDispositivo.resources
+C:\Users\randy\OneDrive\Escritorio\ElectroNova\ElectroNova\obj\Debug\ElectroN.C07AAF14.Up2Date

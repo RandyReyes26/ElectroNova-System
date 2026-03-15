@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ElectroNova.Layers.Entities
 {
-    class Usuario
+    public class Usuario
     {
         public int ID_Usuario { set; get; }
         public string NombreUsuario { set; get; }

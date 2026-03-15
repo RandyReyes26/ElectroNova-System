@@ -33,12 +33,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="log4net, Version=3.3.0.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.3.3.0\lib\net462\log4net.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.13.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -50,14 +54,34 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Interfaces\IBLLCliente.cs" />
+    <Compile Include="Interfaces\IBLLFoto.cs" />
+    <Compile Include="Interfaces\IBLLMarca.cs" />
+    <Compile Include="Interfaces\IBLLPadron.cs" />
     <Compile Include="Interfaces\IBLLRol.cs" />
+    <Compile Include="Interfaces\IBLLUbicacion.cs" />
     <Compile Include="Interfaces\IBLLUsuario.cs" />
+    <Compile Include="Interfaces\IDALCliente.cs" />
+    <Compile Include="Interfaces\IDALMarca.cs" />
     <Compile Include="Interfaces\IDALRol.cs" />
     <Compile Include="Interfaces\IDALUsuario.cs" />
+    <Compile Include="Layers\BLL\BLLCliente.cs" />
+    <Compile Include="Layers\BLL\BLLFoto.cs" />
+    <Compile Include="Layers\BLL\BLLMarca.cs" />
+    <Compile Include="Layers\BLL\BLLPadron.cs" />
     <Compile Include="Layers\BLL\BLLRol.cs" />
+    <Compile Include="Layers\BLL\BLLUbicacion.cs" />
     <Compile Include="Layers\BLL\BLLUsuario.cs" />
+    <Compile Include="Layers\DAL\DALCliente.cs" />
+    <Compile Include="Layers\DAL\DALMarca.cs" />
     <Compile Include="Layers\DAL\DALRol.cs" />
     <Compile Include="Layers\DAL\DALUsuario.cs" />
+    <Compile Include="Layers\Entities\Clientes.cs" />
+    <Compile Include="Layers\Entities\DTO\FotoDTO.cs" />
+    <Compile Include="Layers\Entities\DTO\PadronDTO.cs" />
+    <Compile Include="Layers\Entities\DTO\UbicacionDTO.cs" />
+    <Compile Include="Layers\Entities\Fotografia.cs" />
+    <Compile Include="Layers\Entities\Marca.cs" />
     <Compile Include="Layers\Entities\Rol.cs" />
     <Compile Include="Layers\Entities\Usuario.cs" />
     <Compile Include="Layers\UI\frmAdministracion.cs">
@@ -166,7 +190,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Layers\Entities\DTO\" />
     <Folder Include="Layers\UI\Filtros\" />
     <Folder Include="Layers\UI\Procesos\" />
     <Folder Include="Layers\UI\Reportes\" />

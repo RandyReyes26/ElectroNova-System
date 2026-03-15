@@ -1,4 +1,5 @@
 ﻿using ElectroNova.Interfaces;
+using ElectroNova.Layers.DAL;
 using ElectroNova.Layers.Entities;
 using System;
 using System.Collections.Generic;
@@ -12,37 +13,45 @@ namespace ElectroNova.Layers.BLL
     {
         public void Actualizar(Usuario pUsuario)
         {
-            throw new NotImplementedException();
+            var dalUsuario = new DALUsuario();
+            dalUsuario.ActualizarUsuario(pUsuario);
         }
 
         public bool EiminarUsuario(string pLogin)
         {
-            throw new NotImplementedException();
+            IDALUsuario _DALUsuario = new DALUsuario();
+            return _DALUsuario.EliminarUsuario(pLogin);
         }
 
         public void GuardarUsuario(Usuario pUsuario)
         {
-            throw new NotImplementedException();
+            var DalUsuario = new DALUsuario();
+            DalUsuario.GuardarUsuario(pUsuario);
         }
 
         public Usuario Login(string pLogin, string pPassword)
         {
-            throw new NotImplementedException();
+            DALUsuario dALUsuario = new DALUsuario();
+
+            return dALUsuario.Login(pLogin, pPassword);
         }
 
         public IEnumerable<Usuario> ObtenerTodoLogin()
         {
-            throw new NotImplementedException();
+            IDALUsuario _DALUsuario = new DALUsuario();
+            return _DALUsuario.ObtenerTodoLogin();
         }
 
         public List<Usuario> ObtenerTodos()
         {
-            throw new NotImplementedException();
+            var dalUSuario = new DALUsuario();
+            return dalUSuario.SeleccionarTodos();
         }
 
         public Usuario ObtenerUsuarioPorId(int pLogin)
         {
-            throw new NotImplementedException();
+            IDALUsuario _DALUsuario = new DALUsuario();
+            return _DALUsuario.ObtenerUsuarioPorId(pLogin);
         }
     }
 }

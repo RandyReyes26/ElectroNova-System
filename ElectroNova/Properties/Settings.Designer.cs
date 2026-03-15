@@ -26,11 +26,11 @@ namespace ElectroNova.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=RANDY;Initial Catalog=ProyectoElectroNova;Persist Security Info=True;" +
-            "User ID=sa;Password=***********;Encrypt=False;Trust Server Certificate=True")]
-        public string Cadena {
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=RANDY;Initial Catalog=ProyectoElectroNova1;Persist Security Info=True" +
+            ";User ID=sa;Password=123456;Encrypt=False;TrustServerCertificate=True")]
+        public string Conexion {
             get {
-                return ((string)(this["Cadena"]));
+                return ((string)(this["Conexion"]));
             }
         }
     }
