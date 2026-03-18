@@ -36,6 +36,7 @@
             this.toolStripMantenimiento = new System.Windows.Forms.ToolStripMenuItem();
             this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MarcaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ModeloToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripProcesos = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripReportes = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripAdministracion = new System.Windows.Forms.ToolStripMenuItem();
@@ -59,7 +60,7 @@
             this.MenuVertical.Dock = System.Windows.Forms.DockStyle.Left;
             this.MenuVertical.Location = new System.Drawing.Point(0, 0);
             this.MenuVertical.Name = "MenuVertical";
-            this.MenuVertical.Size = new System.Drawing.Size(298, 661);
+            this.MenuVertical.Size = new System.Drawing.Size(308, 661);
             this.MenuVertical.TabIndex = 0;
             // 
             // panel1
@@ -95,12 +96,14 @@
             // 
             this.toolStripMantenimiento.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.clientesToolStripMenuItem,
-            this.MarcaToolStripMenuItem});
+            this.MarcaToolStripMenuItem,
+            this.ModeloToolStripMenuItem});
             this.toolStripMantenimiento.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripMantenimiento.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMantenimiento.Image")));
+            this.toolStripMantenimiento.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.toolStripMantenimiento.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripMantenimiento.Name = "toolStripMantenimiento";
-            this.toolStripMantenimiento.Size = new System.Drawing.Size(274, 68);
+            this.toolStripMantenimiento.Size = new System.Drawing.Size(274, 36);
             this.toolStripMantenimiento.Text = "MANTENIMIENTOS";
             // 
             // clientesToolStripMenuItem
@@ -117,29 +120,36 @@
             this.MarcaToolStripMenuItem.Text = "MARCA";
             this.MarcaToolStripMenuItem.Click += new System.EventHandler(this.MarcaToolStripMenuItem_Click);
             // 
+            // ModeloToolStripMenuItem
+            // 
+            this.ModeloToolStripMenuItem.Name = "ModeloToolStripMenuItem";
+            this.ModeloToolStripMenuItem.Size = new System.Drawing.Size(224, 28);
+            this.ModeloToolStripMenuItem.Text = "MODELO";
+            this.ModeloToolStripMenuItem.Click += new System.EventHandler(this.ModeloToolStripMenuItem_Click);
+            // 
             // toolStripProcesos
             // 
             this.toolStripProcesos.Image = ((System.Drawing.Image)(resources.GetObject("toolStripProcesos.Image")));
             this.toolStripProcesos.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripProcesos.Name = "toolStripProcesos";
-            this.toolStripProcesos.Size = new System.Drawing.Size(274, 68);
-            this.toolStripProcesos.Text = "Procesos";
+            this.toolStripProcesos.Size = new System.Drawing.Size(274, 36);
+            this.toolStripProcesos.Text = "PROCESOS";
             // 
             // ToolStripReportes
             // 
             this.ToolStripReportes.Image = ((System.Drawing.Image)(resources.GetObject("ToolStripReportes.Image")));
             this.ToolStripReportes.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.ToolStripReportes.Name = "ToolStripReportes";
-            this.ToolStripReportes.Size = new System.Drawing.Size(274, 68);
-            this.ToolStripReportes.Text = "Reportes";
+            this.ToolStripReportes.Size = new System.Drawing.Size(274, 36);
+            this.ToolStripReportes.Text = "REPORTES";
             // 
             // ToolStripAdministracion
             // 
             this.ToolStripAdministracion.Image = ((System.Drawing.Image)(resources.GetObject("ToolStripAdministracion.Image")));
             this.ToolStripAdministracion.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.ToolStripAdministracion.Name = "ToolStripAdministracion";
-            this.ToolStripAdministracion.Size = new System.Drawing.Size(274, 68);
-            this.ToolStripAdministracion.Text = "Administración";
+            this.ToolStripAdministracion.Size = new System.Drawing.Size(274, 36);
+            this.ToolStripAdministracion.Text = "ADMINISTRACIÓN";
             // 
             // toolStripMenuItem6
             // 
@@ -147,7 +157,7 @@
             this.toolStripMenuItem6.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripMenuItem6.Name = "toolStripMenuItem6";
             this.toolStripMenuItem6.Size = new System.Drawing.Size(274, 68);
-            this.toolStripMenuItem6.Text = "Info";
+            this.toolStripMenuItem6.Text = "INFO";
             // 
             // lblUsuario
             // 
@@ -163,7 +173,7 @@
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(3, 3);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(292, 124);
+            this.pictureBox1.Size = new System.Drawing.Size(302, 124);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
@@ -171,9 +181,9 @@
             // pnlContenido
             // 
             this.pnlContenido.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlContenido.Location = new System.Drawing.Point(298, 0);
+            this.pnlContenido.Location = new System.Drawing.Point(308, 0);
             this.pnlContenido.Name = "pnlContenido";
-            this.pnlContenido.Size = new System.Drawing.Size(1306, 661);
+            this.pnlContenido.Size = new System.Drawing.Size(1296, 661);
             this.pnlContenido.TabIndex = 1;
             // 
             // frmMenuPrincipal
@@ -212,5 +222,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel pnlContenido;
         private System.Windows.Forms.ToolStripMenuItem MarcaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ModeloToolStripMenuItem;
     }
 }

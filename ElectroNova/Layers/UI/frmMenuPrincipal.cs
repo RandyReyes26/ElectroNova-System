@@ -181,5 +181,21 @@ namespace ElectroNova.Layers.UI
             }
 
         }
+
+        private void ModeloToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (formularioActivo == null || !(formularioActivo is frmModelos))
+            {
+
+                if (formularioActivo != null)
+                {
+                    CerrarFormulario(formularioActivo);
+                }
+
+
+                AbrirFormulario((ToolStripMenuItem)sender, new frmModelos());
+            }
+
+        }
     }
 }

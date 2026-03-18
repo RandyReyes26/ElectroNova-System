@@ -393,6 +393,7 @@
             this.txtIdentificacion.Size = new System.Drawing.Size(524, 27);
             this.txtIdentificacion.TabIndex = 4;
             this.txtIdentificacion.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtIdentificacion_KeyDown);
+            this.txtIdentificacion.Leave += new System.EventHandler(this.txtIdentificacion_Leave);
             // 
             // label3
             // 

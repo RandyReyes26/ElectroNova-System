@@ -14,41 +14,39 @@ namespace ElectroNova.Layers.DAL
     class DALCliente : IDALCliente
     {
         private static readonly ILog _MyLogControlEventos = log4net.LogManager.GetLogger("MyControlEventos");
-        public async Task<Clientes> ActualizarCliente(Clientes pCliente)
+        public Task<Clientes> ActualizarCliente(Clientes pCliente)
         {
             double row = 0;
-            SqlCommand command = new SqlCommand();
+            Clientes oCliente = null;
 
-            Clientes oCliente = new Clientes();
-
-            command.Parameters.AddWithValue("@ID_Cliente", pCliente.ID_Cliente);
-            command.Parameters.AddWithValue("@Identificacion", pCliente.Identificacion);
-            command.Parameters.AddWithValue("@Pasaporte", pCliente.Pasaporte);
-            command.Parameters.AddWithValue("@Nombre", pCliente.Nombre);
-            command.Parameters.AddWithValue("@Apellidos", pCliente.Apellidos);
-            command.Parameters.AddWithValue("@Sexo", pCliente.Sexo);
-            command.Parameters.AddWithValue("@Telefono", pCliente.Telefono);
-            command.Parameters.AddWithValue("@Email", pCliente.Email);
-            command.Parameters.AddWithValue("@DireccionExacta", pCliente.DireccionExacta);
-            command.Parameters.AddWithValue("@Provincia", pCliente.Provincia);
-            command.Parameters.AddWithValue("@Fotografia", pCliente.Fotografia);
-            command.Parameters.AddWithValue("@Estado", pCliente.Estado);
-
-
-
-            command.CommandType = System.Data.CommandType.StoredProcedure;
-            command.CommandText = "usp_UPDATE_Cliente";
-
-            using (IDataBase db = FactoryDatabase.CreateDataBase(FactoryConexion.CreateConnection()))
+            using (SqlCommand command = new SqlCommand())
             {
-                row = db.ExecuteNonQuery(command, IsolationLevel.ReadCommitted);
+                command.CommandType = CommandType.StoredProcedure;
+                command.CommandText = "usp_UPDATE_Cliente";
+
+                command.Parameters.AddWithValue("@ID_Cliente", pCliente.ID_Cliente);
+                command.Parameters.AddWithValue("@Identificacion", (object)pCliente.Identificacion ?? DBNull.Value);
+                command.Parameters.AddWithValue("@Pasaporte", string.IsNullOrWhiteSpace(pCliente.Pasaporte) ? "" : pCliente.Pasaporte);
+                command.Parameters.AddWithValue("@Nombre", (object)pCliente.Nombre ?? DBNull.Value);
+                command.Parameters.AddWithValue("@Apellidos", (object)pCliente.Apellidos ?? DBNull.Value);
+                command.Parameters.AddWithValue("@Sexo", pCliente.Sexo);
+                command.Parameters.AddWithValue("@Telefono", (object)pCliente.Telefono ?? DBNull.Value);
+                command.Parameters.AddWithValue("@Email", (object)pCliente.Email ?? DBNull.Value);
+                command.Parameters.AddWithValue("@DireccionExacta", (object)pCliente.DireccionExacta ?? DBNull.Value);
+                command.Parameters.AddWithValue("@Provincia", (object)pCliente.Provincia ?? DBNull.Value);
+                command.Parameters.AddWithValue("@Fotografia", (object)pCliente.Fotografia ?? DBNull.Value);
+                command.Parameters.AddWithValue("@Estado", pCliente.Estado);
+
+                using (IDataBase db = FactoryDatabase.CreateDataBase(FactoryConexion.CreateConnection()))
+                {
+                    row = db.ExecuteNonQuery(command, IsolationLevel.ReadCommitted);
+                }
             }
 
-            // Si devuelve filas quiere decir que se salvo entonces extraerlo
             if (row > 0)
                 oCliente = this.ObtenerClientePorId(pCliente.ID_Cliente);
 
-            return oCliente;
+            return Task.FromResult(oCliente);
         }
 
         public async Task<bool> BorrarCliente(int pId_Cliente)
@@ -74,41 +72,38 @@ namespace ElectroNova.Layers.DAL
 
         }
 
-        public async Task<Clientes> GuardarCliente(Clientes pCliente)
+        public  Task<Clientes> GuardarCliente(Clientes pCliente)
         {
-            SqlCommand command = new SqlCommand();
             Clientes oCliente = null;
-
-
             double row = 0;
-            //try
-            //{
-            command.Parameters.AddWithValue("@ID_Cliente", pCliente.ID_Cliente);
-            command.Parameters.AddWithValue("@Identificacion", pCliente.Identificacion);
-            command.Parameters.AddWithValue("@Pasaporte", pCliente.Pasaporte);
-            command.Parameters.AddWithValue("@Nombre", pCliente.Nombre);
-            command.Parameters.AddWithValue("@Apellidos", pCliente.Apellidos);
-            command.Parameters.AddWithValue("@Sexo", pCliente.Sexo);
-            command.Parameters.AddWithValue("@Telefono", pCliente.Telefono);
-            command.Parameters.AddWithValue("@Email", pCliente.Email);
-            command.Parameters.AddWithValue("@DireccionExacta", pCliente.DireccionExacta);
-            command.Parameters.AddWithValue("@Fotografia", pCliente.Fotografia);
-            command.Parameters.AddWithValue("@Provincia", pCliente.Provincia);
-            command.Parameters.AddWithValue("@Estado", pCliente.Estado);
 
-            command.CommandType = System.Data.CommandType.StoredProcedure;
-            command.CommandText = "usp_INSERT_Cliente";
-
-
-            using (IDataBase db = FactoryDatabase.CreateDataBase(FactoryConexion.CreateConnection()))
+            using (SqlCommand command = new SqlCommand())
             {
-                row = db.ExecuteNonQuery(command, IsolationLevel.ReadCommitted);
+                command.CommandType = CommandType.StoredProcedure;
+                command.CommandText = "usp_INSERT_Cliente";
+
+                command.Parameters.AddWithValue("@Identificacion", (object)pCliente.Identificacion ?? DBNull.Value);
+                command.Parameters.AddWithValue("@Pasaporte", string.IsNullOrWhiteSpace(pCliente.Pasaporte) ? "" : pCliente.Pasaporte);
+                command.Parameters.AddWithValue("@Nombre", (object)pCliente.Nombre ?? DBNull.Value);
+                command.Parameters.AddWithValue("@Apellidos", (object)pCliente.Apellidos ?? DBNull.Value);
+                command.Parameters.AddWithValue("@Sexo", pCliente.Sexo);
+                command.Parameters.AddWithValue("@Telefono", (object)pCliente.Telefono ?? DBNull.Value);
+                command.Parameters.AddWithValue("@Email", (object)pCliente.Email ?? DBNull.Value);
+                command.Parameters.AddWithValue("@DireccionExacta", (object)pCliente.DireccionExacta ?? DBNull.Value);
+                command.Parameters.AddWithValue("@Provincia", (object)pCliente.Provincia ?? DBNull.Value);
+                command.Parameters.AddWithValue("@Fotografia", (object)pCliente.Fotografia ?? DBNull.Value);
+                command.Parameters.AddWithValue("@Estado", pCliente.Estado);
+
+                using (IDataBase db = FactoryDatabase.CreateDataBase(FactoryConexion.CreateConnection()))
+                {
+                    row = db.ExecuteNonQuery(command, IsolationLevel.ReadCommitted);
+                }
             }
 
             if (row > 0)
-                oCliente = this.ObtenerClientePorId(pCliente.ID_Cliente);
+                oCliente = pCliente;
 
-            return oCliente;
+            return Task.FromResult(oCliente);
         }
 
         public Clientes ObtenerClientePorId(int pId_Cliente)

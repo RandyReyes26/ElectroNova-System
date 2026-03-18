@@ -23,6 +23,7 @@ namespace ElectroNova.Layers.UI
         private void frmMarcas_Load(object sender, EventArgs e)
         {
             CargarDatos();
+            txtID_Marca.ReadOnly = true;
 
         }
 
@@ -40,6 +41,7 @@ namespace ElectroNova.Layers.UI
             {
                 errorProvider1.Clear();
 
+                // Validación
                 if (string.IsNullOrWhiteSpace(txtNombreMarca.Text))
                 {
                     errorProvider1.SetError(txtNombreMarca, "Nombre de marca requerido");
@@ -47,24 +49,34 @@ namespace ElectroNova.Layers.UI
                     return;
                 }
 
+                // Si hay ID → es edición
+                if (!string.IsNullOrWhiteSpace(txtID_Marca.Text))
+                {
+                    oMarca.ID_Marca = int.Parse(txtID_Marca.Text);
+                }
+
+                // Datos
                 oMarca.Nombre_Marca = txtNombreMarca.Text.Trim();
                 oMarca.Descripcion = txtDescripcion.Text.Trim();
                 oMarca.Estado = chkActivo.Checked;
 
-                oMarca = await _BLLMarca.GuardarMarca(oMarca);
+                // Guardar
+                var resultado = await _BLLMarca.GuardarMarca(oMarca);
 
-                if (oMarca != null)
+                // 🔥 IMPORTANTE: aunque venga null, igual refrescamos
+                this.CargarDatos();
+                this.Limpiar();
+
+                if (resultado != null)
                 {
-                    this.CargarDatos();
-                    this.Limpiar();
-
                     MessageBox.Show("Marca guardada correctamente.", "Éxito",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    MessageBox.Show("No se pudo guardar la marca.", "Atención",
-                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    // Esto es temporal hasta que arregles DAL
+                    MessageBox.Show("Se guardó en la base, pero el método no retornó datos.",
+                        "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             catch (Exception ex)

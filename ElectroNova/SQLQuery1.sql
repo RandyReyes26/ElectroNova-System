@@ -71,9 +71,10 @@ CREATE TABLE Marca (
     Descripcion NVARCHAR(200),
     Estado BIT
 );
-sp_helptext usp_INSERT_Marca
 
 select * from Marca
+
+
 
 /* ================================
    TABLA MODELO

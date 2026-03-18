@@ -29,6 +29,7 @@ namespace ElectroNova.Layers.UI
             _BLLDireccion = new BLLUbicacion();
             ConfigurarPictureBox();
             txtIdentificacion.KeyDown += txtIdentificacion_KeyDown;
+            txtID.ReadOnly = true;
 
             _DALCliente = new DALCliente();
 
@@ -192,28 +193,47 @@ namespace ElectroNova.Layers.UI
         {
             if (dgvDatos.SelectedRows.Count == 0)
             {
-                MessageBox.Show("Debe seleccionar una fila para editar.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Debe seleccionar una fila para editar.", "Información",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
 
-            Clientes oCliente = null;
+            Clientes oCliente = dgvDatos.SelectedRows[0].DataBoundItem as Clientes;
 
-            oCliente = this.dgvDatos.SelectedRows[0].DataBoundItem as Clientes;
-            this.txtID.Text = oCliente.ID_Cliente.ToString();
-            oCliente.Identificacion = this.txtIdentificacion.Text;
-            this.txtIdentificacion.Text = oCliente.Pasaporte.ToString();
-            this.txtNombre.Text = oCliente.Nombre;
-            this.txtApellidos.Text = oCliente.Apellidos;
-            this.rbtFemenino.Checked = oCliente.Sexo == 2 ? true : false;
-            this.rbtMasculino.Checked = oCliente.Sexo == 1 ? true : false;
-            this.txtTelefono.Text = oCliente.Telefono;
-            this.txtEmail.Text = oCliente.Email;
-            this.cmbProvincia.Text = oCliente.Provincia;
+            if (oCliente == null)
+            {
+                MessageBox.Show("No se pudo obtener el cliente seleccionado.");
+                return;
+            }
+
+            txtID.Text = oCliente.ID_Cliente.ToString();
+            txtIdentificacion.Text = oCliente.Identificacion;
+            txtNombre.Text = oCliente.Nombre;
+            txtApellidos.Text = oCliente.Apellidos;
+            txtTelefono.Text = oCliente.Telefono;
+            txtEmail.Text = oCliente.Email;
+            txtDireccionExacta.Text = oCliente.DireccionExacta;
+            cmbProvincia.Text = oCliente.Provincia;
+
+            rbtMasculino.Checked = oCliente.Sexo == 1;
+            rbtFemenino.Checked = oCliente.Sexo == 2;
+
             chkActivo.Checked = oCliente.Estado;
             chkInactivo.Checked = !oCliente.Estado;
 
-            // Convertir el texto del ComboBox a bool
-            //bool estadoSeleccionado = this.cboEstadoCliente.Text == "1";
+            if (oCliente.Fotografia != null)
+            {
+                using (MemoryStream ms = new MemoryStream(oCliente.Fotografia))
+                {
+                    pblImagen.Image = Image.FromStream(ms);
+                }
+                pblImagen.Tag = oCliente.Fotografia;
+            }
+            else
+            {
+                pblImagen.Image = null;
+                pblImagen.Tag = null;
+            }
 
         }
         private void Limpiar()
@@ -232,57 +252,78 @@ namespace ElectroNova.Layers.UI
         private void ToolStripMenuNuevo_Click(object sender, EventArgs e)
         {
             Limpiar();
-            txtID.Select();
+            //txtID.Select();
+            txtIdentificacion.Focus();
 
         }
 
         private async void GuardartoolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            IBLLCliente _BLLCliente = new BLLCliente();
-            Clientes oCliente = new Clientes();
-
-            errorProvider1.Clear();
-
-            if (string.IsNullOrWhiteSpace(txtIdentificacion.Text))
+            try
             {
-                errorProvider1.SetError(txtIdentificacion, "Cédula requerida");
-                txtIdentificacion.Focus();
-                return;
+                IBLLCliente _BLLCliente = new BLLCliente();
+                Clientes oCliente = new Clientes();
+
+                errorProvider1.Clear();
+
+                if (string.IsNullOrWhiteSpace(txtIdentificacion.Text))
+                {
+                    errorProvider1.SetError(txtIdentificacion, "Cédula requerida");
+                    txtIdentificacion.Focus();
+                    return;
+                }
+
+                if (string.IsNullOrWhiteSpace(txtNombre.Text))
+                {
+                    errorProvider1.SetError(txtNombre, "Nombre requerido");
+                    txtNombre.Focus();
+                    return;
+                }
+
+                if (!string.IsNullOrWhiteSpace(txtID.Text))
+                    oCliente.ID_Cliente = int.Parse(txtID.Text);
+
+                oCliente.Identificacion = txtIdentificacion.Text.Trim();
+
+                // 
+                oCliente.Pasaporte = "";
+                oCliente.Nombre = txtNombre.Text.Trim();
+                oCliente.Apellidos = txtApellidos.Text.Trim();
+                oCliente.DireccionExacta = txtDireccionExacta.Text.Trim();
+                oCliente.Provincia = cmbProvincia.Text;
+                oCliente.Telefono = txtTelefono.Text.Trim();
+                oCliente.Email = txtEmail.Text.Trim();
+                oCliente.Estado = chkActivo.Checked;
+
+                if (rbtMasculino.Checked)
+                    oCliente.Sexo = 1;
+                else if (rbtFemenino.Checked)
+                    oCliente.Sexo = 2;
+                else
+                    oCliente.Sexo = 0;
+
+                if (pblImagen.Tag != null)
+                    oCliente.Fotografia = (byte[])pblImagen.Tag;
+                else
+                    oCliente.Fotografia = null;
+
+                oCliente = await _BLLCliente.GuardarCliente(oCliente);
+
+                if (oCliente != null)
+                {
+                    CargarDatos();
+                    Limpiar();
+                    MessageBox.Show("Cliente guardado correctamente.", "Éxito",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("No se pudo guardar el cliente.");
+                }
             }
-
-            if (!string.IsNullOrWhiteSpace(txtID.Text))
+            catch (Exception ex)
             {
-                oCliente.ID_Cliente = int.Parse(this.txtID.Text);
-            }
-
-            oCliente.Identificacion = this.txtIdentificacion.Text.Trim();
-            oCliente.Pasaporte = this.txtIdentificacion.Text.Trim();
-            oCliente.Nombre = this.txtNombre.Text.Trim();
-            oCliente.Apellidos = this.txtApellidos.Text.Trim();
-            oCliente.DireccionExacta = this.txtDireccionExacta.Text.Trim();
-            oCliente.Provincia = this.cmbProvincia.Text;
-            oCliente.Telefono = this.txtTelefono.Text.Trim();
-            oCliente.Email = this.txtEmail.Text.Trim();
-            oCliente.Estado = chkActivo.Checked;
-
-            if (rbtMasculino.Checked)
-                oCliente.Sexo = 1;
-            else if (rbtFemenino.Checked)
-                oCliente.Sexo = 2;
-
-            if (pblImagen.Tag != null)
-                oCliente.Fotografia = (byte[])pblImagen.Tag;
-
-            oCliente = await _BLLCliente.GuardarCliente(oCliente);
-
-            if (oCliente != null)
-            {
-                this.CargarDatos();
-                MessageBox.Show("Cliente guardado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-            {
-                MessageBox.Show("No se pudo guardar el cliente.");
+                MessageBox.Show("Error al guardar el cliente: " + ex.Message);
             }
         }
 
@@ -306,8 +347,12 @@ namespace ElectroNova.Layers.UI
                 // Guarda la imagen en bytes en el Tag
                 pblImagen.Tag = cadenaBytes;
             }
-        }    
+        }
 
+        private void txtIdentificacion_Leave(object sender, EventArgs e)
+        {
+            BuscarPorCedula();
+        }
     }
 }
 
