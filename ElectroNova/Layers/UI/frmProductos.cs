@@ -16,5 +16,6 @@ namespace ElectroNova.Layers.UI
         {
             InitializeComponent();
         }
+
     }
 }

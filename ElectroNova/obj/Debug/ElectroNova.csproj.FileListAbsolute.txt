@@ -20,3 +20,4 @@ C:\Users\randy\OneDrive\Escritorio\ElectroNova\ElectroNova\obj\Debug\ElectroNova
 C:\Users\randy\OneDrive\Escritorio\ElectroNova\ElectroNova\obj\Debug\ElectroN.C07AAF14.Up2Date
 C:\Users\randy\OneDrive\Escritorio\ElectroNova\ElectroNova\obj\Debug\ElectroNova.exe
 C:\Users\randy\OneDrive\Escritorio\ElectroNova\ElectroNova\obj\Debug\ElectroNova.pdb
+C:\Users\randy\OneDrive\Escritorio\ElectroNova\ElectroNova\obj\Debug\ElectroNova.Layers.UI.frmProductos.resources
