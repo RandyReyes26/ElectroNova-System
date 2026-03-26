@@ -88,7 +88,7 @@
             // 
             // mnuStrip1
             // 
-            this.mnuStrip1.BackColor = System.Drawing.Color.White;
+            this.mnuStrip1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.mnuStrip1.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mnuStrip1.GripMargin = new System.Windows.Forms.Padding(2);
             this.mnuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);

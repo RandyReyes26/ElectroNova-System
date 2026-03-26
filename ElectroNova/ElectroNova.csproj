@@ -117,6 +117,12 @@
     <Compile Include="Layers\UI\frmControlStock.Designer.cs">
       <DependentUpon>frmControlStock.cs</DependentUpon>
     </Compile>
+    <Compile Include="Layers\UI\frmInformacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layers\UI\frmInformacion.Designer.cs">
+      <DependentUpon>frmInformacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Layers\UI\frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -167,6 +173,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Layers\UI\frmControlStock.resx">
       <DependentUpon>frmControlStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layers\UI\frmInformacion.resx">
+      <DependentUpon>frmInformacion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Layers\UI\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
