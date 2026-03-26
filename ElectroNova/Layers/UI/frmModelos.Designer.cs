@@ -28,81 +28,88 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmModelos));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
+            this.ToolStripMenuNuevo = new System.Windows.Forms.ToolStripButton();
+            this.GuardartoolStripMenuItem1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripEditar = new System.Windows.Forms.ToolStripButton();
+            this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dgvDatos = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtID_Modelo = new System.Windows.Forms.TextBox();
+            this.chkInactivo = new System.Windows.Forms.CheckBox();
+            this.chkActivo = new System.Windows.Forms.CheckBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtDescripcion = new System.Windows.Forms.TextBox();
+            this.txtCodigoModelo = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.chkActivo = new System.Windows.Forms.CheckBox();
-            this.chkInactivo = new System.Windows.Forms.CheckBox();
-            this.txtID_Marca = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.toolStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStrip1
             // 
             this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton1,
-            this.toolStripButton2,
-            this.toolStripButton3,
-            this.toolStripButton4});
+            this.ToolStripMenuNuevo,
+            this.GuardartoolStripMenuItem1,
+            this.toolStripEditar,
+            this.eliminarToolStripMenuItem});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(1195, 71);
             this.toolStrip1.TabIndex = 3;
             this.toolStrip1.Text = "toolStrip1";
             // 
-            // toolStripButton1
+            // ToolStripMenuNuevo
             // 
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(178, 68);
-            this.toolStripButton1.Text = "Agregar Nuevo";
+            this.ToolStripMenuNuevo.Image = ((System.Drawing.Image)(resources.GetObject("ToolStripMenuNuevo.Image")));
+            this.ToolStripMenuNuevo.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.ToolStripMenuNuevo.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.ToolStripMenuNuevo.Name = "ToolStripMenuNuevo";
+            this.ToolStripMenuNuevo.Size = new System.Drawing.Size(178, 68);
+            this.ToolStripMenuNuevo.Text = "Agregar Nuevo";
+            this.ToolStripMenuNuevo.Click += new System.EventHandler(this.ToolStripMenuNuevo_Click);
             // 
-            // toolStripButton2
+            // GuardartoolStripMenuItem1
             // 
-            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
-            this.toolStripButton2.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(130, 68);
-            this.toolStripButton2.Text = "Guardar";
+            this.GuardartoolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("GuardartoolStripMenuItem1.Image")));
+            this.GuardartoolStripMenuItem1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.GuardartoolStripMenuItem1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.GuardartoolStripMenuItem1.Name = "GuardartoolStripMenuItem1";
+            this.GuardartoolStripMenuItem1.Size = new System.Drawing.Size(130, 68);
+            this.GuardartoolStripMenuItem1.Text = "Guardar";
+            this.GuardartoolStripMenuItem1.Click += new System.EventHandler(this.GuardartoolStripMenuItem1_Click);
             // 
-            // toolStripButton3
+            // toolStripEditar
             // 
-            this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
-            this.toolStripButton3.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton3.Name = "toolStripButton3";
-            this.toolStripButton3.Size = new System.Drawing.Size(116, 68);
-            this.toolStripButton3.Text = "Editar";
+            this.toolStripEditar.Image = ((System.Drawing.Image)(resources.GetObject("toolStripEditar.Image")));
+            this.toolStripEditar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripEditar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripEditar.Name = "toolStripEditar";
+            this.toolStripEditar.Size = new System.Drawing.Size(116, 68);
+            this.toolStripEditar.Text = "Editar";
+            this.toolStripEditar.Click += new System.EventHandler(this.toolStripEditar_Click);
             // 
-            // toolStripButton4
+            // eliminarToolStripMenuItem
             // 
-            this.toolStripButton4.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton4.Image")));
-            this.toolStripButton4.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton4.Name = "toolStripButton4";
-            this.toolStripButton4.Size = new System.Drawing.Size(131, 68);
-            this.toolStripButton4.Text = "Eliminar";
+            this.eliminarToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("eliminarToolStripMenuItem.Image")));
+            this.eliminarToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.eliminarToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.eliminarToolStripMenuItem.Name = "eliminarToolStripMenuItem";
+            this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(131, 68);
+            this.eliminarToolStripMenuItem.Text = "Eliminar";
+            this.eliminarToolStripMenuItem.Click += new System.EventHandler(this.eliminarToolStripMenuItem_Click);
             // 
             // panel1
             // 
@@ -135,12 +142,12 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.txtID_Marca);
+            this.groupBox1.Controls.Add(this.txtID_Modelo);
             this.groupBox1.Controls.Add(this.chkInactivo);
             this.groupBox1.Controls.Add(this.chkActivo);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.txtDescripcion);
+            this.groupBox1.Controls.Add(this.txtCodigoModelo);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -151,19 +158,68 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos del Modelo";
             // 
-            // textBox2
+            // label4
             // 
-            this.textBox2.Location = new System.Drawing.Point(206, 140);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(469, 27);
-            this.textBox2.TabIndex = 4;
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(17, 30);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(72, 17);
+            this.label4.TabIndex = 23;
+            this.label4.Text = "ID Modelo";
             // 
-            // textBox1
+            // txtID_Modelo
             // 
-            this.textBox1.Location = new System.Drawing.Point(206, 82);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(469, 27);
-            this.textBox1.TabIndex = 3;
+            this.txtID_Modelo.Location = new System.Drawing.Point(206, 26);
+            this.txtID_Modelo.Name = "txtID_Modelo";
+            this.txtID_Modelo.Size = new System.Drawing.Size(469, 27);
+            this.txtID_Modelo.TabIndex = 22;
+            // 
+            // chkInactivo
+            // 
+            this.chkInactivo.AutoSize = true;
+            this.chkInactivo.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkInactivo.Location = new System.Drawing.Point(530, 201);
+            this.chkInactivo.Name = "chkInactivo";
+            this.chkInactivo.Size = new System.Drawing.Size(79, 21);
+            this.chkInactivo.TabIndex = 21;
+            this.chkInactivo.Text = "Inactivo";
+            this.chkInactivo.UseVisualStyleBackColor = true;
+            // 
+            // chkActivo
+            // 
+            this.chkActivo.AutoSize = true;
+            this.chkActivo.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkActivo.Location = new System.Drawing.Point(206, 201);
+            this.chkActivo.Name = "chkActivo";
+            this.chkActivo.Size = new System.Drawing.Size(69, 21);
+            this.chkActivo.TabIndex = 19;
+            this.chkActivo.Text = "Activo";
+            this.chkActivo.UseVisualStyleBackColor = true;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(17, 201);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(54, 17);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Estado";
+            // 
+            // txtDescripcion
+            // 
+            this.txtDescripcion.Location = new System.Drawing.Point(206, 140);
+            this.txtDescripcion.Name = "txtDescripcion";
+            this.txtDescripcion.Size = new System.Drawing.Size(469, 27);
+            this.txtDescripcion.TabIndex = 4;
+            // 
+            // txtCodigoModelo
+            // 
+            this.txtCodigoModelo.Location = new System.Drawing.Point(206, 82);
+            this.txtCodigoModelo.Name = "txtCodigoModelo";
+            this.txtCodigoModelo.Size = new System.Drawing.Size(469, 27);
+            this.txtCodigoModelo.TabIndex = 3;
             // 
             // label2
             // 
@@ -183,56 +239,11 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(124, 17);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Nombre de Marca";
+            this.label1.Text = "Código de Modelo";
             // 
-            // label3
+            // errorProvider1
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(17, 201);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(54, 17);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Estado";
-            // 
-            // chkActivo
-            // 
-            this.chkActivo.AutoSize = true;
-            this.chkActivo.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkActivo.Location = new System.Drawing.Point(206, 201);
-            this.chkActivo.Name = "chkActivo";
-            this.chkActivo.Size = new System.Drawing.Size(69, 21);
-            this.chkActivo.TabIndex = 19;
-            this.chkActivo.Text = "Activo";
-            this.chkActivo.UseVisualStyleBackColor = true;
-            // 
-            // chkInactivo
-            // 
-            this.chkInactivo.AutoSize = true;
-            this.chkInactivo.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkInactivo.Location = new System.Drawing.Point(530, 201);
-            this.chkInactivo.Name = "chkInactivo";
-            this.chkInactivo.Size = new System.Drawing.Size(79, 21);
-            this.chkInactivo.TabIndex = 21;
-            this.chkInactivo.Text = "Inactivo";
-            this.chkInactivo.UseVisualStyleBackColor = true;
-            // 
-            // txtID_Marca
-            // 
-            this.txtID_Marca.Location = new System.Drawing.Point(206, 26);
-            this.txtID_Marca.Name = "txtID_Marca";
-            this.txtID_Marca.Size = new System.Drawing.Size(469, 27);
-            this.txtID_Marca.TabIndex = 22;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(17, 30);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(72, 17);
-            this.label4.TabIndex = 23;
-            this.label4.Text = "ID Modelo";
+            this.errorProvider1.ContainerControl = this;
             // 
             // frmModelos
             // 
@@ -243,6 +254,7 @@
             this.Controls.Add(this.toolStrip1);
             this.Name = "frmModelos";
             this.Text = "frmModelos";
+            this.Load += new System.EventHandler(this.frmModelos_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -250,6 +262,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -258,22 +271,23 @@
         #endregion
 
         private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
-        private System.Windows.Forms.ToolStripButton toolStripButton2;
-        private System.Windows.Forms.ToolStripButton toolStripButton3;
-        private System.Windows.Forms.ToolStripButton toolStripButton4;
+        private System.Windows.Forms.ToolStripButton ToolStripMenuNuevo;
+        private System.Windows.Forms.ToolStripButton GuardartoolStripMenuItem1;
+        private System.Windows.Forms.ToolStripButton toolStripEditar;
+        private System.Windows.Forms.ToolStripButton eliminarToolStripMenuItem;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DataGridView dgvDatos;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtDescripcion;
+        private System.Windows.Forms.TextBox txtCodigoModelo;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.CheckBox chkActivo;
         private System.Windows.Forms.CheckBox chkInactivo;
-        private System.Windows.Forms.TextBox txtID_Marca;
+        private System.Windows.Forms.TextBox txtID_Modelo;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

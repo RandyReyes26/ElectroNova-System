@@ -16,37 +16,42 @@ namespace ElectroNova.Layers.DAL
         private static readonly ILog _MyLogControlEventos = log4net.LogManager.GetLogger("MyControlEventos");
         public async Task<Modelo> ActualizarModelo(Modelo pModelo)
         {
-            double row = 0;
             SqlCommand command = new SqlCommand();
+            Modelo oModelo = null;
 
-            Modelo oModelo = new Modelo();
             try
             {
+                command.CommandType = CommandType.StoredProcedure;
+                command.CommandText = "usp_UPDATE_Modelo";
+
+                command.Parameters.AddWithValue("@ID_Modelo", pModelo.ID_Modelo);
                 command.Parameters.AddWithValue("@Codigo_Modelo", pModelo.Codigo_Modelo);
                 command.Parameters.AddWithValue("@Descripcion", pModelo.Descripcion);
                 command.Parameters.AddWithValue("@Estado", pModelo.Estado);
 
-
-
-
-                command.CommandType = System.Data.CommandType.StoredProcedure;
-                command.CommandText = "usp_UPDATE_Motocicleta";
-
                 using (IDataBase db = FactoryDatabase.CreateDataBase(FactoryConexion.CreateConnection()))
                 {
-                    row = db.ExecuteNonQuery(command, IsolationLevel.ReadCommitted);
+                    using (IDataReader reader = db.ExecuteReader(command))
+                    {
+                        if (reader.Read())
+                        {
+                            oModelo = new Modelo
+                            {
+                            ID_Modelo = Convert.ToInt32(reader["ID_Modelo"]),
+                            Codigo_Modelo = reader["Codigo_Modelo"].ToString(),
+                            Descripcion = reader["Descripcion"].ToString(),
+                            Estado = bool.Parse(reader["Estado"].ToString())
+
+                        };
+                        }
+                    }
                 }
 
-                // Si devuelve filas quiere decir que se salvo entonces extraerlo
-                if (row > 0)
-                    oModelo = this.ObtenerModeloPorId(pModelo.ID_Modelo);
-
                 return oModelo;
-
             }
             catch (Exception ex)
             {
-                _MyLogControlEventos.Error("Error en Moto", ex);
+                _MyLogControlEventos.Error("Error al actualizar Marca", ex);
                 throw;
             }
         }
@@ -61,8 +66,8 @@ namespace ElectroNova.Layers.DAL
 
 
                 command.CommandType = System.Data.CommandType.StoredProcedure;
-                command.CommandText = "usp_DELETE_Motocicleta_ByID";
-                command.Parameters.AddWithValue("@ID_Motocicleta", pId_Modelo);
+                command.CommandText = "usp_DELETE_Modelo_ByID";
+                command.Parameters.AddWithValue("@ID_Modelo", pId_Modelo);
 
                 using (IDataBase db = FactoryDatabase.CreateDataBase(FactoryConexion.CreateConnection()))
                 {
@@ -87,31 +92,37 @@ namespace ElectroNova.Layers.DAL
             SqlCommand command = new SqlCommand();
             Modelo oModelo = null;
 
-
-            double row = 0;
             try
             {
+                command.CommandType = CommandType.StoredProcedure;
+                command.CommandText = "usp_INSERT_Modelo";
+
                 command.Parameters.AddWithValue("@Codigo_Modelo", pModelo.Codigo_Modelo);
                 command.Parameters.AddWithValue("@Descripcion", pModelo.Descripcion);
                 command.Parameters.AddWithValue("@Estado", pModelo.Estado);
 
-                command.CommandType = System.Data.CommandType.StoredProcedure;
-                command.CommandText = "usp_INSERT_Motocicleta";
-
-
                 using (IDataBase db = FactoryDatabase.CreateDataBase(FactoryConexion.CreateConnection()))
                 {
-                    row = db.ExecuteNonQuery(command, IsolationLevel.ReadCommitted);
+                    using (IDataReader reader = db.ExecuteReader(command))
+                    {
+                        if (reader.Read())
+                        {
+                            oModelo = new Modelo
+                            {
+                                ID_Modelo = Convert.ToInt32(reader["ID_Modelo"]),
+                                Codigo_Modelo = reader["Codigo_Modelo"].ToString(),
+                                Descripcion = reader["Descripcion"].ToString(),
+                                Estado = Convert.ToBoolean(reader["Estado"])
+                            };
+                        }
+                    }
                 }
-
-                if (row > 0)
-                    oModelo = this.ObtenerModeloPorId(pModelo.ID_Modelo);
 
                 return oModelo;
             }
             catch (Exception ex)
             {
-                _MyLogControlEventos.Error("Error en Login", ex);
+                _MyLogControlEventos.Error("Error al guardar Marca", ex);
                 throw;
             }
         }
@@ -122,8 +133,8 @@ namespace ElectroNova.Layers.DAL
 
             using (SqlCommand command = new SqlCommand())
             {
-                command.CommandType = System.Data.CommandType.StoredProcedure;
-                command.CommandText = "usp_SELECT_Motocicleta_All";
+                command.CommandType = CommandType.StoredProcedure;
+                command.CommandText = "usp_SELECT_Modelo_All";
 
                 try
                 {
@@ -134,31 +145,18 @@ namespace ElectroNova.Layers.DAL
                             while (reader.Read())
                             {
                                 Modelo oModelo = new Modelo();
+
                                 try
                                 {
                                     oModelo.ID_Modelo = int.Parse(reader["ID_Modelo"].ToString());
                                     oModelo.Codigo_Modelo = reader["Codigo_Modelo"].ToString();
                                     oModelo.Descripcion = reader["Descripcion"].ToString();
                                     oModelo.Estado = bool.Parse(reader["Estado"].ToString());
-
-
-                                    // Usar TryParse para evitar la excepción si el valor no es un bool válido
-                                    bool estado;
-                                    if (reader["Estado"] != DBNull.Value && bool.TryParse(reader["Estado"].ToString(), out estado))
-                                    {
-                                        oModelo.Estado = estado;
-                                    }
-                                    else
-                                    {
-                                        oModelo.Estado = false;  // Valor por defecto si la conversión falla
-                                    }
-
-                                    oModelo.ID_Modelo = int.Parse(reader["ID_Cliente"].ToString());
                                 }
                                 catch (Exception ex)
                                 {
-                                    _MyLogControlEventos.Error("Error al leer datos de la motocicleta", ex);
-                                    continue;  // Si hay un error al leer un registro, lo omite y continúa con el siguiente
+                                    _MyLogControlEventos.Error("Error al leer datos de Marca", ex);
+                                    continue;
                                 }
 
                                 lista.Add(oModelo);
@@ -168,7 +166,7 @@ namespace ElectroNova.Layers.DAL
                 }
                 catch (Exception ex)
                 {
-                    _MyLogControlEventos.Error("Error en GetAllLogin", ex);
+                    _MyLogControlEventos.Error("Error en ObtenerMarca", ex);
                     throw;
                 }
             }
@@ -184,12 +182,9 @@ namespace ElectroNova.Layers.DAL
 
             try
             {
-
-                command.Parameters.AddWithValue("@ID_Motocicleta", pId_Modelo);
-
-                command.CommandType = System.Data.CommandType.StoredProcedure;
-                command.CommandText = "usp_SELECT_Motocicleta_ByID";
-
+                command.Parameters.AddWithValue("@ID_Modelo", pId_Modelo);
+                command.CommandType = CommandType.StoredProcedure;
+                command.CommandText = "usp_SELECT_Modelo_ByID";
 
                 using (IDataBase db = FactoryDatabase.CreateDataBase(FactoryConexion.CreateConnection()))
                 {
@@ -197,33 +192,21 @@ namespace ElectroNova.Layers.DAL
 
                     if (reader.Read())
                     {
-                        oModelo = new Modelo();
+                        oModelo = new Modelo
                         {
-                            oModelo.ID_Modelo = int.Parse(reader["ID_Modelo"].ToString());
-                            oModelo.Codigo_Modelo = reader["Codigo_Modelo"].ToString();
-                            oModelo.Descripcion = reader["Descripcion"].ToString();
-                            oModelo.Estado = bool.Parse(reader["Estado"].ToString());
-                            // Usar TryParse para evitar la excepción si el valor no es un bool válido
-                            bool estado;
-                            if (reader["Estado"] != DBNull.Value && bool.TryParse(reader["Estado"].ToString(), out estado))
-                            {
-                                oModelo.Estado = estado;
-                            }
-                            else
-                            {
-                                oModelo.Estado = false;  // Valor por defecto si la conversión falla
-                            }
-                            oModelo.ID_Modelo = int.Parse(reader["ID_Cliente"].ToString());
-
-
+                            ID_Modelo = Convert.ToInt32(reader["ID_Modelo"]),
+                            Codigo_Modelo = reader["Codigo_Modelo"].ToString(),
+                            Descripcion = reader["Descripcion"].ToString(),
+                            Estado = Convert.ToBoolean(reader["Estado"])
                         };
                     }
                 }
+
                 return oModelo;
             }
             catch (Exception ex)
             {
-                _MyLogControlEventos.Error("Error en GetAllLogin", ex);
+                _MyLogControlEventos.Error("Error en ObtenerMarcaPorId", ex);
                 throw;
             }
         }

@@ -3,216 +3,32 @@
   "WorkspaceRootPath": "C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{28B6F992-692C-4507-8E51-AA3C2A0D8013}|ElectroNova\\ElectroNova.csproj|C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\electronova\\layers\\ui\\frmcontrolstock.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{28B6F992-692C-4507-8E51-AA3C2A0D8013}|ElectroNova\\ElectroNova.csproj|solutionrelative:electronova\\layers\\ui\\frmcontrolstock.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{28B6F992-692C-4507-8E51-AA3C2A0D8013}|ElectroNova\\ElectroNova.csproj|c:\\users\\randy\\onedrive\\escritorio\\electronova\\electronova\\layers\\ui\\frmmenuprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28B6F992-692C-4507-8E51-AA3C2A0D8013}|ElectroNova\\ElectroNova.csproj|solutionrelative:electronova\\layers\\ui\\frmmenuprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28B6F992-692C-4507-8E51-AA3C2A0D8013}|ElectroNova\\ElectroNova.csproj|c:\\users\\randy\\onedrive\\escritorio\\electronova\\electronova\\layers\\ui\\frmmenuprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{28B6F992-692C-4507-8E51-AA3C2A0D8013}|ElectroNova\\ElectroNova.csproj|solutionrelative:electronova\\layers\\ui\\frmmenuprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{28B6F992-692C-4507-8E51-AA3C2A0D8013}|ElectroNova\\ElectroNova.csproj|c:\\users\\randy\\onedrive\\escritorio\\electronova\\electronova\\layers\\ui\\frmadministracion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{28B6F992-692C-4507-8E51-AA3C2A0D8013}|ElectroNova\\ElectroNova.csproj|solutionrelative:electronova\\layers\\ui\\frmadministracion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{28B6F992-692C-4507-8E51-AA3C2A0D8013}|ElectroNova\\ElectroNova.csproj|C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\electronova\\layers\\ui\\frmclientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{28B6F992-692C-4507-8E51-AA3C2A0D8013}|ElectroNova\\ElectroNova.csproj|solutionrelative:electronova\\layers\\ui\\frmclientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{28B6F992-692C-4507-8E51-AA3C2A0D8013}|ElectroNova\\ElectroNova.csproj|C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\electronova\\layers\\ui\\frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{28B6F992-692C-4507-8E51-AA3C2A0D8013}|ElectroNova\\ElectroNova.csproj|solutionrelative:electronova\\layers\\ui\\frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{28B6F992-692C-4507-8E51-AA3C2A0D8013}|ElectroNova\\ElectroNova.csproj|C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\electronova\\layers\\ui\\frmmarcas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{28B6F992-692C-4507-8E51-AA3C2A0D8013}|ElectroNova\\ElectroNova.csproj|solutionrelative:electronova\\layers\\ui\\frmmarcas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{28B6F992-692C-4507-8E51-AA3C2A0D8013}|ElectroNova\\ElectroNova.csproj|C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\electronova\\layers\\ui\\frmmenuprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{28B6F992-692C-4507-8E51-AA3C2A0D8013}|ElectroNova\\ElectroNova.csproj|solutionrelative:electronova\\layers\\ui\\frmmenuprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{28B6F992-692C-4507-8E51-AA3C2A0D8013}|ElectroNova\\ElectroNova.csproj|c:\\users\\randy\\onedrive\\escritorio\\electronova\\electronova\\layers\\ui\\frmproductos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{28B6F992-692C-4507-8E51-AA3C2A0D8013}|ElectroNova\\ElectroNova.csproj|solutionrelative:electronova\\layers\\ui\\frmproductos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{28B6F992-692C-4507-8E51-AA3C2A0D8013}|ElectroNova\\ElectroNova.csproj|C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\electronova\\layers\\ui\\frmmodelos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{28B6F992-692C-4507-8E51-AA3C2A0D8013}|ElectroNova\\ElectroNova.csproj|solutionrelative:electronova\\layers\\ui\\frmmodelos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{28B6F992-692C-4507-8E51-AA3C2A0D8013}|ElectroNova\\ElectroNova.csproj|C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\electronova\\layers\\ui\\frmtipodispositivo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{28B6F992-692C-4507-8E51-AA3C2A0D8013}|ElectroNova\\ElectroNova.csproj|solutionrelative:electronova\\layers\\ui\\frmtipodispositivo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{28B6F992-692C-4507-8E51-AA3C2A0D8013}|ElectroNova\\ElectroNova.csproj|C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\electronova\\layers\\bll\\bllmodelo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{28B6F992-692C-4507-8E51-AA3C2A0D8013}|ElectroNova\\ElectroNova.csproj|solutionrelative:electronova\\layers\\bll\\bllmodelo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{28B6F992-692C-4507-8E51-AA3C2A0D8013}|ElectroNova\\ElectroNova.csproj|C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\electronova\\layers\\bll\\bllpadron.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{28B6F992-692C-4507-8E51-AA3C2A0D8013}|ElectroNova\\ElectroNova.csproj|solutionrelative:electronova\\layers\\bll\\bllpadron.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{28B6F992-692C-4507-8E51-AA3C2A0D8013}|ElectroNova\\ElectroNova.csproj|C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\electronova\\layers\\bll\\bllfoto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{28B6F992-692C-4507-8E51-AA3C2A0D8013}|ElectroNova\\ElectroNova.csproj|solutionrelative:electronova\\layers\\bll\\bllfoto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{28B6F992-692C-4507-8E51-AA3C2A0D8013}|ElectroNova\\ElectroNova.csproj|C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\electronova\\layers\\entities\\modelo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{28B6F992-692C-4507-8E51-AA3C2A0D8013}|ElectroNova\\ElectroNova.csproj|solutionrelative:electronova\\layers\\entities\\modelo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{28B6F992-692C-4507-8E51-AA3C2A0D8013}|ElectroNova\\ElectroNova.csproj|c:\\users\\randy\\onedrive\\escritorio\\electronova\\electronova\\layers\\entities\\rol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{28B6F992-692C-4507-8E51-AA3C2A0D8013}|ElectroNova\\ElectroNova.csproj|solutionrelative:electronova\\layers\\entities\\rol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{28B6F992-692C-4507-8E51-AA3C2A0D8013}|ElectroNova\\ElectroNova.csproj|C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\electronova\\layers\\dal\\dalcliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{28B6F992-692C-4507-8E51-AA3C2A0D8013}|ElectroNova\\ElectroNova.csproj|solutionrelative:electronova\\layers\\dal\\dalcliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{28B6F992-692C-4507-8E51-AA3C2A0D8013}|ElectroNova\\ElectroNova.csproj|C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\electronova\\layers\\dal\\dalmodelo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{28B6F992-692C-4507-8E51-AA3C2A0D8013}|ElectroNova\\ElectroNova.csproj|solutionrelative:electronova\\layers\\dal\\dalmodelo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{28B6F992-692C-4507-8E51-AA3C2A0D8013}|ElectroNova\\ElectroNova.csproj|c:\\users\\randy\\onedrive\\escritorio\\electronova\\electronova\\layers\\ui\\frmclientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28B6F992-692C-4507-8E51-AA3C2A0D8013}|ElectroNova\\ElectroNova.csproj|solutionrelative:electronova\\layers\\ui\\frmclientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{28B6F992-692C-4507-8E51-AA3C2A0D8013}|ElectroNova\\ElectroNova.csproj|c:\\users\\randy\\onedrive\\escritorio\\electronova\\electronova\\layers\\ui\\frmproductos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{28B6F992-692C-4507-8E51-AA3C2A0D8013}|ElectroNova\\ElectroNova.csproj|solutionrelative:electronova\\layers\\ui\\frmproductos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{28B6F992-692C-4507-8E51-AA3C2A0D8013}|ElectroNova\\ElectroNova.csproj|c:\\users\\randy\\onedrive\\escritorio\\electronova\\electronova\\layers\\ui\\frmproductos.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{28B6F992-692C-4507-8E51-AA3C2A0D8013}|ElectroNova\\ElectroNova.csproj|solutionrelative:electronova\\layers\\ui\\frmproductos.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{28B6F992-692C-4507-8E51-AA3C2A0D8013}|ElectroNova\\ElectroNova.csproj|C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\electronova\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{28B6F992-692C-4507-8E51-AA3C2A0D8013}|ElectroNova\\ElectroNova.csproj|solutionrelative:electronova\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{28B6F992-692C-4507-8E51-AA3C2A0D8013}|ElectroNova\\ElectroNova.csproj|C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\electronova\\layers\\ui\\frmclientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{28B6F992-692C-4507-8E51-AA3C2A0D8013}|ElectroNova\\ElectroNova.csproj|solutionrelative:electronova\\layers\\ui\\frmclientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{28B6F992-692C-4507-8E51-AA3C2A0D8013}|ElectroNova\\ElectroNova.csproj|C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\electronova\\layers\\bll\\bllmarca.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{28B6F992-692C-4507-8E51-AA3C2A0D8013}|ElectroNova\\ElectroNova.csproj|solutionrelative:electronova\\layers\\bll\\bllmarca.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{28B6F992-692C-4507-8E51-AA3C2A0D8013}|ElectroNova\\ElectroNova.csproj|C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\electronova\\layers\\ui\\frmmarcas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{28B6F992-692C-4507-8E51-AA3C2A0D8013}|ElectroNova\\ElectroNova.csproj|solutionrelative:electronova\\layers\\ui\\frmmarcas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{28B6F992-692C-4507-8E51-AA3C2A0D8013}|ElectroNova\\ElectroNova.csproj|C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\electronova\\layers\\dal\\dalmarca.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{28B6F992-692C-4507-8E51-AA3C2A0D8013}|ElectroNova\\ElectroNova.csproj|solutionrelative:electronova\\layers\\dal\\dalmarca.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{28B6F992-692C-4507-8E51-AA3C2A0D8013}|ElectroNova\\ElectroNova.csproj|C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\electronova\\layers\\ui\\frmmenuprincipal.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{28B6F992-692C-4507-8E51-AA3C2A0D8013}|ElectroNova\\ElectroNova.csproj|solutionrelative:electronova\\layers\\ui\\frmmenuprincipal.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{28B6F992-692C-4507-8E51-AA3C2A0D8013}|ElectroNova\\ElectroNova.csproj|C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\electronova\\layers\\ui\\frmmenuprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{28B6F992-692C-4507-8E51-AA3C2A0D8013}|ElectroNova\\ElectroNova.csproj|solutionrelative:electronova\\layers\\ui\\frmmenuprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{28B6F992-692C-4507-8E51-AA3C2A0D8013}|ElectroNova\\ElectroNova.csproj|C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\electronova\\layers\\entities\\clientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{28B6F992-692C-4507-8E51-AA3C2A0D8013}|ElectroNova\\ElectroNova.csproj|solutionrelative:electronova\\layers\\entities\\clientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{28B6F992-692C-4507-8E51-AA3C2A0D8013}|ElectroNova\\ElectroNova.csproj|C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\electronova\\layers\\bll\\bllcliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{28B6F992-692C-4507-8E51-AA3C2A0D8013}|ElectroNova\\ElectroNova.csproj|solutionrelative:electronova\\layers\\bll\\bllcliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{28B6F992-692C-4507-8E51-AA3C2A0D8013}|ElectroNova\\ElectroNova.csproj|C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\electronova\\interfaces\\ibllcliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{28B6F992-692C-4507-8E51-AA3C2A0D8013}|ElectroNova\\ElectroNova.csproj|solutionrelative:electronova\\interfaces\\ibllcliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{28B6F992-692C-4507-8E51-AA3C2A0D8013}|ElectroNova\\ElectroNova.csproj|C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\electronova\\interfaces\\idalmodelo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{28B6F992-692C-4507-8E51-AA3C2A0D8013}|ElectroNova\\ElectroNova.csproj|solutionrelative:electronova\\interfaces\\idalmodelo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{28B6F992-692C-4507-8E51-AA3C2A0D8013}|ElectroNova\\ElectroNova.csproj|C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\electronova\\interfaces\\ibllmodelo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{28B6F992-692C-4507-8E51-AA3C2A0D8013}|ElectroNova\\ElectroNova.csproj|solutionrelative:electronova\\interfaces\\ibllmodelo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{28B6F992-692C-4507-8E51-AA3C2A0D8013}|ElectroNova\\ElectroNova.csproj|C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\electronova\\interfaces\\idalmarca.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{28B6F992-692C-4507-8E51-AA3C2A0D8013}|ElectroNova\\ElectroNova.csproj|solutionrelative:electronova\\interfaces\\idalmarca.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{28B6F992-692C-4507-8E51-AA3C2A0D8013}|ElectroNova\\ElectroNova.csproj|C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\electronova\\interfaces\\ibllmarca.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{28B6F992-692C-4507-8E51-AA3C2A0D8013}|ElectroNova\\ElectroNova.csproj|solutionrelative:electronova\\interfaces\\ibllmarca.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{28B6F992-692C-4507-8E51-AA3C2A0D8013}|ElectroNova\\ElectroNova.csproj|C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\electronova\\persistencia\\database.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{28B6F992-692C-4507-8E51-AA3C2A0D8013}|ElectroNova\\ElectroNova.csproj|solutionrelative:electronova\\persistencia\\database.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{28B6F992-692C-4507-8E51-AA3C2A0D8013}|ElectroNova\\ElectroNova.csproj|C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\electronova\\layers\\entities\\marca.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{28B6F992-692C-4507-8E51-AA3C2A0D8013}|ElectroNova\\ElectroNova.csproj|solutionrelative:electronova\\layers\\entities\\marca.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{28B6F992-692C-4507-8E51-AA3C2A0D8013}|ElectroNova\\ElectroNova.csproj|C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\electronova\\interfaces\\ibllpadron.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{28B6F992-692C-4507-8E51-AA3C2A0D8013}|ElectroNova\\ElectroNova.csproj|solutionrelative:electronova\\interfaces\\ibllpadron.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{28B6F992-692C-4507-8E51-AA3C2A0D8013}|ElectroNova\\ElectroNova.csproj|C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\electronova\\interfaces\\ibllubicacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{28B6F992-692C-4507-8E51-AA3C2A0D8013}|ElectroNova\\ElectroNova.csproj|solutionrelative:electronova\\interfaces\\ibllubicacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{28B6F992-692C-4507-8E51-AA3C2A0D8013}|ElectroNova\\ElectroNova.csproj|C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\electronova\\layers\\bll\\bllubicacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{28B6F992-692C-4507-8E51-AA3C2A0D8013}|ElectroNova\\ElectroNova.csproj|solutionrelative:electronova\\layers\\bll\\bllubicacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{28B6F992-692C-4507-8E51-AA3C2A0D8013}|ElectroNova\\ElectroNova.csproj|C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\electronova\\interfaces\\ibllfoto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{28B6F992-692C-4507-8E51-AA3C2A0D8013}|ElectroNova\\ElectroNova.csproj|solutionrelative:electronova\\interfaces\\ibllfoto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{28B6F992-692C-4507-8E51-AA3C2A0D8013}|ElectroNova\\ElectroNova.csproj|C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\electronova\\layers\\entities\\fotografia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{28B6F992-692C-4507-8E51-AA3C2A0D8013}|ElectroNova\\ElectroNova.csproj|solutionrelative:electronova\\layers\\entities\\fotografia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{28B6F992-692C-4507-8E51-AA3C2A0D8013}|ElectroNova\\ElectroNova.csproj|C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\electronova\\interfaces\\idalcliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{28B6F992-692C-4507-8E51-AA3C2A0D8013}|ElectroNova\\ElectroNova.csproj|solutionrelative:electronova\\interfaces\\idalcliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{28B6F992-692C-4507-8E51-AA3C2A0D8013}|ElectroNova\\ElectroNova.csproj|C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\electronova\\layers\\entities\\dto\\padrondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{28B6F992-692C-4507-8E51-AA3C2A0D8013}|ElectroNova\\ElectroNova.csproj|solutionrelative:electronova\\layers\\entities\\dto\\padrondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{28B6F992-692C-4507-8E51-AA3C2A0D8013}|ElectroNova\\ElectroNova.csproj|C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\electronova\\layers\\entities\\dto\\ubicaciondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{28B6F992-692C-4507-8E51-AA3C2A0D8013}|ElectroNova\\ElectroNova.csproj|solutionrelative:electronova\\layers\\entities\\dto\\ubicaciondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{28B6F992-692C-4507-8E51-AA3C2A0D8013}|ElectroNova\\ElectroNova.csproj|C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\electronova\\layers\\entities\\dto\\fotodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{28B6F992-692C-4507-8E51-AA3C2A0D8013}|ElectroNova\\ElectroNova.csproj|solutionrelative:electronova\\layers\\entities\\dto\\fotodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{28B6F992-692C-4507-8E51-AA3C2A0D8013}|ElectroNova\\ElectroNova.csproj|C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\electronova\\persistencia\\factoryconexion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{28B6F992-692C-4507-8E51-AA3C2A0D8013}|ElectroNova\\ElectroNova.csproj|solutionrelative:electronova\\persistencia\\factoryconexion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{28B6F992-692C-4507-8E51-AA3C2A0D8013}|ElectroNova\\ElectroNova.csproj|C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\electronova\\properties\\settings.settings||{6D2695F9-5365-4A78-89ED-F205C045BFE6}",
-      "RelativeMoniker": "D:0:0:{28B6F992-692C-4507-8E51-AA3C2A0D8013}|ElectroNova\\ElectroNova.csproj|solutionrelative:electronova\\properties\\settings.settings||{6D2695F9-5365-4A78-89ED-F205C045BFE6}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{28B6F992-692C-4507-8E51-AA3C2A0D8013}|ElectroNova\\ElectroNova.csproj|C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\electronova\\layers\\dal\\dalrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{28B6F992-692C-4507-8E51-AA3C2A0D8013}|ElectroNova\\ElectroNova.csproj|solutionrelative:electronova\\layers\\dal\\dalrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{28B6F992-692C-4507-8E51-AA3C2A0D8013}|ElectroNova\\ElectroNova.csproj|C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\electronova\\layers\\dal\\dalusuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{28B6F992-692C-4507-8E51-AA3C2A0D8013}|ElectroNova\\ElectroNova.csproj|solutionrelative:electronova\\layers\\dal\\dalusuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{28B6F992-692C-4507-8E51-AA3C2A0D8013}|ElectroNova\\ElectroNova.csproj|C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\electronova\\layers\\entities\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{28B6F992-692C-4507-8E51-AA3C2A0D8013}|ElectroNova\\ElectroNova.csproj|solutionrelative:electronova\\layers\\entities\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{28B6F992-692C-4507-8E51-AA3C2A0D8013}|ElectroNova\\ElectroNova.csproj|C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\electronova\\layers\\ui\\frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{28B6F992-692C-4507-8E51-AA3C2A0D8013}|ElectroNova\\ElectroNova.csproj|solutionrelative:electronova\\layers\\ui\\frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{28B6F992-692C-4507-8E51-AA3C2A0D8013}|ElectroNova\\ElectroNova.csproj|C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\electronova\\layers\\bll\\bllrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{28B6F992-692C-4507-8E51-AA3C2A0D8013}|ElectroNova\\ElectroNova.csproj|solutionrelative:electronova\\layers\\bll\\bllrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{28B6F992-692C-4507-8E51-AA3C2A0D8013}|ElectroNova\\ElectroNova.csproj|C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\electronova\\layers\\bll\\bllusuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{28B6F992-692C-4507-8E51-AA3C2A0D8013}|ElectroNova\\ElectroNova.csproj|solutionrelative:electronova\\layers\\bll\\bllusuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{28B6F992-692C-4507-8E51-AA3C2A0D8013}|ElectroNova\\ElectroNova.csproj|C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\electronova\\persistencia\\factorydatabase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{28B6F992-692C-4507-8E51-AA3C2A0D8013}|ElectroNova\\ElectroNova.csproj|solutionrelative:electronova\\persistencia\\factorydatabase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{28B6F992-692C-4507-8E51-AA3C2A0D8013}|ElectroNova\\ElectroNova.csproj|C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\electronova\\properties\\resources.resx||{FF4D6ACA-9352-4A5F-821E-F4D6EBDCAB11}",
-      "RelativeMoniker": "D:0:0:{28B6F992-692C-4507-8E51-AA3C2A0D8013}|ElectroNova\\ElectroNova.csproj|solutionrelative:electronova\\properties\\resources.resx||{FF4D6ACA-9352-4A5F-821E-F4D6EBDCAB11}"
+      "AbsoluteMoniker": "D:0:0:{28B6F992-692C-4507-8E51-AA3C2A0D8013}|ElectroNova\\ElectroNova.csproj|c:\\users\\randy\\onedrive\\escritorio\\electronova\\electronova\\layers\\ui\\frmmodelos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{28B6F992-692C-4507-8E51-AA3C2A0D8013}|ElectroNova\\ElectroNova.csproj|solutionrelative:electronova\\layers\\ui\\frmmodelos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -222,658 +38,94 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "frmMarcas.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\ElectroNova\\Layers\\UI\\frmMarcas.cs",
-              "RelativeDocumentMoniker": "ElectroNova\\Layers\\UI\\frmMarcas.cs",
-              "ToolTip": "C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\ElectroNova\\Layers\\UI\\frmMarcas.cs [Design]",
-              "RelativeToolTip": "ElectroNova\\Layers\\UI\\frmMarcas.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-15T03:50:26.542Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "frmLogin.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\ElectroNova\\Layers\\UI\\frmLogin.cs",
-              "RelativeDocumentMoniker": "ElectroNova\\Layers\\UI\\frmLogin.cs",
-              "ToolTip": "C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\ElectroNova\\Layers\\UI\\frmLogin.cs [Design]",
-              "RelativeToolTip": "ElectroNova\\Layers\\UI\\frmLogin.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-13T00:23:59.495Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "frmClientes.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\ElectroNova\\Layers\\UI\\frmClientes.cs",
-              "RelativeDocumentMoniker": "ElectroNova\\Layers\\UI\\frmClientes.cs",
-              "ToolTip": "C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\ElectroNova\\Layers\\UI\\frmClientes.cs [Design]",
-              "RelativeToolTip": "ElectroNova\\Layers\\UI\\frmClientes.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-13T18:52:56.712Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
               "Title": "frmAdministracion.cs [Design]",
               "DocumentMoniker": "C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\ElectroNova\\Layers\\UI\\frmAdministracion.cs",
               "RelativeDocumentMoniker": "ElectroNova\\Layers\\UI\\frmAdministracion.cs",
               "ToolTip": "C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\ElectroNova\\Layers\\UI\\frmAdministracion.cs [Design]",
               "RelativeToolTip": "ElectroNova\\Layers\\UI\\frmAdministracion.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-24T02:44:12.625Z",
+              "WhenOpened": "2026-03-26T03:10:09.673Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "frmControlStock.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\ElectroNova\\Layers\\UI\\frmControlStock.cs",
-              "RelativeDocumentMoniker": "ElectroNova\\Layers\\UI\\frmControlStock.cs",
-              "ToolTip": "C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\ElectroNova\\Layers\\UI\\frmControlStock.cs [Design]",
-              "RelativeToolTip": "ElectroNova\\Layers\\UI\\frmControlStock.cs [Design]",
+              "Title": "frmMenuPrincipal.cs",
+              "DocumentMoniker": "C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\ElectroNova\\Layers\\UI\\frmMenuPrincipal.cs",
+              "RelativeDocumentMoniker": "ElectroNova\\Layers\\UI\\frmMenuPrincipal.cs",
+              "ToolTip": "C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\ElectroNova\\Layers\\UI\\frmMenuPrincipal.cs",
+              "RelativeToolTip": "ElectroNova\\Layers\\UI\\frmMenuPrincipal.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAPgAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-13T00:23:58.117Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2026-03-26T02:55:02.997Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 1,
               "Title": "frmMenuPrincipal.cs [Design]",
               "DocumentMoniker": "C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\ElectroNova\\Layers\\UI\\frmMenuPrincipal.cs",
               "RelativeDocumentMoniker": "ElectroNova\\Layers\\UI\\frmMenuPrincipal.cs",
               "ToolTip": "C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\ElectroNova\\Layers\\UI\\frmMenuPrincipal.cs [Design]",
               "RelativeToolTip": "ElectroNova\\Layers\\UI\\frmMenuPrincipal.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-10T02:21:30.493Z",
+              "WhenOpened": "2026-03-26T02:54:43.299Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 4,
+              "Title": "frmClientes.cs",
+              "DocumentMoniker": "C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\ElectroNova\\Layers\\UI\\frmClientes.cs",
+              "RelativeDocumentMoniker": "ElectroNova\\Layers\\UI\\frmClientes.cs",
+              "ToolTip": "C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\ElectroNova\\Layers\\UI\\frmClientes.cs",
+              "RelativeToolTip": "ElectroNova\\Layers\\UI\\frmClientes.cs",
+              "ViewState": "AQIAAE4AAAAAAAAAAAAowCcAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-26T01:43:19.73Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "frmProductos.cs",
+              "DocumentMoniker": "C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\ElectroNova\\Layers\\UI\\frmProductos.cs",
+              "RelativeDocumentMoniker": "ElectroNova\\Layers\\UI\\frmProductos.cs",
+              "ToolTip": "C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\ElectroNova\\Layers\\UI\\frmProductos.cs",
+              "RelativeToolTip": "ElectroNova\\Layers\\UI\\frmProductos.cs",
+              "ViewState": "AQIAAGcAAAAAAAAAAAAgwHYAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-26T01:21:46.42Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "frmProductos.cs [Design]",
               "DocumentMoniker": "C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\ElectroNova\\Layers\\UI\\frmProductos.cs",
               "RelativeDocumentMoniker": "ElectroNova\\Layers\\UI\\frmProductos.cs",
               "ToolTip": "C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\ElectroNova\\Layers\\UI\\frmProductos.cs [Design]",
               "RelativeToolTip": "ElectroNova\\Layers\\UI\\frmProductos.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-19T17:03:02.715Z",
+              "WhenOpened": "2026-03-26T01:19:48.179Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 6,
               "Title": "frmModelos.cs [Design]",
               "DocumentMoniker": "C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\ElectroNova\\Layers\\UI\\frmModelos.cs",
               "RelativeDocumentMoniker": "ElectroNova\\Layers\\UI\\frmModelos.cs",
               "ToolTip": "C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\ElectroNova\\Layers\\UI\\frmModelos.cs [Design]",
               "RelativeToolTip": "ElectroNova\\Layers\\UI\\frmModelos.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-19T17:02:09.141Z",
+              "WhenOpened": "2026-03-26T01:19:45.309Z",
               "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "frmTipoDispositivo.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\ElectroNova\\Layers\\UI\\frmTipoDispositivo.cs",
-              "RelativeDocumentMoniker": "ElectroNova\\Layers\\UI\\frmTipoDispositivo.cs",
-              "ToolTip": "C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\ElectroNova\\Layers\\UI\\frmTipoDispositivo.cs [Design]",
-              "RelativeToolTip": "ElectroNova\\Layers\\UI\\frmTipoDispositivo.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-19T17:02:23.359Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "BLLModelo.cs",
-              "DocumentMoniker": "C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\ElectroNova\\Layers\\BLL\\BLLModelo.cs",
-              "RelativeDocumentMoniker": "ElectroNova\\Layers\\BLL\\BLLModelo.cs",
-              "ToolTip": "C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\ElectroNova\\Layers\\BLL\\BLLModelo.cs",
-              "RelativeToolTip": "ElectroNova\\Layers\\BLL\\BLLModelo.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAA0AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-15T20:09:20.151Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "Modelo.cs",
-              "DocumentMoniker": "C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\ElectroNova\\Layers\\Entities\\Modelo.cs",
-              "RelativeDocumentMoniker": "ElectroNova\\Layers\\Entities\\Modelo.cs",
-              "ToolTip": "C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\ElectroNova\\Layers\\Entities\\Modelo.cs",
-              "RelativeToolTip": "ElectroNova\\Layers\\Entities\\Modelo.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-15T20:06:35.149Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "Rol.cs",
-              "DocumentMoniker": "C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\ElectroNova\\Layers\\Entities\\Rol.cs",
-              "RelativeDocumentMoniker": "ElectroNova\\Layers\\Entities\\Rol.cs",
-              "ToolTip": "C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\ElectroNova\\Layers\\Entities\\Rol.cs",
-              "RelativeToolTip": "ElectroNova\\Layers\\Entities\\Rol.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-24T02:24:48.823Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "DALModelo.cs",
-              "DocumentMoniker": "C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\ElectroNova\\Layers\\DAL\\DALModelo.cs",
-              "RelativeDocumentMoniker": "ElectroNova\\Layers\\DAL\\DALModelo.cs",
-              "ToolTip": "C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\ElectroNova\\Layers\\DAL\\DALModelo.cs",
-              "RelativeToolTip": "ElectroNova\\Layers\\DAL\\DALModelo.cs",
-              "ViewState": "AQIAAFEAAAAAAAAAAAAYwAgAAAASAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-15T20:09:34.321Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "BLLFoto.cs",
-              "DocumentMoniker": "C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\ElectroNova\\Layers\\BLL\\BLLFoto.cs",
-              "RelativeDocumentMoniker": "ElectroNova\\Layers\\BLL\\BLLFoto.cs",
-              "ToolTip": "C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\ElectroNova\\Layers\\BLL\\BLLFoto.cs",
-              "RelativeToolTip": "ElectroNova\\Layers\\BLL\\BLLFoto.cs",
-              "ViewState": "AQIAAA8AAAAAAAAAAAAAwBUAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-13T19:41:42.381Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "BLLPadron.cs",
-              "DocumentMoniker": "C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\ElectroNova\\Layers\\BLL\\BLLPadron.cs",
-              "RelativeDocumentMoniker": "ElectroNova\\Layers\\BLL\\BLLPadron.cs",
-              "ToolTip": "C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\ElectroNova\\Layers\\BLL\\BLLPadron.cs",
-              "RelativeToolTip": "ElectroNova\\Layers\\BLL\\BLLPadron.cs",
-              "ViewState": "AQIAAAIAAAAAAAAAAAAAwCgAAAARAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-14T17:24:52.298Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "DALCliente.cs",
-              "DocumentMoniker": "C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\ElectroNova\\Layers\\DAL\\DALCliente.cs",
-              "RelativeDocumentMoniker": "ElectroNova\\Layers\\DAL\\DALCliente.cs",
-              "ToolTip": "C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\ElectroNova\\Layers\\DAL\\DALCliente.cs",
-              "RelativeToolTip": "ElectroNova\\Layers\\DAL\\DALCliente.cs",
-              "ViewState": "AQIAABEAAAAAAAAAAAAswDAAAAAMAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-13T18:47:11.916Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "frmProductos.cs",
-              "DocumentMoniker": "C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\ElectroNova\\Layers\\UI\\frmProductos.cs",
-              "RelativeDocumentMoniker": "ElectroNova\\Layers\\UI\\frmProductos.cs",
-              "ToolTip": "C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\ElectroNova\\Layers\\UI\\frmProductos.cs",
-              "RelativeToolTip": "ElectroNova\\Layers\\UI\\frmProductos.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-24T02:16:12.909Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "frmProductos.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\ElectroNova\\Layers\\UI\\frmProductos.Designer.cs",
-              "RelativeDocumentMoniker": "ElectroNova\\Layers\\UI\\frmProductos.Designer.cs",
-              "ToolTip": "C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\ElectroNova\\Layers\\UI\\frmProductos.Designer.cs",
-              "RelativeToolTip": "ElectroNova\\Layers\\UI\\frmProductos.Designer.cs",
-              "ViewState": "AQIAAPMAAAAAAAAAAAAowAIBAAADAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-24T02:16:25.509Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "BLLMarca.cs",
-              "DocumentMoniker": "C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\ElectroNova\\Layers\\BLL\\BLLMarca.cs",
-              "RelativeDocumentMoniker": "ElectroNova\\Layers\\BLL\\BLLMarca.cs",
-              "ToolTip": "C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\ElectroNova\\Layers\\BLL\\BLLMarca.cs",
-              "RelativeToolTip": "ElectroNova\\Layers\\BLL\\BLLMarca.cs",
-              "ViewState": "AQIAABcAAAAAAAAAAAAAAC4AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-15T03:24:20.056Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 27,
-              "Title": "IBLLCliente.cs",
-              "DocumentMoniker": "C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\ElectroNova\\Interfaces\\IBLLCliente.cs",
-              "RelativeDocumentMoniker": "ElectroNova\\Interfaces\\IBLLCliente.cs",
-              "ToolTip": "C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\ElectroNova\\Interfaces\\IBLLCliente.cs",
-              "RelativeToolTip": "ElectroNova\\Interfaces\\IBLLCliente.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAyAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-13T18:44:49.975Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "App.config",
-              "DocumentMoniker": "C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\ElectroNova\\App.config",
-              "RelativeDocumentMoniker": "ElectroNova\\App.config",
-              "ToolTip": "C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\ElectroNova\\App.config",
-              "RelativeToolTip": "ElectroNova\\App.config",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAARAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
-              "WhenOpened": "2026-03-13T00:42:10.731Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "frmMenuPrincipal.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\ElectroNova\\Layers\\UI\\frmMenuPrincipal.Designer.cs",
-              "RelativeDocumentMoniker": "ElectroNova\\Layers\\UI\\frmMenuPrincipal.Designer.cs",
-              "ToolTip": "C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\ElectroNova\\Layers\\UI\\frmMenuPrincipal.Designer.cs",
-              "RelativeToolTip": "ElectroNova\\Layers\\UI\\frmMenuPrincipal.Designer.cs",
-              "ViewState": "AQIAAHIAAAAAAAAAAAD4v4AAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-13T17:03:37.852Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "DALMarca.cs",
-              "DocumentMoniker": "C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\ElectroNova\\Layers\\DAL\\DALMarca.cs",
-              "RelativeDocumentMoniker": "ElectroNova\\Layers\\DAL\\DALMarca.cs",
-              "ToolTip": "C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\ElectroNova\\Layers\\DAL\\DALMarca.cs",
-              "RelativeToolTip": "ElectroNova\\Layers\\DAL\\DALMarca.cs",
-              "ViewState": "AQIAAGEAAAAAAAAAAAAwwNEAAAANAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-15T03:24:33.906Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "frmClientes.cs",
-              "DocumentMoniker": "C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\ElectroNova\\Layers\\UI\\frmClientes.cs",
-              "RelativeDocumentMoniker": "ElectroNova\\Layers\\UI\\frmClientes.cs",
-              "ToolTip": "C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\ElectroNova\\Layers\\UI\\frmClientes.cs",
-              "RelativeToolTip": "ElectroNova\\Layers\\UI\\frmClientes.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAGEBAAAeAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-13T19:37:56.298Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "frmMarcas.cs",
-              "DocumentMoniker": "C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\ElectroNova\\Layers\\UI\\frmMarcas.cs",
-              "RelativeDocumentMoniker": "ElectroNova\\Layers\\UI\\frmMarcas.cs",
-              "ToolTip": "C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\ElectroNova\\Layers\\UI\\frmMarcas.cs",
-              "RelativeToolTip": "ElectroNova\\Layers\\UI\\frmMarcas.cs",
-              "ViewState": "AQIAAFkAAAAAAAAAAAA/wBkAAAAoAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-15T17:35:09.358Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 26,
-              "Title": "BLLCliente.cs",
-              "DocumentMoniker": "C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\ElectroNova\\Layers\\BLL\\BLLCliente.cs",
-              "RelativeDocumentMoniker": "ElectroNova\\Layers\\BLL\\BLLCliente.cs",
-              "ToolTip": "C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\ElectroNova\\Layers\\BLL\\BLLCliente.cs",
-              "RelativeToolTip": "ElectroNova\\Layers\\BLL\\BLLCliente.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAC4AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-13T18:46:07.613Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "frmMenuPrincipal.cs",
-              "DocumentMoniker": "C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\ElectroNova\\Layers\\UI\\frmMenuPrincipal.cs",
-              "RelativeDocumentMoniker": "ElectroNova\\Layers\\UI\\frmMenuPrincipal.cs",
-              "ToolTip": "C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\ElectroNova\\Layers\\UI\\frmMenuPrincipal.cs",
-              "RelativeToolTip": "ElectroNova\\Layers\\UI\\frmMenuPrincipal.cs",
-              "ViewState": "AQIAAD4AAAAAAAAAAAAYwMMAAABJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-13T01:19:50.574Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "Clientes.cs",
-              "DocumentMoniker": "C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\ElectroNova\\Layers\\Entities\\Clientes.cs",
-              "RelativeDocumentMoniker": "ElectroNova\\Layers\\Entities\\Clientes.cs",
-              "ToolTip": "C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\ElectroNova\\Layers\\Entities\\Clientes.cs",
-              "RelativeToolTip": "ElectroNova\\Layers\\Entities\\Clientes.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAqwBoAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-13T18:44:04.588Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 29,
-              "Title": "IBLLModelo.cs",
-              "DocumentMoniker": "C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\ElectroNova\\Interfaces\\IBLLModelo.cs",
-              "RelativeDocumentMoniker": "ElectroNova\\Interfaces\\IBLLModelo.cs",
-              "ToolTip": "C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\ElectroNova\\Interfaces\\IBLLModelo.cs",
-              "RelativeToolTip": "ElectroNova\\Interfaces\\IBLLModelo.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAAA4AAAAuAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-15T20:07:07.831Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 28,
-              "Title": "IDALModelo.cs",
-              "DocumentMoniker": "C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\ElectroNova\\Interfaces\\IDALModelo.cs",
-              "RelativeDocumentMoniker": "ElectroNova\\Interfaces\\IDALModelo.cs",
-              "ToolTip": "C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\ElectroNova\\Interfaces\\IDALModelo.cs",
-              "RelativeToolTip": "ElectroNova\\Interfaces\\IDALModelo.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAA8AAAAuAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-15T20:07:26.494Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 31,
-              "Title": "IBLLMarca.cs",
-              "DocumentMoniker": "C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\ElectroNova\\Interfaces\\IBLLMarca.cs",
-              "RelativeDocumentMoniker": "ElectroNova\\Interfaces\\IBLLMarca.cs",
-              "ToolTip": "C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\ElectroNova\\Interfaces\\IBLLMarca.cs",
-              "RelativeToolTip": "ElectroNova\\Interfaces\\IBLLMarca.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAuAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-15T03:23:42.166Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 30,
-              "Title": "IDALMarca.cs",
-              "DocumentMoniker": "C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\ElectroNova\\Interfaces\\IDALMarca.cs",
-              "RelativeDocumentMoniker": "ElectroNova\\Interfaces\\IDALMarca.cs",
-              "ToolTip": "C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\ElectroNova\\Interfaces\\IDALMarca.cs",
-              "RelativeToolTip": "ElectroNova\\Interfaces\\IDALMarca.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAuAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-15T03:24:03.761Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 32,
-              "Title": "DataBase.cs",
-              "DocumentMoniker": "C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\ElectroNova\\Persistencia\\DataBase.cs",
-              "RelativeDocumentMoniker": "ElectroNova\\Persistencia\\DataBase.cs",
-              "ToolTip": "C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\ElectroNova\\Persistencia\\DataBase.cs",
-              "RelativeToolTip": "ElectroNova\\Persistencia\\DataBase.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAHEAAAAQAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-13T14:16:52.029Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 38,
-              "Title": "Fotografia.cs",
-              "DocumentMoniker": "C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\ElectroNova\\Layers\\Entities\\Fotografia.cs",
-              "RelativeDocumentMoniker": "ElectroNova\\Layers\\Entities\\Fotografia.cs",
-              "ToolTip": "C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\ElectroNova\\Layers\\Entities\\Fotografia.cs",
-              "RelativeToolTip": "ElectroNova\\Layers\\Entities\\Fotografia.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAwAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-13T19:40:45.363Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 33,
-              "Title": "Marca.cs",
-              "DocumentMoniker": "C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\ElectroNova\\Layers\\Entities\\Marca.cs",
-              "RelativeDocumentMoniker": "ElectroNova\\Layers\\Entities\\Marca.cs",
-              "ToolTip": "C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\ElectroNova\\Layers\\Entities\\Marca.cs",
-              "RelativeToolTip": "ElectroNova\\Layers\\Entities\\Marca.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-15T03:22:03.079Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 37,
-              "Title": "IBLLFoto.cs",
-              "DocumentMoniker": "C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\ElectroNova\\Interfaces\\IBLLFoto.cs",
-              "RelativeDocumentMoniker": "ElectroNova\\Interfaces\\IBLLFoto.cs",
-              "ToolTip": "C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\ElectroNova\\Interfaces\\IBLLFoto.cs",
-              "RelativeToolTip": "ElectroNova\\Interfaces\\IBLLFoto.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAwAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-13T19:40:06.966Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 34,
-              "Title": "IBLLPadron.cs",
-              "DocumentMoniker": "C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\ElectroNova\\Interfaces\\IBLLPadron.cs",
-              "RelativeDocumentMoniker": "ElectroNova\\Interfaces\\IBLLPadron.cs",
-              "ToolTip": "C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\ElectroNova\\Interfaces\\IBLLPadron.cs",
-              "RelativeToolTip": "ElectroNova\\Interfaces\\IBLLPadron.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-14T17:23:39.961Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 36,
-              "Title": "BLLUbicacion.cs",
-              "DocumentMoniker": "C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\ElectroNova\\Layers\\BLL\\BLLUbicacion.cs",
-              "RelativeDocumentMoniker": "ElectroNova\\Layers\\BLL\\BLLUbicacion.cs",
-              "ToolTip": "C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\ElectroNova\\Layers\\BLL\\BLLUbicacion.cs",
-              "RelativeToolTip": "ElectroNova\\Layers\\BLL\\BLLUbicacion.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAADMAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-14T15:57:48.601Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 35,
-              "Title": "IBLLUbicacion.cs",
-              "DocumentMoniker": "C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\ElectroNova\\Interfaces\\IBLLUbicacion.cs",
-              "RelativeDocumentMoniker": "ElectroNova\\Interfaces\\IBLLUbicacion.cs",
-              "ToolTip": "C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\ElectroNova\\Interfaces\\IBLLUbicacion.cs",
-              "RelativeToolTip": "ElectroNova\\Interfaces\\IBLLUbicacion.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-14T15:56:44.207Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 41,
-              "Title": "UbicacionDTO.cs",
-              "DocumentMoniker": "C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\ElectroNova\\Layers\\Entities\\DTO\\UbicacionDTO.cs",
-              "RelativeDocumentMoniker": "ElectroNova\\Layers\\Entities\\DTO\\UbicacionDTO.cs",
-              "ToolTip": "C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\ElectroNova\\Layers\\Entities\\DTO\\UbicacionDTO.cs",
-              "RelativeToolTip": "ElectroNova\\Layers\\Entities\\DTO\\UbicacionDTO.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-13T19:14:18.587Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 40,
-              "Title": "PadronDTO.cs",
-              "DocumentMoniker": "C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\ElectroNova\\Layers\\Entities\\DTO\\PadronDTO.cs",
-              "RelativeDocumentMoniker": "ElectroNova\\Layers\\Entities\\DTO\\PadronDTO.cs",
-              "ToolTip": "C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\ElectroNova\\Layers\\Entities\\DTO\\PadronDTO.cs",
-              "RelativeToolTip": "ElectroNova\\Layers\\Entities\\DTO\\PadronDTO.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB4AAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-13T19:13:56.52Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 42,
-              "Title": "FotoDTO.cs",
-              "DocumentMoniker": "C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\ElectroNova\\Layers\\Entities\\DTO\\FotoDTO.cs",
-              "RelativeDocumentMoniker": "ElectroNova\\Layers\\Entities\\DTO\\FotoDTO.cs",
-              "ToolTip": "C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\ElectroNova\\Layers\\Entities\\DTO\\FotoDTO.cs",
-              "RelativeToolTip": "ElectroNova\\Layers\\Entities\\DTO\\FotoDTO.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAtAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-13T19:13:37.036Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 39,
-              "Title": "IDALCliente.cs",
-              "DocumentMoniker": "C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\ElectroNova\\Interfaces\\IDALCliente.cs",
-              "RelativeDocumentMoniker": "ElectroNova\\Interfaces\\IDALCliente.cs",
-              "ToolTip": "C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\ElectroNova\\Interfaces\\IDALCliente.cs",
-              "RelativeToolTip": "ElectroNova\\Interfaces\\IDALCliente.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAMAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-13T18:45:33.437Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 44,
-              "Title": "Settings.settings",
-              "DocumentMoniker": "C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\ElectroNova\\Properties\\Settings.settings",
-              "RelativeDocumentMoniker": "ElectroNova\\Properties\\Settings.settings",
-              "ToolTip": "C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\ElectroNova\\Properties\\Settings.settings",
-              "RelativeToolTip": "ElectroNova\\Properties\\Settings.settings",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002767|",
-              "WhenOpened": "2026-03-13T14:15:24.816Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 52,
-              "Title": "Resources.resx",
-              "DocumentMoniker": "C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\ElectroNova\\Properties\\Resources.resx",
-              "RelativeDocumentMoniker": "ElectroNova\\Properties\\Resources.resx",
-              "ToolTip": "C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\ElectroNova\\Properties\\Resources.resx",
-              "RelativeToolTip": "ElectroNova\\Properties\\Resources.resx",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
-              "WhenOpened": "2026-03-13T14:15:14.058Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 43,
-              "Title": "FactoryConexion.cs",
-              "DocumentMoniker": "C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\ElectroNova\\Persistencia\\FactoryConexion.cs",
-              "RelativeDocumentMoniker": "ElectroNova\\Persistencia\\FactoryConexion.cs",
-              "ToolTip": "C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\ElectroNova\\Persistencia\\FactoryConexion.cs",
-              "RelativeToolTip": "ElectroNova\\Persistencia\\FactoryConexion.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAVAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-13T14:16:41.977Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 47,
-              "Title": "Usuario.cs",
-              "DocumentMoniker": "C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\ElectroNova\\Layers\\Entities\\Usuario.cs",
-              "RelativeDocumentMoniker": "ElectroNova\\Layers\\Entities\\Usuario.cs",
-              "ToolTip": "C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\ElectroNova\\Layers\\Entities\\Usuario.cs",
-              "RelativeToolTip": "ElectroNova\\Layers\\Entities\\Usuario.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAALAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-13T00:24:29.267Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 48,
-              "Title": "frmLogin.cs",
-              "DocumentMoniker": "C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\ElectroNova\\Layers\\UI\\frmLogin.cs",
-              "RelativeDocumentMoniker": "ElectroNova\\Layers\\UI\\frmLogin.cs",
-              "ToolTip": "C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\ElectroNova\\Layers\\UI\\frmLogin.cs",
-              "RelativeToolTip": "ElectroNova\\Layers\\UI\\frmLogin.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAFoAAAAMAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-13T04:43:43.599Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 46,
-              "Title": "DALUsuario.cs",
-              "DocumentMoniker": "C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\ElectroNova\\Layers\\DAL\\DALUsuario.cs",
-              "RelativeDocumentMoniker": "ElectroNova\\Layers\\DAL\\DALUsuario.cs",
-              "ToolTip": "C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\ElectroNova\\Layers\\DAL\\DALUsuario.cs",
-              "RelativeToolTip": "ElectroNova\\Layers\\DAL\\DALUsuario.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAAIMAAABXAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-13T05:07:14.206Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 45,
-              "Title": "DALRol.cs",
-              "DocumentMoniker": "C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\ElectroNova\\Layers\\DAL\\DALRol.cs",
-              "RelativeDocumentMoniker": "ElectroNova\\Layers\\DAL\\DALRol.cs",
-              "ToolTip": "C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\ElectroNova\\Layers\\DAL\\DALRol.cs",
-              "RelativeToolTip": "ElectroNova\\Layers\\DAL\\DALRol.cs",
-              "ViewState": "AQIAAA4AAAAAAAAAAAAkwCsAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-13T05:07:11.37Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 49,
-              "Title": "BLLRol.cs",
-              "DocumentMoniker": "C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\ElectroNova\\Layers\\BLL\\BLLRol.cs",
-              "RelativeDocumentMoniker": "ElectroNova\\Layers\\BLL\\BLLRol.cs",
-              "ToolTip": "C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\ElectroNova\\Layers\\BLL\\BLLRol.cs",
-              "RelativeToolTip": "ElectroNova\\Layers\\BLL\\BLLRol.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAnAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-13T00:24:23.681Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 50,
-              "Title": "BLLUsuario.cs",
-              "DocumentMoniker": "C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\ElectroNova\\Layers\\BLL\\BLLUsuario.cs",
-              "RelativeDocumentMoniker": "ElectroNova\\Layers\\BLL\\BLLUsuario.cs",
-              "ToolTip": "C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\ElectroNova\\Layers\\BLL\\BLLUsuario.cs",
-              "RelativeToolTip": "ElectroNova\\Layers\\BLL\\BLLUsuario.cs",
-              "ViewState": "AQIAAB4AAAAAAAAAAAAgwC8AAAAxAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-13T00:24:25.807Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 51,
-              "Title": "FactoryDataBase.cs",
-              "DocumentMoniker": "C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\ElectroNova\\Persistencia\\FactoryDataBase.cs",
-              "RelativeDocumentMoniker": "ElectroNova\\Persistencia\\FactoryDataBase.cs",
-              "ToolTip": "C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\ElectroNova\\Persistencia\\FactoryDataBase.cs",
-              "RelativeToolTip": "ElectroNova\\Persistencia\\FactoryDataBase.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-13T14:16:56.406Z"
             }
           ]
         }

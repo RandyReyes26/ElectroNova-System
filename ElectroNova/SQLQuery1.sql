@@ -27,6 +27,8 @@ CREATE TABLE Usuario (
     Estado BIT,
 );
 
+select * from Usuario
+
 INSERT INTO Rol (ID_Rol, Nombre_Rol)
 VALUES (1, 'ADMINISTRADOR');
 
@@ -84,4 +86,63 @@ CREATE TABLE Modelo (
     Codigo_Modelo NVARCHAR(50) NOT NULL,
     Descripcion NVARCHAR(150) NOT NULL,
     Estado BIT 
+);
+
+select * from Modelo
+
+/* ================================
+   TABLA Tipo Dispositivo
+================================ */
+CREATE TABLE TipoDispositivo (
+    ID_TipoDispositivo INT IDENTITY(1,1) PRIMARY KEY,
+    Nombre_TipoDispositivo NVARCHAR(100) NOT NULL,
+    Descripcion NVARCHAR(300),
+    Estado BIT 
+);
+
+/* ================================
+   Datos de ejemplo
+================================ */
+
+INSERT INTO TipoDispositivo (Nombre_TipoDispositivo, Descripcion, Estado) VALUES
+('Smartphone', 'Telefono inteligente de uso personal', 1),
+('Tablet', 'Dispositivo tactil para multimedia y trabajo', 1),
+('Laptop', 'Computadora portatil', 1),
+('Smartwatch', 'Reloj inteligente con funciones avanzadas', 1),
+('PC de Escritorio', 'Equipo fijo de alto rendimiento', 1),
+('Smartband', 'Pulsera inteligente orientada a actividad fisica', 1),
+('Audifonos Inalambricos', 'Auriculares TWS o bluetooth', 1),
+('Consola de Videojuegos', 'Equipo para videojuegos', 1),
+('Smart TV', 'Televisor inteligente con acceso a internet', 1),
+('Asistente de Voz', 'Dispositivo inteligente para comandos por voz', 1),
+('Streaming Stick', 'Dispositivo de transmision multimedia', 1),
+('Camara DSLR o Mirrorless', 'Camara profesional de fotografia o video', 1),
+('Camara de Accion', 'Camara compacta para deportes y aventura', 1),
+('Drone', 'Dispositivo aereo con camara', 1);
+
+
+
+/* ================================
+   TABLA Producto
+================================ */
+CREATE TABLE Producto (
+    ID_Producto INT IDENTITY(1,1) PRIMARY KEY,
+    Codigo_Barras NVARCHAR(100),
+    ID_Marca INT,
+    ID_Modelo INT,
+    ID_TipoDispositivo INT,
+    Informacion_General NVARCHAR(500) ,
+    Caracteristicas_Tecnicas NVARCHAR(1000),
+    Extras_Accesorios NVARCHAR(500),
+    Fotografia VARBINARY(MAX),
+    Estado BIT,
+
+    CONSTRAINT FK_Producto_Marca
+        FOREIGN KEY (ID_Marca) REFERENCES Marca(ID_Marca),
+
+    CONSTRAINT FK_Producto_Modelo
+        FOREIGN KEY (ID_Modelo) REFERENCES Modelo(ID_Modelo),
+
+    CONSTRAINT FK_Producto_TipoDispositivo
+        FOREIGN KEY (ID_TipoDispositivo) REFERENCES TipoDispositivo(ID_TipoDispositivo)
 );

@@ -37,6 +37,7 @@
             this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MarcaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ModeloToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tIPOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripProcesos = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripReportes = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripAdministracion = new System.Windows.Forms.ToolStripMenuItem();
@@ -45,6 +46,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.pnlContenido = new System.Windows.Forms.Panel();
+            this.pRODUCTOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuVertical.SuspendLayout();
             this.panel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -97,7 +99,9 @@
             this.toolStripMantenimiento.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.clientesToolStripMenuItem,
             this.MarcaToolStripMenuItem,
-            this.ModeloToolStripMenuItem});
+            this.ModeloToolStripMenuItem,
+            this.tIPOToolStripMenuItem,
+            this.pRODUCTOSToolStripMenuItem});
             this.toolStripMantenimiento.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripMantenimiento.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMantenimiento.Image")));
             this.toolStripMantenimiento.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -109,23 +113,30 @@
             // clientesToolStripMenuItem
             // 
             this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
-            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(224, 28);
+            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(273, 28);
             this.clientesToolStripMenuItem.Text = "CLIENTES";
             this.clientesToolStripMenuItem.Click += new System.EventHandler(this.clientesToolStripMenuItem_Click_1);
             // 
             // MarcaToolStripMenuItem
             // 
             this.MarcaToolStripMenuItem.Name = "MarcaToolStripMenuItem";
-            this.MarcaToolStripMenuItem.Size = new System.Drawing.Size(224, 28);
+            this.MarcaToolStripMenuItem.Size = new System.Drawing.Size(273, 28);
             this.MarcaToolStripMenuItem.Text = "MARCA";
             this.MarcaToolStripMenuItem.Click += new System.EventHandler(this.MarcaToolStripMenuItem_Click);
             // 
             // ModeloToolStripMenuItem
             // 
             this.ModeloToolStripMenuItem.Name = "ModeloToolStripMenuItem";
-            this.ModeloToolStripMenuItem.Size = new System.Drawing.Size(224, 28);
+            this.ModeloToolStripMenuItem.Size = new System.Drawing.Size(273, 28);
             this.ModeloToolStripMenuItem.Text = "MODELO";
             this.ModeloToolStripMenuItem.Click += new System.EventHandler(this.ModeloToolStripMenuItem_Click);
+            // 
+            // tIPOToolStripMenuItem
+            // 
+            this.tIPOToolStripMenuItem.Name = "tIPOToolStripMenuItem";
+            this.tIPOToolStripMenuItem.Size = new System.Drawing.Size(273, 28);
+            this.tIPOToolStripMenuItem.Text = "TIPO DISPOSITIVO";
+            this.tIPOToolStripMenuItem.Click += new System.EventHandler(this.tIPOToolStripMenuItem_Click);
             // 
             // toolStripProcesos
             // 
@@ -150,6 +161,7 @@
             this.ToolStripAdministracion.Name = "ToolStripAdministracion";
             this.ToolStripAdministracion.Size = new System.Drawing.Size(274, 36);
             this.ToolStripAdministracion.Text = "ADMINISTRACIÓN";
+            this.ToolStripAdministracion.Click += new System.EventHandler(this.ToolStripAdministracion_Click);
             // 
             // toolStripMenuItem6
             // 
@@ -185,6 +197,13 @@
             this.pnlContenido.Name = "pnlContenido";
             this.pnlContenido.Size = new System.Drawing.Size(1296, 661);
             this.pnlContenido.TabIndex = 1;
+            // 
+            // pRODUCTOSToolStripMenuItem
+            // 
+            this.pRODUCTOSToolStripMenuItem.Name = "pRODUCTOSToolStripMenuItem";
+            this.pRODUCTOSToolStripMenuItem.Size = new System.Drawing.Size(273, 28);
+            this.pRODUCTOSToolStripMenuItem.Text = "PRODUCTOS";
+            this.pRODUCTOSToolStripMenuItem.Click += new System.EventHandler(this.pRODUCTOSToolStripMenuItem_Click);
             // 
             // frmMenuPrincipal
             // 
@@ -223,5 +242,7 @@
         private System.Windows.Forms.Panel pnlContenido;
         private System.Windows.Forms.ToolStripMenuItem MarcaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ModeloToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tIPOToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pRODUCTOSToolStripMenuItem;
     }
 }

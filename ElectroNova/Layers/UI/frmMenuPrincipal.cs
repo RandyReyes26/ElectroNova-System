@@ -197,5 +197,52 @@ namespace ElectroNova.Layers.UI
             }
 
         }
+
+        private void tIPOToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (formularioActivo == null || !(formularioActivo is frmTipoDispositivo))
+            {
+
+                if (formularioActivo != null)
+                {
+                    CerrarFormulario(formularioActivo);
+                }
+
+
+                AbrirFormulario((ToolStripMenuItem)sender, new frmTipoDispositivo());
+            }
+        }
+
+        private void pRODUCTOSToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (formularioActivo == null || !(formularioActivo is frmProductos))
+            {
+
+                if (formularioActivo != null)
+                {
+                    CerrarFormulario(formularioActivo);
+                }
+
+
+                AbrirFormulario((ToolStripMenuItem)sender, new frmProductos());
+            }
+
+        }
+
+        private void ToolStripAdministracion_Click(object sender, EventArgs e)
+        {
+            if (formularioActivo == null || !(formularioActivo is frmAdministracion))
+            {
+
+                if (formularioActivo != null)
+                {
+                    CerrarFormulario(formularioActivo);
+                }
+
+
+                AbrirFormulario((ToolStripMenuItem)sender, new frmAdministracion());
+            }
+
+        }
     }
 }
