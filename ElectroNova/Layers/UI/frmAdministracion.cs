@@ -117,9 +117,6 @@ namespace ElectroNova.Layers.UI
                 oUsuario.NombreUsuario = txtNombreUsuario.Text.Trim();
                 oUsuario.Contrasena = txtContrasenia.Text.Trim();
                 oUsuario.ID_Rol = Convert.ToInt32(cboRol.SelectedValue);
-                oUsuario.Nombre = txtNombre.Text.Trim();
-                oUsuario.Apellidos = txtApellidos.Text.Trim();
-                oUsuario.Email = txtEmail.Text.Trim();
                 oUsuario.Estado = chkActivo.Checked;
 
                 if (oUsuario.ID_Usuario == 0)
@@ -159,9 +156,6 @@ namespace ElectroNova.Layers.UI
                         txtNombreUsuario.Text = oUsuario.NombreUsuario;
                         txtContrasenia.Text = oUsuario.Contrasena;
                         cboRol.SelectedValue = oUsuario.ID_Rol;
-                        txtNombre.Text = oUsuario.Nombre;
-                        txtApellidos.Text = oUsuario.Apellidos;
-                        txtEmail.Text = oUsuario.Email;
 
                         if (oUsuario.Estado)
                         {
@@ -230,9 +224,6 @@ namespace ElectroNova.Layers.UI
             txtID_Usuario.Clear();
             txtNombreUsuario.Clear();
             txtContrasenia.Clear();
-            txtNombre.Clear();
-            txtApellidos.Clear();
-            txtEmail.Clear();
             cboRol.SelectedIndex = -1;
             chkActivo.Checked = false;
             chkInactivo.Checked = false;
@@ -262,9 +253,6 @@ namespace ElectroNova.Layers.UI
                     txtNombreUsuario.Text = oUsuario.NombreUsuario;
                     txtContrasenia.Text = oUsuario.Contrasena;
                     cboRol.SelectedValue = oUsuario.ID_Rol;
-                    txtNombre.Text = oUsuario.Nombre;
-                    txtApellidos.Text = oUsuario.Apellidos;
-                    txtEmail.Text = oUsuario.Email;
 
                     chkActivo.Checked = oUsuario.Estado;
                     chkInactivo.Checked = !oUsuario.Estado;

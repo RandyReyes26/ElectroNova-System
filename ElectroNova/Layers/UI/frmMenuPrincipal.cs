@@ -1,4 +1,5 @@
-﻿using ElectroNova.Layers.Entities;
+﻿using ElectroNova.Layers.BLL;
+using ElectroNova.Layers.Entities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -27,6 +28,7 @@ namespace ElectroNova.Layers.UI
         {
             ConfigurarPermisos();
             MostrarInformacionUsuario();
+            CargarTipoCambio();
         }
         public void MostrarInformacionUsuario()
         {
@@ -275,6 +277,47 @@ namespace ElectroNova.Layers.UI
                 AbrirFormulario((ToolStripMenuItem)sender, new frmControlStock());
             }
 
+        }
+
+        private void fACTURACÓNToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (formularioActivo == null || !(formularioActivo is frmFacturacion))
+            {
+
+                if (formularioActivo != null)
+                {
+                    CerrarFormulario(formularioActivo);
+                }
+
+
+                AbrirFormulario((ToolStripMenuItem)sender, new frmFacturacion());
+            }
+        }
+
+        private void CargarTipoCambio()
+        {
+            try
+            {
+                BLLConexionWebServer service = new BLLConexionWebServer();
+
+                IEnumerable<Dolar> lista = service.GetDolar(DateTime.Now, DateTime.Now, "v");
+
+                if (lista != null && lista.Any())
+                {
+                    Dolar dolar = lista.Last();
+
+                    lblTipoCambio.Text = $"₡ {dolar.Monto:N2}";
+                }
+                else
+                {
+                    lblTipoCambio.Text = "No disponible";
+                }
+            }
+            catch (Exception ex)
+            {
+                lblTipoCambio.Text = "Error";
+                MessageBox.Show("Error al obtener tipo de cambio: " + ex.Message);
+            }
         }
     }
 }

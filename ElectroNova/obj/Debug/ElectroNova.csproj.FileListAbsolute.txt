@@ -23,3 +23,4 @@ C:\Users\randy\OneDrive\Escritorio\ElectroNova\ElectroNova\obj\Debug\ElectroNova
 C:\Users\randy\OneDrive\Escritorio\ElectroNova\ElectroNova\obj\Debug\ElectroNova.Layers.UI.frmProductos.resources
 C:\Users\randy\OneDrive\Escritorio\ElectroNova\ElectroNova\obj\Debug\ElectroNova.Layers.UI.frmControlStock.resources
 C:\Users\randy\OneDrive\Escritorio\ElectroNova\ElectroNova\obj\Debug\ElectroNova.Layers.UI.frmInformacion.resources
+C:\Users\randy\OneDrive\Escritorio\ElectroNova\ElectroNova\obj\Debug\ElectroNova.Layers.UI.frmFacturacion.resources

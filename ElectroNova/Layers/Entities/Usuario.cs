@@ -12,9 +12,6 @@ namespace ElectroNova.Layers.Entities
         public string NombreUsuario { set; get; }
         public string Contrasena { set; get; }
         public int ID_Rol { set; get; }
-        public string Nombre { set; get; }
-        public string Apellidos { set; get; }
-        public string Email { set; get; }
         public bool Estado { set; get; }
 
     }

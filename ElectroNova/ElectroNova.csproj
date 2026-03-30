@@ -42,6 +42,8 @@
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -54,8 +56,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Connected Services\ServiceReference1\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Interfaces\IBLLCliente.cs" />
     <Compile Include="Interfaces\IBLLFoto.cs" />
+    <Compile Include="Interfaces\IBLLImpuesto.cs" />
     <Compile Include="Interfaces\IBLLMarca.cs" />
     <Compile Include="Interfaces\IBLLModelo.cs" />
     <Compile Include="Interfaces\IBLLPadron.cs" />
@@ -65,6 +73,7 @@
     <Compile Include="Interfaces\IBLLUbicacion.cs" />
     <Compile Include="Interfaces\IBLLUsuario.cs" />
     <Compile Include="Interfaces\IDALCliente.cs" />
+    <Compile Include="Interfaces\IDALImpuesto.cs" />
     <Compile Include="Interfaces\IDALMarca.cs" />
     <Compile Include="Interfaces\IDALModelo.cs" />
     <Compile Include="Interfaces\IDALProducto.cs" />
@@ -72,7 +81,9 @@
     <Compile Include="Interfaces\IDALTipoDispositivo.cs" />
     <Compile Include="Interfaces\IDALUsuario.cs" />
     <Compile Include="Layers\BLL\BLLCliente.cs" />
+    <Compile Include="Layers\BLL\BLLConexionWebServer.cs" />
     <Compile Include="Layers\BLL\BLLFoto.cs" />
+    <Compile Include="Layers\BLL\BLLImpuesto.cs" />
     <Compile Include="Layers\BLL\BLLMarca.cs" />
     <Compile Include="Layers\BLL\BLLModelo.cs" />
     <Compile Include="Layers\BLL\BLLPadron.cs" />
@@ -82,6 +93,7 @@
     <Compile Include="Layers\BLL\BLLUbicacion.cs" />
     <Compile Include="Layers\BLL\BLLUsuario.cs" />
     <Compile Include="Layers\DAL\DALCliente.cs" />
+    <Compile Include="Layers\DAL\DALImpuesto.cs" />
     <Compile Include="Layers\DAL\DALMarca.cs" />
     <Compile Include="Layers\DAL\DALModelo.cs" />
     <Compile Include="Layers\DAL\DALProducto.cs" />
@@ -89,10 +101,12 @@
     <Compile Include="Layers\DAL\DALTipoDispositivo.cs" />
     <Compile Include="Layers\DAL\DALUsuario.cs" />
     <Compile Include="Layers\Entities\Clientes.cs" />
+    <Compile Include="Layers\Entities\Dolar.cs" />
     <Compile Include="Layers\Entities\DTO\FotoDTO.cs" />
     <Compile Include="Layers\Entities\DTO\PadronDTO.cs" />
     <Compile Include="Layers\Entities\DTO\UbicacionDTO.cs" />
     <Compile Include="Layers\Entities\Fotografia.cs" />
+    <Compile Include="Layers\Entities\Impuesto.cs" />
     <Compile Include="Layers\Entities\Marca.cs" />
     <Compile Include="Layers\Entities\Modelo.cs" />
     <Compile Include="Layers\Entities\Productos.cs" />
@@ -116,6 +130,18 @@
     </Compile>
     <Compile Include="Layers\UI\frmControlStock.Designer.cs">
       <DependentUpon>frmControlStock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layers\UI\frmFacturacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layers\UI\frmFacturacion.Designer.cs">
+      <DependentUpon>frmFacturacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layers\UI\frmImpuesto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layers\UI\frmImpuesto.Designer.cs">
+      <DependentUpon>frmImpuesto.cs</DependentUpon>
     </Compile>
     <Compile Include="Layers\UI\frmInformacion.cs">
       <SubType>Form</SubType>
@@ -174,6 +200,12 @@
     <EmbeddedResource Include="Layers\UI\frmControlStock.resx">
       <DependentUpon>frmControlStock.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Layers\UI\frmFacturacion.resx">
+      <DependentUpon>frmFacturacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layers\UI\frmImpuesto.resx">
+      <DependentUpon>frmImpuesto.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Layers\UI\frmInformacion.resx">
       <DependentUpon>frmInformacion.cs</DependentUpon>
     </EmbeddedResource>
@@ -200,7 +232,9 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="Connected Services\ServiceReference1\wsindicadoreseconomicos.wsdl" />
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\System.Data.DataSet.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -225,6 +259,13 @@
     <Folder Include="Layers\UI\Reportes\" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Connected Services\ServiceReference1\wsindicadoreseconomicos.disco" />
+    <None Include="Connected Services\ServiceReference1\configuration91.svcinfo" />
+    <None Include="Connected Services\ServiceReference1\configuration.svcinfo" />
+    <None Include="Connected Services\ServiceReference1\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="Resources\agregar-archivo.png" />
     <Content Include="Resources\disquete.png" />
     <Content Include="Resources\editar.png" />
@@ -237,6 +278,12 @@
     <Content Include="Resources\menuLogo %282%29.png" />
     <Content Include="Resources\proceso.png" />
     <Content Include="Resources\reporte.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\ServiceReference1\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

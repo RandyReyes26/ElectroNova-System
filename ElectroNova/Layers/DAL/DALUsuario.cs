@@ -33,9 +33,6 @@ namespace ElectroNova.Layers.DAL
                 command.Parameters.AddWithValue("@NombreUsuario", pUsuario.NombreUsuario);
                 command.Parameters.AddWithValue("@Contrasena", pUsuario.Contrasena);
                 command.Parameters.AddWithValue("@ID_Rol", pUsuario.ID_Rol);
-                command.Parameters.AddWithValue("@Nombre", pUsuario.Nombre);
-                command.Parameters.AddWithValue("@Apellidos", pUsuario.Apellidos);
-                command.Parameters.AddWithValue("@Email", pUsuario.Email);
                 command.Parameters.AddWithValue("@Estado", pUsuario.Estado);
 
                 db.ExecuteNonQuery(command);
@@ -85,9 +82,6 @@ namespace ElectroNova.Layers.DAL
                     command.Parameters.AddWithValue("@NombreUsuario", pUsuario.NombreUsuario);
                     command.Parameters.AddWithValue("@Contrasena", pUsuario.Contrasena);
                     command.Parameters.AddWithValue("@ID_Rol", pUsuario.ID_Rol);
-                    command.Parameters.AddWithValue("@Nombre", pUsuario.Nombre);
-                    command.Parameters.AddWithValue("@Apellidos", pUsuario.Apellidos);
-                    command.Parameters.AddWithValue("@Email", pUsuario.Email);
                     command.Parameters.AddWithValue("@Estado", pUsuario.Estado);
 
 
@@ -109,7 +103,7 @@ namespace ElectroNova.Layers.DAL
             Usuario oUsuario = null;
             using (SqlCommand command = new SqlCommand())
             {
-                command.CommandText = @"SELECT ID_Usuario,NombreUsuario,Contrasena,ID_Rol,Nombre,Apellidos,Email,Estado  
+                command.CommandText = @"SELECT ID_Usuario,NombreUsuario,Contrasena,ID_Rol,Estado  
                                 FROM Usuario  
                                 WHERE NombreUsuario = @NombreUsuario 
                                 AND Contrasena = @Contrasena";
@@ -132,9 +126,6 @@ namespace ElectroNova.Layers.DAL
                                     NombreUsuario = reader["NombreUsuario"].ToString(),
                                     Contrasena = reader["Contrasena"].ToString(),
                                     ID_Rol = int.Parse(reader["ID_Rol"].ToString()),
-                                    Nombre = reader["Nombre"].ToString(),
-                                    Apellidos = reader["Apellidos"].ToString(),
-                                    Email = reader["Email"].ToString(),
                                     Estado = bool.Parse(reader["Estado"].ToString()),
                                 };
                             }
@@ -173,9 +164,6 @@ namespace ElectroNova.Layers.DAL
                                     NombreUsuario = reader["NombreUsuario"].ToString(),
                                     Contrasena = reader["Contrasena"].ToString(),
                                     ID_Rol = int.Parse(reader["ID_Rol"].ToString()),
-                                    Nombre = reader["Nombre"].ToString(),
-                                    Apellidos = reader["Apellidos"].ToString(),
-                                    Email = reader["Email"].ToString(),
                                     Estado = bool.Parse(reader["Estado"].ToString()),
 
                                 };
@@ -201,7 +189,7 @@ namespace ElectroNova.Layers.DAL
 
             try
             {
-                command.CommandText = @"Select  ID_Usuario,NombreUsuario,Contrasena,ID_Rol,Nombre,Apellidos,Email,Estado  from  Usuario   Where (ID_Usuario = @ID_Usuario) ";
+                command.CommandText = @"Select  ID_Usuario,NombreUsuario,Contrasena,ID_Rol,Estado  from  Usuario   Where (ID_Usuario = @ID_Usuario) ";
                 command.Parameters.AddWithValue("@ID_Usuario", pLogin);
 
                 command.CommandType = CommandType.Text;
@@ -218,9 +206,6 @@ namespace ElectroNova.Layers.DAL
                             NombreUsuario = reader["NombreUsuario"].ToString(),
                             Contrasena = reader["Contrasena"].ToString(),
                             ID_Rol = int.Parse(reader["ID_Rol"].ToString()),
-                            Nombre = reader["Nombre"].ToString(),
-                            Apellidos = reader["Apellidos"].ToString(),
-                            Email = reader["Email"].ToString(),
                             Estado = bool.Parse(reader["Estado"].ToString()),
 
                         };
@@ -255,9 +240,6 @@ namespace ElectroNova.Layers.DAL
                     oUsuario.NombreUsuario = dr["NombreUsuario"].ToString();
                     oUsuario.Contrasena = dr["Contrasena"].ToString();
                     oUsuario.ID_Rol = int.Parse(dr["ID_Rol"].ToString());
-                    oUsuario.Nombre = dr["Nombre"].ToString();
-                    oUsuario.Apellidos = dr["Apellidos"].ToString();
-                    oUsuario.Email = dr["Email"].ToString();
                     oUsuario.Estado = bool.Parse(dr["Estado"].ToString());
                     lista.Add(oUsuario);
 

@@ -39,6 +39,8 @@
             this.ModeloToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tIPOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pRODUCTOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.controlStockToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.impuestoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripProcesos = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripReportes = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripAdministracion = new System.Windows.Forms.ToolStripMenuItem();
@@ -47,8 +49,9 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.pnlContenido = new System.Windows.Forms.Panel();
-            this.controlStockToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.impuestoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fACTURACÓNToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblTipoCambio = new System.Windows.Forms.Label();
             this.MenuVertical.SuspendLayout();
             this.panel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -58,6 +61,8 @@
             // MenuVertical
             // 
             this.MenuVertical.BackColor = System.Drawing.SystemColors.Control;
+            this.MenuVertical.Controls.Add(this.lblTipoCambio);
+            this.MenuVertical.Controls.Add(this.label1);
             this.MenuVertical.Controls.Add(this.panel1);
             this.MenuVertical.Controls.Add(this.lblUsuario);
             this.MenuVertical.Controls.Add(this.pictureBox1);
@@ -149,8 +154,23 @@
             this.pRODUCTOSToolStripMenuItem.Text = "PRODUCTOS";
             this.pRODUCTOSToolStripMenuItem.Click += new System.EventHandler(this.pRODUCTOSToolStripMenuItem_Click);
             // 
+            // controlStockToolStripMenuItem
+            // 
+            this.controlStockToolStripMenuItem.Name = "controlStockToolStripMenuItem";
+            this.controlStockToolStripMenuItem.Size = new System.Drawing.Size(273, 28);
+            this.controlStockToolStripMenuItem.Text = "Control Stock";
+            this.controlStockToolStripMenuItem.Click += new System.EventHandler(this.controlStockToolStripMenuItem_Click);
+            // 
+            // impuestoToolStripMenuItem
+            // 
+            this.impuestoToolStripMenuItem.Name = "impuestoToolStripMenuItem";
+            this.impuestoToolStripMenuItem.Size = new System.Drawing.Size(273, 28);
+            this.impuestoToolStripMenuItem.Text = "Impuesto";
+            // 
             // toolStripProcesos
             // 
+            this.toolStripProcesos.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fACTURACÓNToolStripMenuItem});
             this.toolStripProcesos.Image = ((System.Drawing.Image)(resources.GetObject("toolStripProcesos.Image")));
             this.toolStripProcesos.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripProcesos.Name = "toolStripProcesos";
@@ -210,18 +230,30 @@
             this.pnlContenido.Size = new System.Drawing.Size(1296, 661);
             this.pnlContenido.TabIndex = 1;
             // 
-            // controlStockToolStripMenuItem
+            // fACTURACÓNToolStripMenuItem
             // 
-            this.controlStockToolStripMenuItem.Name = "controlStockToolStripMenuItem";
-            this.controlStockToolStripMenuItem.Size = new System.Drawing.Size(273, 28);
-            this.controlStockToolStripMenuItem.Text = "Control Stock";
-            this.controlStockToolStripMenuItem.Click += new System.EventHandler(this.controlStockToolStripMenuItem_Click);
+            this.fACTURACÓNToolStripMenuItem.Name = "fACTURACÓNToolStripMenuItem";
+            this.fACTURACÓNToolStripMenuItem.Size = new System.Drawing.Size(235, 28);
+            this.fACTURACÓNToolStripMenuItem.Text = "FACTURACION";
+            this.fACTURACÓNToolStripMenuItem.Click += new System.EventHandler(this.fACTURACÓNToolStripMenuItem_Click);
             // 
-            // impuestoToolStripMenuItem
+            // label1
             // 
-            this.impuestoToolStripMenuItem.Name = "impuestoToolStripMenuItem";
-            this.impuestoToolStripMenuItem.Size = new System.Drawing.Size(273, 28);
-            this.impuestoToolStripMenuItem.Text = "Impuesto";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(22, 566);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(85, 16);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Tipo Cambio";
+            // 
+            // lblTipoCambio
+            // 
+            this.lblTipoCambio.AutoSize = true;
+            this.lblTipoCambio.Location = new System.Drawing.Point(148, 566);
+            this.lblTipoCambio.Name = "lblTipoCambio";
+            this.lblTipoCambio.Size = new System.Drawing.Size(10, 16);
+            this.lblTipoCambio.TabIndex = 46;
+            this.lblTipoCambio.Text = ".";
             // 
             // frmMenuPrincipal
             // 
@@ -264,5 +296,8 @@
         private System.Windows.Forms.ToolStripMenuItem pRODUCTOSToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem controlStockToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem impuestoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem fACTURACÓNToolStripMenuItem;
+        private System.Windows.Forms.Label lblTipoCambio;
+        private System.Windows.Forms.Label label1;
     }
 }

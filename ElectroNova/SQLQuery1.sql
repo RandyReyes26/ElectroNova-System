@@ -29,6 +29,19 @@ CREATE TABLE Usuario (
 
 select * from Usuario
 
+ALTER TABLE Usuario
+DROP COLUMN Nombre,
+            Apellidos,
+            Email;
+
+INSERT INTO Usuario
+(NombreUsuario, Contrasena, ID_Rol, Estado)
+VALUES
+('admin', '123', 1, 1);
+
+DELETE FROM Usuario
+WHERE ID_Usuario = 1;
+
 INSERT INTO Rol (ID_Rol, Nombre_Rol)
 VALUES (1, 'ADMINISTRADOR');
 
@@ -145,4 +158,13 @@ CREATE TABLE Producto (
 
     CONSTRAINT FK_Producto_TipoDispositivo
         FOREIGN KEY (ID_TipoDispositivo) REFERENCES TipoDispositivo(ID_TipoDispositivo)
+);
+
+/* ================================
+   TABLA IVA
+================================ */
+CREATE TABLE IVA (
+    ID_IVA INT PRIMARY KEY,
+	Descripcion VARCHAR(50),
+    Valor DECIMAL(5, 2) NOT NULL
 );
