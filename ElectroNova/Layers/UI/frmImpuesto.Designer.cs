@@ -28,12 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmImpuesto));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtIva = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.mnuStrip1 = new System.Windows.Forms.MenuStrip();
             this.GuardartoolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtIva = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.mnuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -49,6 +48,23 @@
             this.panel1.Size = new System.Drawing.Size(529, 348);
             this.panel1.TabIndex = 0;
             // 
+            // txtIva
+            // 
+            this.txtIva.Location = new System.Drawing.Point(160, 195);
+            this.txtIva.Name = "txtIva";
+            this.txtIva.Size = new System.Drawing.Size(114, 22);
+            this.txtIva.TabIndex = 97;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(24, 195);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(109, 24);
+            this.label1.TabIndex = 96;
+            this.label1.Text = "IVA actual:";
+            // 
             // mnuStrip1
             // 
             this.mnuStrip1.BackColor = System.Drawing.SystemColors.ActiveCaption;
@@ -60,35 +76,17 @@
             this.mnuStrip1.Location = new System.Drawing.Point(0, 0);
             this.mnuStrip1.Name = "mnuStrip1";
             this.mnuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.mnuStrip1.Size = new System.Drawing.Size(529, 98);
+            this.mnuStrip1.Size = new System.Drawing.Size(529, 34);
             this.mnuStrip1.TabIndex = 95;
             this.mnuStrip1.Text = "menuStrip1";
             // 
             // GuardartoolStripMenuItem1
             // 
-            this.GuardartoolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("GuardartoolStripMenuItem1.Image")));
             this.GuardartoolStripMenuItem1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.GuardartoolStripMenuItem1.Name = "GuardartoolStripMenuItem1";
-            this.GuardartoolStripMenuItem1.Size = new System.Drawing.Size(105, 94);
-            this.GuardartoolStripMenuItem1.Text = "Guardar";
+            this.GuardartoolStripMenuItem1.Size = new System.Drawing.Size(88, 30);
+            this.GuardartoolStripMenuItem1.Text = "Volver";
             this.GuardartoolStripMenuItem1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(24, 195);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(109, 24);
-            this.label1.TabIndex = 96;
-            this.label1.Text = "Costo IVA:";
-            // 
-            // txtIva
-            // 
-            this.txtIva.Location = new System.Drawing.Point(160, 195);
-            this.txtIva.Name = "txtIva";
-            this.txtIva.Size = new System.Drawing.Size(114, 22);
-            this.txtIva.TabIndex = 97;
             // 
             // frmImpuesto
             // 
@@ -98,6 +96,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "frmImpuesto";
             this.Text = "frmImpuesto";
+            this.Load += new System.EventHandler(this.frmImpuesto_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.mnuStrip1.ResumeLayout(false);

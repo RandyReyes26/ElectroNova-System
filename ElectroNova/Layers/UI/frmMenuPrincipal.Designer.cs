@@ -31,6 +31,8 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMenuPrincipal));
             this.MenuVertical = new System.Windows.Forms.Panel();
+            this.lblTipoCambio = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.toolStripMantenimiento = new System.Windows.Forms.ToolStripMenuItem();
@@ -42,6 +44,7 @@
             this.controlStockToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.impuestoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripProcesos = new System.Windows.Forms.ToolStripMenuItem();
+            this.fACTURACÓNToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripReportes = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripAdministracion = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem6 = new System.Windows.Forms.ToolStripMenuItem();
@@ -49,9 +52,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.pnlContenido = new System.Windows.Forms.Panel();
-            this.fACTURACÓNToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.label1 = new System.Windows.Forms.Label();
-            this.lblTipoCambio = new System.Windows.Forms.Label();
             this.MenuVertical.SuspendLayout();
             this.panel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -71,6 +71,24 @@
             this.MenuVertical.Name = "MenuVertical";
             this.MenuVertical.Size = new System.Drawing.Size(308, 661);
             this.MenuVertical.TabIndex = 0;
+            // 
+            // lblTipoCambio
+            // 
+            this.lblTipoCambio.AutoSize = true;
+            this.lblTipoCambio.Location = new System.Drawing.Point(148, 566);
+            this.lblTipoCambio.Name = "lblTipoCambio";
+            this.lblTipoCambio.Size = new System.Drawing.Size(10, 16);
+            this.lblTipoCambio.TabIndex = 46;
+            this.lblTipoCambio.Text = ".";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(22, 566);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(85, 16);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Tipo Cambio";
             // 
             // panel1
             // 
@@ -166,6 +184,7 @@
             this.impuestoToolStripMenuItem.Name = "impuestoToolStripMenuItem";
             this.impuestoToolStripMenuItem.Size = new System.Drawing.Size(273, 28);
             this.impuestoToolStripMenuItem.Text = "Impuesto";
+            this.impuestoToolStripMenuItem.Click += new System.EventHandler(this.impuestoToolStripMenuItem_Click);
             // 
             // toolStripProcesos
             // 
@@ -176,6 +195,13 @@
             this.toolStripProcesos.Name = "toolStripProcesos";
             this.toolStripProcesos.Size = new System.Drawing.Size(274, 36);
             this.toolStripProcesos.Text = "PROCESOS";
+            // 
+            // fACTURACÓNToolStripMenuItem
+            // 
+            this.fACTURACÓNToolStripMenuItem.Name = "fACTURACÓNToolStripMenuItem";
+            this.fACTURACÓNToolStripMenuItem.Size = new System.Drawing.Size(235, 28);
+            this.fACTURACÓNToolStripMenuItem.Text = "FACTURACION";
+            this.fACTURACÓNToolStripMenuItem.Click += new System.EventHandler(this.fACTURACÓNToolStripMenuItem_Click);
             // 
             // ToolStripReportes
             // 
@@ -229,31 +255,6 @@
             this.pnlContenido.Name = "pnlContenido";
             this.pnlContenido.Size = new System.Drawing.Size(1296, 661);
             this.pnlContenido.TabIndex = 1;
-            // 
-            // fACTURACÓNToolStripMenuItem
-            // 
-            this.fACTURACÓNToolStripMenuItem.Name = "fACTURACÓNToolStripMenuItem";
-            this.fACTURACÓNToolStripMenuItem.Size = new System.Drawing.Size(235, 28);
-            this.fACTURACÓNToolStripMenuItem.Text = "FACTURACION";
-            this.fACTURACÓNToolStripMenuItem.Click += new System.EventHandler(this.fACTURACÓNToolStripMenuItem_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(22, 566);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(85, 16);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Tipo Cambio";
-            // 
-            // lblTipoCambio
-            // 
-            this.lblTipoCambio.AutoSize = true;
-            this.lblTipoCambio.Location = new System.Drawing.Point(148, 566);
-            this.lblTipoCambio.Name = "lblTipoCambio";
-            this.lblTipoCambio.Size = new System.Drawing.Size(10, 16);
-            this.lblTipoCambio.TabIndex = 46;
-            this.lblTipoCambio.Text = ".";
             // 
             // frmMenuPrincipal
             // 

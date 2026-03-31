@@ -160,6 +160,8 @@ CREATE TABLE Producto (
         FOREIGN KEY (ID_TipoDispositivo) REFERENCES TipoDispositivo(ID_TipoDispositivo)
 );
 
+select * from Producto
+
 /* ================================
    TABLA IVA
 ================================ */
@@ -167,4 +169,23 @@ CREATE TABLE IVA (
     ID_IVA INT PRIMARY KEY,
 	Descripcion VARCHAR(50),
     Valor DECIMAL(5, 2) NOT NULL
+);
+
+INSERT INTO IVA (ID_IVA, Descripcion, Valor)
+VALUES (1, 'IVA Costa Rica', 13.00);
+
+select * from IVA
+
+
+/* ================================
+   TABLA Stock
+================================ */
+CREATE TABLE IngresoStock (
+    ID_IngresoStock INT IDENTITY(1,1) PRIMARY KEY,
+    ID_Producto INT,
+    TipoMovimiento NVARCHAR(20),
+    Cantidad INT,
+    FacturaCompra NVARCHAR(100),
+    Observaciones NVARCHAR(300),
+    FOREIGN KEY (ID_Producto) REFERENCES Producto(ID_Producto)
 );

@@ -87,7 +87,7 @@ namespace ElectroNova.Layers.UI
 
                 cboModelo.DataSource = null;
                 cboModelo.DataSource = lista.ToList();
-                cboModelo.DisplayMember = "Codigo_Modelo";
+                cboModelo.DisplayMember = "Descripcion";
                 cboModelo.ValueMember = "ID_Modelo";
                 cboModelo.SelectedIndex = -1;
             }
@@ -164,10 +164,8 @@ namespace ElectroNova.Layers.UI
                     return;
                 }
 
-                if (!string.IsNullOrWhiteSpace(txtID_Producto.Text))
-                {
-                    oProducto.ID_Producto = int.Parse(txtID_Producto.Text);
-                }
+         
+                
 
                 oProducto.Codigo_Barras = txtCodigoBarras.Text.Trim();
                 oProducto.ID_Marca = Convert.ToInt32(cboMarca.SelectedValue);

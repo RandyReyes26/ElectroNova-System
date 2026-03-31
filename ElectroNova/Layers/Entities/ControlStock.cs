@@ -6,11 +6,7 @@ using System.Threading.Tasks;
 
 namespace ElectroNova.Layers.Entities
 {
-    public class Impuesto
+    class ControlStock
     {
-        public int ID_IVA { set; get; }
-        public string Descripcion { set; get; }
-        public double Valor { set; get; }
-
     }
 }

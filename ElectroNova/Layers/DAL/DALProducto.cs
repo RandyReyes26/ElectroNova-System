@@ -112,7 +112,7 @@ namespace ElectroNova.Layers.DAL
                 command.CommandType = CommandType.StoredProcedure;
                 command.CommandText = "usp_INSERT_Producto";
 
-                command.Parameters.AddWithValue("@ID_Producto", pProducto.ID_Producto);
+                //command.Parameters.AddWithValue("@ID_Producto", pProducto.ID_Producto);
                 command.Parameters.AddWithValue("@Codigo_Barras", pProducto.Codigo_Barras);
                 command.Parameters.AddWithValue("@ID_Marca", pProducto.ID_Marca);
                 command.Parameters.AddWithValue("@ID_Modelo", pProducto.ID_Modelo);

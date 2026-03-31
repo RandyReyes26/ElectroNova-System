@@ -319,5 +319,21 @@ namespace ElectroNova.Layers.UI
                 MessageBox.Show("Error al obtener tipo de cambio: " + ex.Message);
             }
         }
+
+        private void impuestoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (formularioActivo == null || !(formularioActivo is frmImpuesto))
+            {
+
+                if (formularioActivo != null)
+                {
+                    CerrarFormulario(formularioActivo);
+                }
+
+
+                AbrirFormulario((ToolStripMenuItem)sender, new frmImpuesto());
+            }
+
+        }
     }
 }

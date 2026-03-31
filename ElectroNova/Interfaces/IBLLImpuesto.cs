@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using ElectroNova.Layers.Entities;
 using System.Threading.Tasks;
 
 namespace ElectroNova.Interfaces
 {
-    interface IBLLImpuesto
+    public interface IBLLImpuesto
     {
+        Task<Impuesto> ObtenerImpuesto();
     }
 }

@@ -41,8 +41,6 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgvDatos = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtID_Producto = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
             this.txtExtrasAccesorios = new System.Windows.Forms.TextBox();
             this.chkInactivo = new System.Windows.Forms.CheckBox();
             this.chkActivo = new System.Windows.Forms.CheckBox();
@@ -180,8 +178,6 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.txtID_Producto);
-            this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.txtExtrasAccesorios);
             this.groupBox1.Controls.Add(this.chkInactivo);
             this.groupBox1.Controls.Add(this.chkActivo);
@@ -206,23 +202,6 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos del producto";
-            // 
-            // txtID_Producto
-            // 
-            this.txtID_Producto.Location = new System.Drawing.Point(214, 19);
-            this.txtID_Producto.Name = "txtID_Producto";
-            this.txtID_Producto.Size = new System.Drawing.Size(375, 27);
-            this.txtID_Producto.TabIndex = 26;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(6, 23);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(85, 17);
-            this.label9.TabIndex = 25;
-            this.label9.Text = "ID Producto";
             // 
             // txtExtrasAccesorios
             // 
@@ -288,14 +267,14 @@
             // cboMarca
             // 
             this.cboMarca.FormattingEnabled = true;
-            this.cboMarca.Location = new System.Drawing.Point(214, 92);
+            this.cboMarca.Location = new System.Drawing.Point(214, 88);
             this.cboMarca.Name = "cboMarca";
             this.cboMarca.Size = new System.Drawing.Size(375, 27);
             this.cboMarca.TabIndex = 11;
             // 
             // txtCodigoBarras
             // 
-            this.txtCodigoBarras.Location = new System.Drawing.Point(214, 55);
+            this.txtCodigoBarras.Location = new System.Drawing.Point(214, 41);
             this.txtCodigoBarras.Name = "txtCodigoBarras";
             this.txtCodigoBarras.Size = new System.Drawing.Size(375, 27);
             this.txtCodigoBarras.TabIndex = 10;
@@ -346,9 +325,9 @@
             this.label4.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(6, 179);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(98, 17);
+            this.label4.Size = new System.Drawing.Size(110, 17);
             this.label4.TabIndex = 5;
-            this.label4.Text = "Tipo Producto";
+            this.label4.Text = "Tipo Dispositivo";
             // 
             // label3
             // 
@@ -364,7 +343,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(6, 96);
+            this.label2.Location = new System.Drawing.Point(6, 92);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(48, 17);
             this.label2.TabIndex = 3;
@@ -375,7 +354,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(6, 55);
+            this.label1.Location = new System.Drawing.Point(6, 45);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(120, 17);
             this.label1.TabIndex = 2;
@@ -440,8 +419,6 @@
         private System.Windows.Forms.CheckBox chkActivo;
         private System.Windows.Forms.CheckBox chkInactivo;
         private System.Windows.Forms.TextBox txtExtrasAccesorios;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox txtID_Producto;
         private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }
