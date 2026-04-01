@@ -29,7 +29,7 @@ namespace ElectroNova.Layers.UI
             _BLLDireccion = new BLLUbicacion();
             ConfigurarPictureBox();
             txtIdentificacion.KeyDown += txtIdentificacion_KeyDown;
-            txtID.ReadOnly = true;
+            //txtID.ReadOnly = true;
 
             _DALCliente = new DALCliente();
 
@@ -206,11 +206,11 @@ namespace ElectroNova.Layers.UI
                 return;
             }
 
-            txtID.Text = oCliente.ID_Cliente.ToString();
+            //txtID.Text = oCliente.ID_Cliente.ToString();
             txtIdentificacion.Text = oCliente.Identificacion;
             txtNombre.Text = oCliente.Nombre;
             txtApellidos.Text = oCliente.Apellidos;
-            txtTelefono.Text = oCliente.Telefono;
+            mtbTelefono.Text = oCliente.Telefono;
             txtEmail.Text = oCliente.Email;
             txtDireccionExacta.Text = oCliente.DireccionExacta;
             cmbProvincia.Text = oCliente.Provincia;
@@ -238,10 +238,10 @@ namespace ElectroNova.Layers.UI
         }
         private void Limpiar()
         {
-            this.txtID.Clear();
+            //this.txtID.Clear();
             this.txtApellidos.Clear();
             this.txtDireccionExacta.Clear();
-            this.txtTelefono.Clear();
+            this.mtbTelefono.Clear();
             this.txtNombre.Clear();
             this.txtIdentificacion.Clear();
             this.txtEmail.Clear(); ;
@@ -279,9 +279,20 @@ namespace ElectroNova.Layers.UI
                     txtNombre.Focus();
                     return;
                 }
+                // Validación teléfono
+                if (!mtbTelefono.MaskCompleted)
+                {
+                    errorProvider1.SetError(mtbTelefono, "Ingrese un teléfono válido (8 dígitos).");
+                    mtbTelefono.Focus();
+                    return;
+                }
+                else
+                {
+                    errorProvider1.SetError(mtbTelefono, "");
+                }
 
-                if (!string.IsNullOrWhiteSpace(txtID.Text))
-                    oCliente.ID_Cliente = int.Parse(txtID.Text);
+                //if (!string.IsNullOrWhiteSpace(txtID.Text))
+                //    oCliente.ID_Cliente = int.Parse(txtID.Text);
 
                 oCliente.Identificacion = txtIdentificacion.Text.Trim();
 
@@ -291,7 +302,8 @@ namespace ElectroNova.Layers.UI
                 oCliente.Apellidos = txtApellidos.Text.Trim();
                 oCliente.DireccionExacta = txtDireccionExacta.Text.Trim();
                 oCliente.Provincia = cmbProvincia.Text;
-                oCliente.Telefono = txtTelefono.Text.Trim();
+                mtbTelefono.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+                oCliente.Telefono = mtbTelefono.Text;
                 oCliente.Email = txtEmail.Text.Trim();
                 oCliente.Estado = chkActivo.Checked;
 

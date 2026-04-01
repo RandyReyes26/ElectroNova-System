@@ -189,3 +189,5 @@ CREATE TABLE IngresoStock (
     Observaciones NVARCHAR(300),
     FOREIGN KEY (ID_Producto) REFERENCES Producto(ID_Producto)
 );
+
+select * from IngresoStock

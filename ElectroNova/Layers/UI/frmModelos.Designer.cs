@@ -39,16 +39,14 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.dgvDatos = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtID_Modelo = new System.Windows.Forms.TextBox();
             this.chkInactivo = new System.Windows.Forms.CheckBox();
             this.chkActivo = new System.Windows.Forms.CheckBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
-            this.txtCodigoModelo = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.txtCodigoModelo = new System.Windows.Forms.TextBox();
             this.toolStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -142,8 +140,6 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.txtID_Modelo);
             this.groupBox1.Controls.Add(this.chkInactivo);
             this.groupBox1.Controls.Add(this.chkActivo);
             this.groupBox1.Controls.Add(this.label3);
@@ -159,28 +155,11 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos del Modelo";
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(17, 30);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(72, 17);
-            this.label4.TabIndex = 23;
-            this.label4.Text = "ID Modelo";
-            // 
-            // txtID_Modelo
-            // 
-            this.txtID_Modelo.Location = new System.Drawing.Point(206, 26);
-            this.txtID_Modelo.Name = "txtID_Modelo";
-            this.txtID_Modelo.Size = new System.Drawing.Size(469, 27);
-            this.txtID_Modelo.TabIndex = 22;
-            // 
             // chkInactivo
             // 
             this.chkInactivo.AutoSize = true;
             this.chkInactivo.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkInactivo.Location = new System.Drawing.Point(530, 201);
+            this.chkInactivo.Location = new System.Drawing.Point(530, 189);
             this.chkInactivo.Name = "chkInactivo";
             this.chkInactivo.Size = new System.Drawing.Size(79, 21);
             this.chkInactivo.TabIndex = 21;
@@ -191,7 +170,7 @@
             // 
             this.chkActivo.AutoSize = true;
             this.chkActivo.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkActivo.Location = new System.Drawing.Point(206, 201);
+            this.chkActivo.Location = new System.Drawing.Point(206, 186);
             this.chkActivo.Name = "chkActivo";
             this.chkActivo.Size = new System.Drawing.Size(69, 21);
             this.chkActivo.TabIndex = 19;
@@ -202,7 +181,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(17, 201);
+            this.label3.Location = new System.Drawing.Point(17, 190);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(54, 17);
             this.label3.TabIndex = 6;
@@ -210,23 +189,16 @@
             // 
             // txtDescripcion
             // 
-            this.txtDescripcion.Location = new System.Drawing.Point(206, 140);
+            this.txtDescripcion.Location = new System.Drawing.Point(206, 116);
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(469, 27);
             this.txtDescripcion.TabIndex = 4;
-            // 
-            // txtCodigoModelo
-            // 
-            this.txtCodigoModelo.Location = new System.Drawing.Point(206, 82);
-            this.txtCodigoModelo.Name = "txtCodigoModelo";
-            this.txtCodigoModelo.Size = new System.Drawing.Size(469, 27);
-            this.txtCodigoModelo.TabIndex = 3;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(17, 150);
+            this.label2.Location = new System.Drawing.Point(17, 120);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(86, 17);
             this.label2.TabIndex = 2;
@@ -236,7 +208,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(17, 86);
+            this.label1.Location = new System.Drawing.Point(17, 47);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(124, 17);
             this.label1.TabIndex = 1;
@@ -245,6 +217,18 @@
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
+            // 
+            // txtCodigoModelo
+            // 
+            this.txtCodigoModelo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtCodigoModelo.Location = new System.Drawing.Point(206, 37);
+            this.txtCodigoModelo.MaxLength = 20;
+            this.txtCodigoModelo.Name = "txtCodigoModelo";
+            this.txtCodigoModelo.Size = new System.Drawing.Size(469, 27);
+            this.txtCodigoModelo.TabIndex = 3;
+            this.txtCodigoModelo.Enter += new System.EventHandler(this.txtCodigoModelo_Enter);
+            this.txtCodigoModelo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodigoModelo_KeyPress);
+            this.txtCodigoModelo.Leave += new System.EventHandler(this.txtCodigoModelo_Leave);
             // 
             // frmModelos
             // 
@@ -281,14 +265,12 @@
         private System.Windows.Forms.DataGridView dgvDatos;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txtDescripcion;
-        private System.Windows.Forms.TextBox txtCodigoModelo;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.CheckBox chkActivo;
         private System.Windows.Forms.CheckBox chkInactivo;
-        private System.Windows.Forms.TextBox txtID_Modelo;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.TextBox txtCodigoModelo;
     }
 }

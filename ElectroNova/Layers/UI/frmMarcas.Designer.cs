@@ -36,8 +36,6 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.chkInactivo = new System.Windows.Forms.CheckBox();
             this.chkActivo = new System.Windows.Forms.CheckBox();
-            this.txtID_Marca = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.txtNombreMarca = new System.Windows.Forms.TextBox();
@@ -89,8 +87,6 @@
             // 
             this.groupBox1.Controls.Add(this.chkInactivo);
             this.groupBox1.Controls.Add(this.chkActivo);
-            this.groupBox1.Controls.Add(this.txtID_Marca);
-            this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.txtDescripcion);
             this.groupBox1.Controls.Add(this.txtNombreMarca);
@@ -126,28 +122,11 @@
             this.chkActivo.Text = "Activo";
             this.chkActivo.UseVisualStyleBackColor = true;
             // 
-            // txtID_Marca
-            // 
-            this.txtID_Marca.Location = new System.Drawing.Point(206, 19);
-            this.txtID_Marca.Name = "txtID_Marca";
-            this.txtID_Marca.Size = new System.Drawing.Size(469, 27);
-            this.txtID_Marca.TabIndex = 7;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(17, 23);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(66, 17);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "ID Marca";
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(17, 143);
+            this.label3.Location = new System.Drawing.Point(17, 139);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(54, 17);
             this.label3.TabIndex = 5;
@@ -155,14 +134,14 @@
             // 
             // txtDescripcion
             // 
-            this.txtDescripcion.Location = new System.Drawing.Point(206, 98);
+            this.txtDescripcion.Location = new System.Drawing.Point(206, 77);
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(469, 27);
             this.txtDescripcion.TabIndex = 4;
             // 
             // txtNombreMarca
             // 
-            this.txtNombreMarca.Location = new System.Drawing.Point(206, 59);
+            this.txtNombreMarca.Location = new System.Drawing.Point(206, 25);
             this.txtNombreMarca.Name = "txtNombreMarca";
             this.txtNombreMarca.Size = new System.Drawing.Size(469, 27);
             this.txtNombreMarca.TabIndex = 3;
@@ -171,7 +150,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(17, 98);
+            this.label2.Location = new System.Drawing.Point(17, 81);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(86, 17);
             this.label2.TabIndex = 2;
@@ -181,7 +160,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(17, 59);
+            this.label1.Location = new System.Drawing.Point(17, 35);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(124, 17);
             this.label1.TabIndex = 1;
@@ -278,8 +257,6 @@
         private System.Windows.Forms.TextBox txtNombreMarca;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtID_Marca;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.CheckBox chkActivo;
         private System.Windows.Forms.CheckBox chkInactivo;

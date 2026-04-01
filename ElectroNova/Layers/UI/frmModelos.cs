@@ -23,7 +23,9 @@ namespace ElectroNova.Layers.UI
         private void frmModelos_Load(object sender, EventArgs e)
         {
             CargarDatos();
-            txtID_Modelo.ReadOnly = true;
+            //txtID_Modelo.ReadOnly = true;
+            txtCodigoModelo.ForeColor = Color.Gray;
+            txtCodigoModelo.Text = "Ej: SM-A54 o MOD-001";
 
         }
 
@@ -56,10 +58,18 @@ namespace ElectroNova.Layers.UI
                     return;
                 }
 
+
                 // Si trae ID, entonces es edición
-                if (!string.IsNullOrWhiteSpace(txtID_Modelo.Text))
+                //if (!string.IsNullOrWhiteSpace(txtID_Modelo.Text))
+                //{
+                //    oModelo.ID_Modelo = int.Parse(txtID_Modelo.Text);
+                //}
+                if (string.IsNullOrWhiteSpace(txtCodigoModelo.Text) ||
+                   txtCodigoModelo.Text == "EJ: SM-A54 O MOD-001")
                 {
-                    oModelo.ID_Modelo = int.Parse(txtID_Modelo.Text);
+                    errorProvider1.SetError(txtCodigoModelo, "El código del modelo es requerido");
+                    txtCodigoModelo.Focus();
+                    return;
                 }
 
                 // Asignar datos
@@ -98,7 +108,7 @@ namespace ElectroNova.Layers.UI
 
             if (oModelo != null)
             {
-                txtID_Modelo.Text = oModelo.ID_Modelo.ToString();
+                //txtID_Modelo.Text = oModelo.ID_Modelo.ToString();
                 txtCodigoModelo.Text = oModelo.Codigo_Modelo;
                 txtDescripcion.Text = oModelo.Descripcion;
             }
@@ -141,9 +151,10 @@ namespace ElectroNova.Layers.UI
         }
         private void Limpiar()
         {
-            this.txtID_Modelo.Clear();
-            this.txtCodigoModelo.Clear();
-            this.txtDescripcion.Clear();
+            //this.txtID_Modelo.Clear();
+            txtCodigoModelo.Text = "EJ: SM-A54 O MOD-001";
+            txtCodigoModelo.ForeColor = Color.Gray;
+            txtDescripcion.Clear();
         }
 
         private async void CargarDatos()
@@ -161,6 +172,34 @@ namespace ElectroNova.Layers.UI
 
             // Cargar el DataGridView
             this.dgvDatos.DataSource = await _BLLModelo.ObtenerModelo();
+        }
+
+        private void txtCodigoModelo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetterOrDigit(e.KeyChar) &&
+               e.KeyChar != '-' &&
+               e.KeyChar != (char)Keys.Back)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtCodigoModelo_Enter(object sender, EventArgs e)
+        {
+            if (txtCodigoModelo.Text == "EJ: SM-A54 O MOD-001")
+            {
+                txtCodigoModelo.Text = "";
+                txtCodigoModelo.ForeColor = Color.Black;
+            }
+        }
+
+        private void txtCodigoModelo_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtCodigoModelo.Text))
+            {
+                txtCodigoModelo.Text = "EJ: SM-A54 O MOD-001";
+                txtCodigoModelo.ForeColor = Color.Gray;
+            }
         }
     }
 }

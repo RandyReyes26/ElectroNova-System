@@ -57,6 +57,8 @@ namespace ElectroNova.Layers.UI
             CargarComboMarca();
             CargarComboModelo();
             CargarComboTipoDispositivo();
+            txtCodigoBarras.ForeColor = Color.Gray;
+            txtCodigoBarras.Text = "Ej: 7501234567890";
         }
         private async void CargarComboMarca()
         {
@@ -163,9 +165,26 @@ namespace ElectroNova.Layers.UI
                     cboTipoProducto.Focus();
                     return;
                 }
+                if (string.IsNullOrWhiteSpace(txtCodigoBarras.Text) ||
+                    txtCodigoBarras.Text == "Ej: 7501234567890")
+                {
+                    errorProvider1.SetError(txtCodigoBarras, "El código de barras es requerido.");
+                    txtCodigoBarras.Focus();
+                    return;
+                }
+                else
+                {
+                    errorProvider1.SetError(txtCodigoBarras, "");
+                }
+                if (txtCodigoBarras.Text.Trim().Length < 8)
+                {
+                    errorProvider1.SetError(txtCodigoBarras, "Ingrese un código de barras válido.");
+                    txtCodigoBarras.Focus();
+                    return;
+                }
 
-         
-                
+
+
 
                 oProducto.Codigo_Barras = txtCodigoBarras.Text.Trim();
                 oProducto.ID_Marca = Convert.ToInt32(cboMarca.SelectedValue);
@@ -319,7 +338,8 @@ namespace ElectroNova.Layers.UI
         private void Limpiar()
         {
             //txtID_Producto.Clear();
-            txtCodigoBarras.Clear();
+            txtCodigoBarras.Text = "Ej: 7501234567890";
+            txtCodigoBarras.ForeColor = Color.Gray;
             txtInformacion.Clear();
             txtCaracteristicas.Clear();
             txtExtrasAccesorios.Clear();
@@ -338,6 +358,32 @@ namespace ElectroNova.Layers.UI
 
             pblImagen.Image = null;
             pblImagen.Tag = null;
+        }
+
+        private void txtCodigoBarras_Enter(object sender, EventArgs e)
+        {
+            if (txtCodigoBarras.Text == "Ej: 7501234567890")
+            {
+                txtCodigoBarras.Text = "";
+                txtCodigoBarras.ForeColor = Color.Black;
+            }
+        }
+
+        private void txtCodigoBarras_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtCodigoBarras.Text))
+            {
+                txtCodigoBarras.Text = "Ej: 7501234567890";
+                txtCodigoBarras.ForeColor = Color.Gray;
+            }
+        }
+
+        private void txtCodigoBarras_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back)
+            {
+                e.Handled = true;
+            }
         }
     }
 }

@@ -43,7 +43,6 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label10 = new System.Windows.Forms.Label();
             this.txtDireccionExacta = new System.Windows.Forms.TextBox();
-            this.txtTelefono = new System.Windows.Forms.TextBox();
             this.chkInactivo = new System.Windows.Forms.CheckBox();
             this.label9 = new System.Windows.Forms.Label();
             this.chkActivo = new System.Windows.Forms.CheckBox();
@@ -61,9 +60,8 @@
             this.txtIdentificacion = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtID = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.mtbTelefono = new System.Windows.Forms.MaskedTextBox();
             this.panel1.SuspendLayout();
             this.mnuStrip1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -186,9 +184,9 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.mtbTelefono);
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.txtDireccionExacta);
-            this.groupBox1.Controls.Add(this.txtTelefono);
             this.groupBox1.Controls.Add(this.chkInactivo);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.chkActivo);
@@ -206,8 +204,6 @@
             this.groupBox1.Controls.Add(this.txtIdentificacion);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.txtID);
-            this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(12, 129);
             this.groupBox1.Name = "groupBox1";
@@ -232,13 +228,6 @@
             this.txtDireccionExacta.Name = "txtDireccionExacta";
             this.txtDireccionExacta.Size = new System.Drawing.Size(524, 27);
             this.txtDireccionExacta.TabIndex = 22;
-            // 
-            // txtTelefono
-            // 
-            this.txtTelefono.Location = new System.Drawing.Point(117, 276);
-            this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(524, 27);
-            this.txtTelefono.TabIndex = 21;
             // 
             // chkInactivo
             // 
@@ -404,26 +393,17 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Identificación";
             // 
-            // txtID
-            // 
-            this.txtID.Location = new System.Drawing.Point(117, 35);
-            this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(524, 27);
-            this.txtID.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(18, 39);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(22, 17);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "ID";
-            // 
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
+            // 
+            // mtbTelefono
+            // 
+            this.mtbTelefono.Location = new System.Drawing.Point(117, 270);
+            this.mtbTelefono.Mask = "0000-0000";
+            this.mtbTelefono.Name = "mtbTelefono";
+            this.mtbTelefono.Size = new System.Drawing.Size(524, 27);
+            this.mtbTelefono.TabIndex = 24;
             // 
             // frmClientes
             // 
@@ -461,8 +441,6 @@
         private System.Windows.Forms.TextBox txtIdentificacion;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtID;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox cmbProvincia;
         private System.Windows.Forms.TextBox txtEmail;
@@ -481,9 +459,9 @@
         private System.Windows.Forms.ToolStripMenuItem GuardartoolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem toolStripEditar;
         private System.Windows.Forms.ToolStripMenuItem eliminarToolStripMenuItem;
-        private System.Windows.Forms.TextBox txtTelefono;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txtDireccionExacta;
+        private System.Windows.Forms.MaskedTextBox mtbTelefono;
     }
 }

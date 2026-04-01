@@ -278,6 +278,9 @@
             this.txtCodigoBarras.Name = "txtCodigoBarras";
             this.txtCodigoBarras.Size = new System.Drawing.Size(375, 27);
             this.txtCodigoBarras.TabIndex = 10;
+            this.txtCodigoBarras.Enter += new System.EventHandler(this.txtCodigoBarras_Enter);
+            this.txtCodigoBarras.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodigoBarras_KeyPress);
+            this.txtCodigoBarras.Leave += new System.EventHandler(this.txtCodigoBarras_Leave);
             // 
             // label8
             // 

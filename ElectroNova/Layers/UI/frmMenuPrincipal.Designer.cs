@@ -176,14 +176,14 @@
             // 
             this.controlStockToolStripMenuItem.Name = "controlStockToolStripMenuItem";
             this.controlStockToolStripMenuItem.Size = new System.Drawing.Size(273, 28);
-            this.controlStockToolStripMenuItem.Text = "Control Stock";
+            this.controlStockToolStripMenuItem.Text = "CONTROL STOCK";
             this.controlStockToolStripMenuItem.Click += new System.EventHandler(this.controlStockToolStripMenuItem_Click);
             // 
             // impuestoToolStripMenuItem
             // 
             this.impuestoToolStripMenuItem.Name = "impuestoToolStripMenuItem";
             this.impuestoToolStripMenuItem.Size = new System.Drawing.Size(273, 28);
-            this.impuestoToolStripMenuItem.Text = "Impuesto";
+            this.impuestoToolStripMenuItem.Text = "IMPUESTO";
             this.impuestoToolStripMenuItem.Click += new System.EventHandler(this.impuestoToolStripMenuItem_Click);
             // 
             // toolStripProcesos

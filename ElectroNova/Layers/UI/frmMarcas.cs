@@ -23,7 +23,7 @@ namespace ElectroNova.Layers.UI
         private void frmMarcas_Load(object sender, EventArgs e)
         {
             CargarDatos();
-            txtID_Marca.ReadOnly = true;
+            //txtID_Marca.ReadOnly = true;
 
         }
 
@@ -50,10 +50,10 @@ namespace ElectroNova.Layers.UI
                 }
 
                 // Si hay ID → es edición
-                if (!string.IsNullOrWhiteSpace(txtID_Marca.Text))
-                {
-                    oMarca.ID_Marca = int.Parse(txtID_Marca.Text);
-                }
+                //if (!string.IsNullOrWhiteSpace(txtID_Marca.Text))
+                //{
+                //    oMarca.ID_Marca = int.Parse(txtID_Marca.Text);
+                //}
 
                 // Datos
                 oMarca.Nombre_Marca = txtNombreMarca.Text.Trim();
@@ -100,7 +100,7 @@ namespace ElectroNova.Layers.UI
 
             oMarca = this.dgvDatos.SelectedRows[0].DataBoundItem as Marca;
 
-            txtID_Marca.Text = oMarca.ID_Marca.ToString();
+            //txtID_Marca.Text = oMarca.ID_Marca.ToString();
             txtNombreMarca.Text = oMarca.Nombre_Marca;
             txtDescripcion.Text = oMarca.Descripcion;
 
@@ -148,7 +148,7 @@ namespace ElectroNova.Layers.UI
 
         private void Limpiar()
         {
-            this.txtID_Marca.Clear();
+            //this.txtID_Marca.Clear();
             this.txtNombreMarca.Clear();
             this.txtDescripcion.Clear();
 

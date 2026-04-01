@@ -23,7 +23,7 @@ namespace ElectroNova.Layers.UI
         private void frmTipoDispositivo_Load(object sender, EventArgs e)
         {
             CargarDatos();
-            txtID_TipoDispositivo.ReadOnly = true;
+            //txtID_TipoDispositivo.ReadOnly = true;
         }
 
         private void ToolStripMenuNuevo_Click(object sender, EventArgs e)
@@ -32,7 +32,7 @@ namespace ElectroNova.Layers.UI
         }
         private void Limpiar()
         {
-            this.txtID_TipoDispositivo.Clear();
+            //this.txtID_TipoDispositivo.Clear();
             this.txtNombre_TipoDispositivo.Clear();
             this.txtDescripcion.Clear();
         }
@@ -79,10 +79,10 @@ namespace ElectroNova.Layers.UI
                 }
 
                 // Si trae ID, entonces es edición
-                if (!string.IsNullOrWhiteSpace(txtID_TipoDispositivo.Text))
-                {
-                    oTipoDispositivo.ID_TipoDispositivo = int.Parse(txtID_TipoDispositivo.Text);
-                }
+                //if (!string.IsNullOrWhiteSpace(txtID_TipoDispositivo.Text))
+                //{
+                //    oTipoDispositivo.ID_TipoDispositivo = int.Parse(txtID_TipoDispositivo.Text);
+                //}
 
                 // Asignar datos
                 oTipoDispositivo.Nombre_TipoDispositivo = txtNombre_TipoDispositivo.Text.Trim();
@@ -120,7 +120,7 @@ namespace ElectroNova.Layers.UI
 
             if (oTipoDispositivo != null)
             {
-                txtID_TipoDispositivo.Text = oTipoDispositivo.ID_TipoDispositivo.ToString();
+                //txtID_TipoDispositivo.Text = oTipoDispositivo.ID_TipoDispositivo.ToString();
                 txtNombre_TipoDispositivo.Text = oTipoDispositivo.Nombre_TipoDispositivo;
                 txtDescripcion.Text = oTipoDispositivo.Descripcion;
             }
