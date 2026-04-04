@@ -63,6 +63,7 @@
     </Compile>
     <Compile Include="Interfaces\IBLLCliente.cs" />
     <Compile Include="Interfaces\IBLLControlStock.cs" />
+    <Compile Include="Interfaces\IBLLFactura.cs" />
     <Compile Include="Interfaces\IBLLFoto.cs" />
     <Compile Include="Interfaces\IBLLImpuesto.cs" />
     <Compile Include="Interfaces\IBLLMarca.cs" />
@@ -75,6 +76,7 @@
     <Compile Include="Interfaces\IBLLUsuario.cs" />
     <Compile Include="Interfaces\IDALCliente.cs" />
     <Compile Include="Interfaces\IDALControlStock.cs" />
+    <Compile Include="Interfaces\IDALFactura.cs" />
     <Compile Include="Interfaces\IDALImpuesto.cs" />
     <Compile Include="Interfaces\IDALMarca.cs" />
     <Compile Include="Interfaces\IDALModelo.cs" />
@@ -85,6 +87,7 @@
     <Compile Include="Layers\BLL\BLLCliente.cs" />
     <Compile Include="Layers\BLL\BLLConexionWebServer.cs" />
     <Compile Include="Layers\BLL\BLLControlStock.cs" />
+    <Compile Include="Layers\BLL\BLLFactura.cs" />
     <Compile Include="Layers\BLL\BLLFoto.cs" />
     <Compile Include="Layers\BLL\BLLImpuesto.cs" />
     <Compile Include="Layers\BLL\BLLMarca.cs" />
@@ -97,6 +100,7 @@
     <Compile Include="Layers\BLL\BLLUsuario.cs" />
     <Compile Include="Layers\DAL\DALCliente.cs" />
     <Compile Include="Layers\DAL\DALControlStock.cs" />
+    <Compile Include="Layers\DAL\DALFactura.cs" />
     <Compile Include="Layers\DAL\DALImpuesto.cs" />
     <Compile Include="Layers\DAL\DALMarca.cs" />
     <Compile Include="Layers\DAL\DALModelo.cs" />
@@ -110,6 +114,7 @@
     <Compile Include="Layers\Entities\DTO\FotoDTO.cs" />
     <Compile Include="Layers\Entities\DTO\PadronDTO.cs" />
     <Compile Include="Layers\Entities\DTO\UbicacionDTO.cs" />
+    <Compile Include="Layers\Entities\Factura.cs" />
     <Compile Include="Layers\Entities\Fotografia.cs" />
     <Compile Include="Layers\Entities\Impuesto.cs" />
     <Compile Include="Layers\Entities\Marca.cs" />

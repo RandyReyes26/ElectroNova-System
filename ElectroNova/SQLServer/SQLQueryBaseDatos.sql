@@ -27,7 +27,9 @@ CREATE TABLE Usuario (
     Estado BIT,
 );
 
+/**************************/
 select * from Usuario
+/**************************/
 
 ALTER TABLE Usuario
 DROP COLUMN Nombre,
@@ -75,7 +77,10 @@ CREATE TABLE Cliente (
     Fotografia VARBINARY(MAX),
     Estado BIT
 );
+
+/**************************/
 select * from Cliente
+/**************************/
 
 /* ============================
    TABLA DE MARCA
@@ -87,9 +92,9 @@ CREATE TABLE Marca (
     Estado BIT
 );
 
+/**************************/
 select * from Marca
-
-
+/**************************/
 
 /* ================================
    TABLA MODELO
@@ -101,7 +106,9 @@ CREATE TABLE Modelo (
     Estado BIT 
 );
 
+/**************************/
 select * from Modelo
+/**************************/
 
 /* ================================
    TABLA Tipo Dispositivo
@@ -160,7 +167,9 @@ CREATE TABLE Producto (
         FOREIGN KEY (ID_TipoDispositivo) REFERENCES TipoDispositivo(ID_TipoDispositivo)
 );
 
+/**************************/
 select * from Producto
+/**************************/
 
 /* ================================
    TABLA IVA
@@ -173,8 +182,9 @@ CREATE TABLE IVA (
 
 INSERT INTO IVA (ID_IVA, Descripcion, Valor)
 VALUES (1, 'IVA Costa Rica', 13.00);
-
+/**************************/
 select * from IVA
+/**************************/
 
 
 /* ================================
@@ -190,4 +200,105 @@ CREATE TABLE IngresoStock (
     FOREIGN KEY (ID_Producto) REFERENCES Producto(ID_Producto)
 );
 
+/**************************/
 select * from IngresoStock
+/**************************/
+
+/* ================================
+   TABLA FACTURA
+================================ */
+CREATE TABLE Factura (
+    ID_Factura VARCHAR(20) PRIMARY KEY, -- Ej: FAC-0001
+    ID_Cliente INT NOT NULL,
+    Fecha DATETIME NOT NULL,
+
+    SubtotalCRC DECIMAL(18,2),
+    ImpuestoCRC DECIMAL(18,2),
+    TotalCRC DECIMAL(18,2),
+
+    TipoCambio DECIMAL(18,2),
+    SubtotalUSD DECIMAL(18,2),
+    ImpuestoUSD DECIMAL(18,2),
+    TotalUSD DECIMAL(18,2),
+
+    MetodoPago VARCHAR(20) NOT NULL, -- TARJETA / TRANSFERENCIA / SINPE
+    XMLFactura XML, -- XML enviado al cliente
+    FirmaCliente VARBINARY(MAX), -- imagen de firma hecha con mouse
+
+
+    CONSTRAINT FK_Factura_Cliente FOREIGN KEY (ID_Cliente)
+        REFERENCES Cliente(ID_Cliente)
+);
+
+
+/* ================================
+   TABLA DETALLE FACTURA
+================================ */
+
+CREATE TABLE DetalleFactura (
+    ID_DetalleFactura INT IDENTITY(1,1) PRIMARY KEY,
+    ID_Factura VARCHAR(20) NOT NULL,
+    ID_Producto INT NOT NULL,
+
+    Cantidad INT NOT NULL,
+    PrecioUnitarioCRC DECIMAL(18,2) NOT NULL,
+    SubtotalLineaCRC DECIMAL(18,2) NOT NULL,
+
+    PrecioUnitarioUSD DECIMAL(18,2) NOT NULL,
+    SubtotalLineaUSD DECIMAL(18,2) NOT NULL,
+
+    CONSTRAINT FK_DetalleFactura_Factura FOREIGN KEY (ID_Factura)
+        REFERENCES Factura(ID_Factura),
+
+    CONSTRAINT FK_DetalleFactura_Producto FOREIGN KEY (ID_Producto)
+        REFERENCES Producto(ID_Producto)
+);
+
+/*****************************************/
+/* ================================
+   TABLAS DE LOS MÉTODOS DE PAGO
+================================ */
+/*****************************************/
+
+
+/* ================================
+   TABLA PAGO TARJETA
+================================ */
+CREATE TABLE PagoTarjeta (
+    ID_PagoTarjeta INT IDENTITY(1,1) PRIMARY KEY,
+    ID_Factura VARCHAR(20) NOT NULL UNIQUE,
+
+    NumeroTarjeta VARCHAR(25) NOT NULL,
+    BancoTarjeta VARCHAR(50) NOT NULL,
+    TipoTarjeta VARCHAR(20) NOT NULL, -- VISA, MASTERCARD, AMEX
+
+    CONSTRAINT FK_PagoTarjeta_Factura FOREIGN KEY (ID_Factura)
+        REFERENCES Factura(ID_Factura)
+);
+
+/* ================================
+   TABLA PAGO TRANSFERENCIA
+================================ */
+CREATE TABLE PagoTransferencia (
+    ID_PagoTransferencia INT IDENTITY(1,1) PRIMARY KEY,
+    ID_Factura VARCHAR(20) NOT NULL UNIQUE,
+
+    BancoGestionado VARCHAR(50) NOT NULL,
+    NumeroTransferencia VARCHAR(50) NOT NULL,
+
+    CONSTRAINT FK_PagoTransferencia_Factura FOREIGN KEY (ID_Factura)
+        REFERENCES Factura(ID_Factura)
+);
+
+/* ================================
+   TABLA PAGO SINPE
+================================ */
+CREATE TABLE PagoSINPE (
+    ID_PagoSINPE INT IDENTITY(1,1) PRIMARY KEY,
+    ID_Factura VARCHAR(20) NOT NULL UNIQUE,
+
+    NumeroSINPE VARCHAR(20) NOT NULL,
+
+    CONSTRAINT FK_PagoSINPE_Factura FOREIGN KEY (ID_Factura)
+        REFERENCES Factura(ID_Factura)
+);
