@@ -167,6 +167,14 @@ CREATE TABLE Producto (
         FOREIGN KEY (ID_TipoDispositivo) REFERENCES TipoDispositivo(ID_TipoDispositivo)
 );
 
+ALTER TABLE Producto
+ADD DocumentoEspecificaciones NVARCHAR(800),
+    Precio DECIMAL(18,2);
+
+
+ALTER TABLE Producto
+ADD Existencia INT;
+
 /**************************/
 select * from Producto
 /**************************/
@@ -231,6 +239,8 @@ CREATE TABLE Factura (
 );
 
 
+select * from Factura
+
 /* ================================
    TABLA DETALLE FACTURA
 ================================ */
@@ -254,51 +264,16 @@ CREATE TABLE DetalleFactura (
         REFERENCES Producto(ID_Producto)
 );
 
+select * from DetalleFactura
+
+CREATE TABLE Tarjeta(
+    ID_tarjeta INT PRIMARY KEY,
+    DescripcionTarjeta NVARCHAR(255)
+);
+
+INSERT INTO Tarjeta (ID_tarjeta, DescripcionTarjeta)
+VALUES 
+(1, 'Visa'),
+(2, 'Mastercard'),
+(3, 'American Express');
 /*****************************************/
-/* ================================
-   TABLAS DE LOS MÉTODOS DE PAGO
-================================ */
-/*****************************************/
-
-
-/* ================================
-   TABLA PAGO TARJETA
-================================ */
-CREATE TABLE PagoTarjeta (
-    ID_PagoTarjeta INT IDENTITY(1,1) PRIMARY KEY,
-    ID_Factura VARCHAR(20) NOT NULL UNIQUE,
-
-    NumeroTarjeta VARCHAR(25) NOT NULL,
-    BancoTarjeta VARCHAR(50) NOT NULL,
-    TipoTarjeta VARCHAR(20) NOT NULL, -- VISA, MASTERCARD, AMEX
-
-    CONSTRAINT FK_PagoTarjeta_Factura FOREIGN KEY (ID_Factura)
-        REFERENCES Factura(ID_Factura)
-);
-
-/* ================================
-   TABLA PAGO TRANSFERENCIA
-================================ */
-CREATE TABLE PagoTransferencia (
-    ID_PagoTransferencia INT IDENTITY(1,1) PRIMARY KEY,
-    ID_Factura VARCHAR(20) NOT NULL UNIQUE,
-
-    BancoGestionado VARCHAR(50) NOT NULL,
-    NumeroTransferencia VARCHAR(50) NOT NULL,
-
-    CONSTRAINT FK_PagoTransferencia_Factura FOREIGN KEY (ID_Factura)
-        REFERENCES Factura(ID_Factura)
-);
-
-/* ================================
-   TABLA PAGO SINPE
-================================ */
-CREATE TABLE PagoSINPE (
-    ID_PagoSINPE INT IDENTITY(1,1) PRIMARY KEY,
-    ID_Factura VARCHAR(20) NOT NULL UNIQUE,
-
-    NumeroSINPE VARCHAR(20) NOT NULL,
-
-    CONSTRAINT FK_PagoSINPE_Factura FOREIGN KEY (ID_Factura)
-        REFERENCES Factura(ID_Factura)
-);

@@ -32,6 +32,9 @@ namespace ElectroNova.Layers.DAL
                 command.Parameters.AddWithValue("@ID_TipoDispositivo", pProducto.ID_TipoDispositivo);
                 command.Parameters.AddWithValue("@Informacion_General", pProducto.Informacion_General);
                 command.Parameters.AddWithValue("@Caracteristicas_Tecnicas", pProducto.Caracteristicas_Tecnicas);
+                command.Parameters.AddWithValue("@DocumentoEspecificaciones", pProducto.DocumentoEspecificaciones);
+                command.Parameters.AddWithValue("@Precio", pProducto.Precio);
+                command.Parameters.AddWithValue("@Existencia", pProducto.Existencia);
                 command.Parameters.AddWithValue("@Extras_Accesorios", pProducto.Extras_Accesorios);
                 command.Parameters.AddWithValue("@Fotografia", pProducto.Fotografia);
                 command.Parameters.AddWithValue("@Estado", pProducto.Estado);
@@ -45,19 +48,22 @@ namespace ElectroNova.Layers.DAL
                         {
                             oProducto = new Productos
                             {
-                            ID_Producto = int.Parse(reader["ID_Producto"].ToString()),
-                            Codigo_Barras = reader["Codigo_Barras"].ToString(),
-                            ID_Marca = int.Parse(reader["ID_Marca"].ToString()),
-                            ID_Modelo = int.Parse(reader["ID_Modelo"].ToString()),
-                            ID_TipoDispositivo = int.Parse(reader["ID_TipoDispositivo"].ToString()),
-                            Informacion_General = reader["Informacion_General"].ToString(),
-                            Caracteristicas_Tecnicas = reader["Caracteristicas_Tecnicas"].ToString(),
-                            Extras_Accesorios = reader["Extras_Accesorios"].ToString(),
-                            Fotografia = (byte[])reader["Fotografia"],
-                            Estado = bool.Parse(reader["Estado"].ToString())
+                                ID_Producto = int.Parse(reader["ID_Producto"].ToString()),
+                                Codigo_Barras = reader["Codigo_Barras"].ToString(),
+                                ID_Marca = int.Parse(reader["ID_Marca"].ToString()),
+                                ID_Modelo = int.Parse(reader["ID_Modelo"].ToString()),
+                                ID_TipoDispositivo = int.Parse(reader["ID_TipoDispositivo"].ToString()),
+                                Informacion_General = reader["Informacion_General"].ToString(),
+                                Caracteristicas_Tecnicas = reader["Caracteristicas_Tecnicas"].ToString(),
+                                DocumentoEspecificaciones = reader["DocumentoEspecificaciones"].ToString(),
+                                Precio = reader["Precio"] == DBNull.Value ? 0 : Convert.ToDecimal(reader["Precio"]),
+                                Existencia = reader["Existencia"] == DBNull.Value ? 0 : Convert.ToInt32(reader["Existencia"]),
+                                Extras_Accesorios = reader["Extras_Accesorios"].ToString(),
+                                Fotografia = (byte[])reader["Fotografia"],
+                                Estado = bool.Parse(reader["Estado"].ToString())
 
 
-                        };
+                            };
                         }
                     }
                 }
@@ -98,7 +104,7 @@ namespace ElectroNova.Layers.DAL
             {
                 _MyLogControlEventos.Error("Error al borrar Producto", ex);
                 throw;
-                
+
             }
         }
 
@@ -119,6 +125,9 @@ namespace ElectroNova.Layers.DAL
                 command.Parameters.AddWithValue("@ID_TipoDispositivo", pProducto.ID_TipoDispositivo);
                 command.Parameters.AddWithValue("@Informacion_General", pProducto.Informacion_General);
                 command.Parameters.AddWithValue("@Caracteristicas_Tecnicas", pProducto.Caracteristicas_Tecnicas);
+                command.Parameters.AddWithValue("@DocumentoEspecificaciones", pProducto.DocumentoEspecificaciones);
+                command.Parameters.AddWithValue("@Precio", pProducto.Precio);
+                command.Parameters.AddWithValue("@Existencia", pProducto.Existencia);
                 command.Parameters.AddWithValue("@Extras_Accesorios", pProducto.Extras_Accesorios);
                 command.Parameters.AddWithValue("@Fotografia", pProducto.Fotografia);
                 command.Parameters.AddWithValue("@Estado", pProducto.Estado);
@@ -138,6 +147,9 @@ namespace ElectroNova.Layers.DAL
                                 ID_TipoDispositivo = int.Parse(reader["ID_TipoDispositivo"].ToString()),
                                 Informacion_General = reader["Informacion_General"].ToString(),
                                 Caracteristicas_Tecnicas = reader["Caracteristicas_Tecnicas"].ToString(),
+                                DocumentoEspecificaciones = reader["DocumentoEspecificaciones"].ToString(),
+                                Precio = reader["Precio"] == DBNull.Value ? 0 : Convert.ToDecimal(reader["Precio"]),
+                                Existencia = reader["Existencia"] == DBNull.Value ? 0 : Convert.ToInt32(reader["Existencia"]),
                                 Extras_Accesorios = reader["Extras_Accesorios"].ToString(),
                                 Fotografia = (byte[])reader["Fotografia"],
                                 Estado = bool.Parse(reader["Estado"].ToString())
@@ -183,6 +195,9 @@ namespace ElectroNova.Layers.DAL
                                     oProducto.ID_TipoDispositivo = int.Parse(reader["ID_TipoDispositivo"].ToString());
                                     oProducto.Informacion_General = reader["Informacion_General"].ToString();
                                     oProducto.Caracteristicas_Tecnicas = reader["Caracteristicas_Tecnicas"].ToString();
+                                    oProducto.DocumentoEspecificaciones = reader["DocumentoEspecificaciones"].ToString();
+                                    oProducto.Precio = reader["Precio"] == DBNull.Value ? 0 : Convert.ToDecimal(reader["Precio"]);
+                                    oProducto.Existencia = reader["Existencia"] == DBNull.Value ? 0 : Convert.ToInt32(reader["Existencia"]);
                                     oProducto.Extras_Accesorios = reader["Extras_Accesorios"].ToString();
                                     oProducto.Fotografia = (byte[])reader["Fotografia"];
                                     oProducto.Estado = bool.Parse(reader["Estado"].ToString());
@@ -236,6 +251,9 @@ namespace ElectroNova.Layers.DAL
                             ID_TipoDispositivo = int.Parse(reader["ID_TipoDispositivo"].ToString()),
                             Informacion_General = reader["Informacion_General"].ToString(),
                             Caracteristicas_Tecnicas = reader["Caracteristicas_Tecnicas"].ToString(),
+                            DocumentoEspecificaciones = reader["DocumentoEspecificaciones"].ToString(),
+                            Precio = reader["Precio"] == DBNull.Value ? 0 : Convert.ToDecimal(reader["Precio"]),
+                            Existencia = reader["Existencia"] == DBNull.Value ? 0 : Convert.ToInt32(reader["Existencia"]),
                             Extras_Accesorios = reader["Extras_Accesorios"].ToString(),
                             Fotografia = (byte[])reader["Fotografia"],
                             Estado = bool.Parse(reader["Estado"].ToString())

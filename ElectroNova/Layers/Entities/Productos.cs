@@ -15,6 +15,9 @@ namespace ElectroNova.Layers.Entities
         public int ID_TipoDispositivo { set; get; }
         public string Informacion_General { set; get; }
         public string Caracteristicas_Tecnicas { set; get; }
+        public string DocumentoEspecificaciones { get; set; }
+        public decimal Precio { get; set; }
+        public int Existencia { get; set; }
         public string Extras_Accesorios { set; get; }
         public byte[] Fotografia { set; get; }
         public bool Estado { set; get; }

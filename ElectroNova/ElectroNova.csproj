@@ -12,6 +12,8 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -39,9 +41,16 @@
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.13.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="QuestPDF, Version=2026.2.4.0, Culture=neutral, PublicKeyToken=0f3c2b2315ff52c8, processorArchitecture=MSIL">
+      <HintPath>..\packages\QuestPDF.2026.2.4\lib\netstandard2.0\QuestPDF.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.6.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.6.1\lib\net462\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web" />
@@ -63,6 +72,7 @@
     </Compile>
     <Compile Include="Interfaces\IBLLCliente.cs" />
     <Compile Include="Interfaces\IBLLControlStock.cs" />
+    <Compile Include="Interfaces\IBLLDetalleFactura.cs" />
     <Compile Include="Interfaces\IBLLFactura.cs" />
     <Compile Include="Interfaces\IBLLFoto.cs" />
     <Compile Include="Interfaces\IBLLImpuesto.cs" />
@@ -76,6 +86,7 @@
     <Compile Include="Interfaces\IBLLUsuario.cs" />
     <Compile Include="Interfaces\IDALCliente.cs" />
     <Compile Include="Interfaces\IDALControlStock.cs" />
+    <Compile Include="Interfaces\IDALDetalleFactura.cs" />
     <Compile Include="Interfaces\IDALFactura.cs" />
     <Compile Include="Interfaces\IDALImpuesto.cs" />
     <Compile Include="Interfaces\IDALMarca.cs" />
@@ -110,6 +121,7 @@
     <Compile Include="Layers\DAL\DALUsuario.cs" />
     <Compile Include="Layers\Entities\Clientes.cs" />
     <Compile Include="Layers\Entities\ControlStock.cs" />
+    <Compile Include="Layers\Entities\DetalleFactura.cs" />
     <Compile Include="Layers\Entities\Dolar.cs" />
     <Compile Include="Layers\Entities\DTO\FotoDTO.cs" />
     <Compile Include="Layers\Entities\DTO\PadronDTO.cs" />
@@ -123,6 +135,18 @@
     <Compile Include="Layers\Entities\Rol.cs" />
     <Compile Include="Layers\Entities\TipoDispositivo.cs" />
     <Compile Include="Layers\Entities\Usuario.cs" />
+    <Compile Include="Layers\UI\Filtros\frmFiltroCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layers\UI\Filtros\frmFiltroCliente.Designer.cs">
+      <DependentUpon>frmFiltroCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layers\UI\Filtros\frmFiltroProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layers\UI\Filtros\frmFiltroProducto.Designer.cs">
+      <DependentUpon>frmFiltroProducto.cs</DependentUpon>
+    </Compile>
     <Compile Include="Layers\UI\frmAdministracion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -201,6 +225,12 @@
     <Compile Include="Persistencia\IDataBase.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Layers\UI\Filtros\frmFiltroCliente.resx">
+      <DependentUpon>frmFiltroCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layers\UI\Filtros\frmFiltroProducto.resx">
+      <DependentUpon>frmFiltroProducto.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Layers\UI\frmAdministracion.resx">
       <DependentUpon>frmAdministracion.cs</DependentUpon>
     </EmbeddedResource>
@@ -264,7 +294,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Layers\UI\Filtros\" />
+    <Folder Include="Layers\Reportes\" />
     <Folder Include="Layers\UI\Reportes\" />
   </ItemGroup>
   <ItemGroup>
@@ -295,4 +325,11 @@
     <WCFMetadataStorage Include="Connected Services\ServiceReference1\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\QuestPDF.2026.2.4\build\net4\QuestPDF.targets" Condition="Exists('..\packages\QuestPDF.2026.2.4\build\net4\QuestPDF.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\QuestPDF.2026.2.4\build\net4\QuestPDF.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\QuestPDF.2026.2.4\build\net4\QuestPDF.targets'))" />
+  </Target>
 </Project>

@@ -41,6 +41,11 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgvDatos = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnPDF = new System.Windows.Forms.Button();
+            this.txtPrecio = new System.Windows.Forms.TextBox();
+            this.txtDocumentoEspecificaciones = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.txtExtrasAccesorios = new System.Windows.Forms.TextBox();
             this.chkInactivo = new System.Windows.Forms.CheckBox();
             this.chkActivo = new System.Windows.Forms.CheckBox();
@@ -59,6 +64,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.label11 = new System.Windows.Forms.Label();
+            this.txtExistencia = new System.Windows.Forms.TextBox();
             this.toolStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -132,7 +139,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 71);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1158, 637);
+            this.panel1.Size = new System.Drawing.Size(1158, 771);
             this.panel1.TabIndex = 5;
             // 
             // groupBox3
@@ -160,7 +167,7 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.dgvDatos);
-            this.groupBox2.Location = new System.Drawing.Point(12, 445);
+            this.groupBox2.Location = new System.Drawing.Point(12, 570);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(1135, 189);
             this.groupBox2.TabIndex = 1;
@@ -178,6 +185,13 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtExistencia);
+            this.groupBox1.Controls.Add(this.label11);
+            this.groupBox1.Controls.Add(this.btnPDF);
+            this.groupBox1.Controls.Add(this.txtPrecio);
+            this.groupBox1.Controls.Add(this.txtDocumentoEspecificaciones);
+            this.groupBox1.Controls.Add(this.label10);
+            this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.txtExtrasAccesorios);
             this.groupBox1.Controls.Add(this.chkInactivo);
             this.groupBox1.Controls.Add(this.chkActivo);
@@ -198,25 +212,69 @@
             this.groupBox1.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(12, 18);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(658, 421);
+            this.groupBox1.Size = new System.Drawing.Size(658, 546);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos del producto";
             // 
+            // btnPDF
+            // 
+            this.btnPDF.Location = new System.Drawing.Point(510, 315);
+            this.btnPDF.Name = "btnPDF";
+            this.btnPDF.Size = new System.Drawing.Size(105, 30);
+            this.btnPDF.TabIndex = 29;
+            this.btnPDF.Text = "PDF";
+            this.btnPDF.UseVisualStyleBackColor = true;
+            this.btnPDF.Click += new System.EventHandler(this.btnPDF_Click);
+            // 
+            // txtPrecio
+            // 
+            this.txtPrecio.Location = new System.Drawing.Point(214, 369);
+            this.txtPrecio.Name = "txtPrecio";
+            this.txtPrecio.Size = new System.Drawing.Size(255, 27);
+            this.txtPrecio.TabIndex = 28;
+            // 
+            // txtDocumentoEspecificaciones
+            // 
+            this.txtDocumentoEspecificaciones.Location = new System.Drawing.Point(214, 315);
+            this.txtDocumentoEspecificaciones.Name = "txtDocumentoEspecificaciones";
+            this.txtDocumentoEspecificaciones.Size = new System.Drawing.Size(255, 27);
+            this.txtDocumentoEspecificaciones.TabIndex = 27;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(6, 373);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(50, 17);
+            this.label10.TabIndex = 26;
+            this.label10.Text = "Precio";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(6, 325);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(199, 17);
+            this.label9.TabIndex = 25;
+            this.label9.Text = "Documento Especificaciones";
+            // 
             // txtExtrasAccesorios
             // 
-            this.txtExtrasAccesorios.Location = new System.Drawing.Point(214, 323);
+            this.txtExtrasAccesorios.Location = new System.Drawing.Point(214, 415);
             this.txtExtrasAccesorios.Multiline = true;
             this.txtExtrasAccesorios.Name = "txtExtrasAccesorios";
             this.txtExtrasAccesorios.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtExtrasAccesorios.Size = new System.Drawing.Size(375, 22);
+            this.txtExtrasAccesorios.Size = new System.Drawing.Size(255, 22);
             this.txtExtrasAccesorios.TabIndex = 24;
             // 
             // chkInactivo
             // 
             this.chkInactivo.AutoSize = true;
             this.chkInactivo.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkInactivo.Location = new System.Drawing.Point(510, 380);
+            this.chkInactivo.Location = new System.Drawing.Point(510, 495);
             this.chkInactivo.Name = "chkInactivo";
             this.chkInactivo.Size = new System.Drawing.Size(79, 21);
             this.chkInactivo.TabIndex = 23;
@@ -227,7 +285,7 @@
             // 
             this.chkActivo.AutoSize = true;
             this.chkActivo.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkActivo.Location = new System.Drawing.Point(214, 380);
+            this.chkActivo.Location = new System.Drawing.Point(214, 495);
             this.chkActivo.Name = "chkActivo";
             this.chkActivo.Size = new System.Drawing.Size(69, 21);
             this.chkActivo.TabIndex = 21;
@@ -238,14 +296,14 @@
             // 
             this.txtCaracteristicas.Location = new System.Drawing.Point(214, 273);
             this.txtCaracteristicas.Name = "txtCaracteristicas";
-            this.txtCaracteristicas.Size = new System.Drawing.Size(375, 27);
+            this.txtCaracteristicas.Size = new System.Drawing.Size(255, 27);
             this.txtCaracteristicas.TabIndex = 15;
             // 
             // txtInformacion
             // 
             this.txtInformacion.Location = new System.Drawing.Point(214, 227);
             this.txtInformacion.Name = "txtInformacion";
-            this.txtInformacion.Size = new System.Drawing.Size(375, 27);
+            this.txtInformacion.Size = new System.Drawing.Size(255, 27);
             this.txtInformacion.TabIndex = 14;
             // 
             // cboTipoProducto
@@ -253,7 +311,7 @@
             this.cboTipoProducto.FormattingEnabled = true;
             this.cboTipoProducto.Location = new System.Drawing.Point(214, 175);
             this.cboTipoProducto.Name = "cboTipoProducto";
-            this.cboTipoProducto.Size = new System.Drawing.Size(375, 27);
+            this.cboTipoProducto.Size = new System.Drawing.Size(255, 27);
             this.cboTipoProducto.TabIndex = 13;
             // 
             // cboModelo
@@ -261,7 +319,7 @@
             this.cboModelo.FormattingEnabled = true;
             this.cboModelo.Location = new System.Drawing.Point(214, 127);
             this.cboModelo.Name = "cboModelo";
-            this.cboModelo.Size = new System.Drawing.Size(375, 27);
+            this.cboModelo.Size = new System.Drawing.Size(255, 27);
             this.cboModelo.TabIndex = 12;
             // 
             // cboMarca
@@ -269,14 +327,14 @@
             this.cboMarca.FormattingEnabled = true;
             this.cboMarca.Location = new System.Drawing.Point(214, 88);
             this.cboMarca.Name = "cboMarca";
-            this.cboMarca.Size = new System.Drawing.Size(375, 27);
+            this.cboMarca.Size = new System.Drawing.Size(255, 27);
             this.cboMarca.TabIndex = 11;
             // 
             // txtCodigoBarras
             // 
             this.txtCodigoBarras.Location = new System.Drawing.Point(214, 41);
             this.txtCodigoBarras.Name = "txtCodigoBarras";
-            this.txtCodigoBarras.Size = new System.Drawing.Size(375, 27);
+            this.txtCodigoBarras.Size = new System.Drawing.Size(255, 27);
             this.txtCodigoBarras.TabIndex = 10;
             this.txtCodigoBarras.Enter += new System.EventHandler(this.txtCodigoBarras_Enter);
             this.txtCodigoBarras.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodigoBarras_KeyPress);
@@ -286,7 +344,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(6, 384);
+            this.label8.Location = new System.Drawing.Point(6, 499);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(54, 17);
             this.label8.TabIndex = 9;
@@ -296,7 +354,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(6, 333);
+            this.label7.Location = new System.Drawing.Point(6, 415);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(127, 17);
             this.label7.TabIndex = 8;
@@ -367,11 +425,28 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(10, 460);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(75, 17);
+            this.label11.TabIndex = 30;
+            this.label11.Text = "Existencia";
+            // 
+            // txtExistencia
+            // 
+            this.txtExistencia.Location = new System.Drawing.Point(214, 450);
+            this.txtExistencia.Name = "txtExistencia";
+            this.txtExistencia.Size = new System.Drawing.Size(255, 27);
+            this.txtExistencia.TabIndex = 31;
+            // 
             // frmProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1158, 708);
+            this.ClientSize = new System.Drawing.Size(1158, 842);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.toolStrip1);
             this.Name = "frmProductos";
@@ -423,5 +498,12 @@
         private System.Windows.Forms.CheckBox chkInactivo;
         private System.Windows.Forms.TextBox txtExtrasAccesorios;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button btnPDF;
+        private System.Windows.Forms.TextBox txtPrecio;
+        private System.Windows.Forms.TextBox txtDocumentoEspecificaciones;
+        private System.Windows.Forms.TextBox txtExistencia;
+        private System.Windows.Forms.Label label11;
     }
 }
