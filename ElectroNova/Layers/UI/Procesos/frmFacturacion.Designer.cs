@@ -644,6 +644,7 @@
             this.btnBorrarProducto.TabIndex = 135;
             this.btnBorrarProducto.Text = "Borrar (-)";
             this.btnBorrarProducto.UseVisualStyleBackColor = false;
+            this.btnBorrarProducto.Click += new System.EventHandler(this.btnBorrarProducto_Click);
             // 
             // dgvDatos
             // 

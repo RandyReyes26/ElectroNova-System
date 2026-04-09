@@ -234,5 +234,47 @@ namespace ElectroNova.Layers.UI
             txtImpuesto.Text = impuesto.ToString("N2");
             txtTotal.Text = total.ToString("N2");
         }
+
+        private void btnBorrarProducto_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (dgvDatos.SelectedRows.Count == 0)
+                {
+                    MessageBox.Show("Seleccione un producto del detalle.",
+                        "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                // 🔥 índice de la fila seleccionada
+                int fila = dgvDatos.SelectedRows[0].Index;
+
+                if (fila >= 0 && fila < detalleFactura.Count)
+                {
+                    // 🔥 eliminar de la lista
+                    detalleFactura.RemoveAt(fila);
+
+                    // 🔥 refrescar grid
+                    dgvDatos.DataSource = null;
+                    dgvDatos.DataSource = detalleFactura;
+
+                    // 🔥 ocultar ID si quieres
+                    if (dgvDatos.Columns["ID_Producto"] != null)
+                        dgvDatos.Columns["ID_Producto"].Visible = false;
+
+                    dgvDatos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                    dgvDatos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+                    dgvDatos.ReadOnly = true;
+
+                    // 🔥 recalcular totales
+                    CalcularTotales();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al eliminar producto: " + ex.Message,
+                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }
