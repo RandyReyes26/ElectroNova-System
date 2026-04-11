@@ -41,6 +41,11 @@
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.13.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="QRCoder, Version=1.8.0.0, Culture=neutral, PublicKeyToken=c4ed5b9ae8358a28, processorArchitecture=MSIL">
+      <HintPath>..\packages\QRCoder.1.8.0\lib\net40\QRCoder.dll</HintPath>
+    </Reference>
     <Reference Include="QuestPDF, Version=2026.2.4.0, Culture=neutral, PublicKeyToken=0f3c2b2315ff52c8, processorArchitecture=MSIL">
       <HintPath>..\packages\QuestPDF.2026.2.4\lib\netstandard2.0\QuestPDF.dll</HintPath>
     </Reference>
@@ -63,6 +68,7 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Connected Services\ServiceReference1\Reference.cs">
@@ -70,6 +76,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Enumeraciones\BancoTarjeta.cs" />
+    <Compile Include="Enumeraciones\BancoTransferencia.cs" />
     <Compile Include="Interfaces\IBLLCliente.cs" />
     <Compile Include="Interfaces\IBLLControlStock.cs" />
     <Compile Include="Interfaces\IBLLDetalleFactura.cs" />
@@ -81,6 +89,7 @@
     <Compile Include="Interfaces\IBLLPadron.cs" />
     <Compile Include="Interfaces\IBLLProducto.cs" />
     <Compile Include="Interfaces\IBLLRol.cs" />
+    <Compile Include="Interfaces\IBLLTarjeta.cs" />
     <Compile Include="Interfaces\IBLLTipoDispositivo.cs" />
     <Compile Include="Interfaces\IBLLUbicacion.cs" />
     <Compile Include="Interfaces\IBLLUsuario.cs" />
@@ -93,11 +102,13 @@
     <Compile Include="Interfaces\IDALModelo.cs" />
     <Compile Include="Interfaces\IDALProducto.cs" />
     <Compile Include="Interfaces\IDALRol.cs" />
+    <Compile Include="Interfaces\IDALTarjeta.cs" />
     <Compile Include="Interfaces\IDALTipoDispositivo.cs" />
     <Compile Include="Interfaces\IDALUsuario.cs" />
     <Compile Include="Layers\BLL\BLLCliente.cs" />
     <Compile Include="Layers\BLL\BLLConexionWebServer.cs" />
     <Compile Include="Layers\BLL\BLLControlStock.cs" />
+    <Compile Include="Layers\BLL\BLLDetalleFactura.cs" />
     <Compile Include="Layers\BLL\BLLFactura.cs" />
     <Compile Include="Layers\BLL\BLLFoto.cs" />
     <Compile Include="Layers\BLL\BLLImpuesto.cs" />
@@ -106,17 +117,20 @@
     <Compile Include="Layers\BLL\BLLPadron.cs" />
     <Compile Include="Layers\BLL\BLLProducto.cs" />
     <Compile Include="Layers\BLL\BLLRol.cs" />
+    <Compile Include="Layers\BLL\BLLTarjeta.cs" />
     <Compile Include="Layers\BLL\BLLTipoDispositivo.cs" />
     <Compile Include="Layers\BLL\BLLUbicacion.cs" />
     <Compile Include="Layers\BLL\BLLUsuario.cs" />
     <Compile Include="Layers\DAL\DALCliente.cs" />
     <Compile Include="Layers\DAL\DALControlStock.cs" />
+    <Compile Include="Layers\DAL\DALDetalleFactura.cs" />
     <Compile Include="Layers\DAL\DALFactura.cs" />
     <Compile Include="Layers\DAL\DALImpuesto.cs" />
     <Compile Include="Layers\DAL\DALMarca.cs" />
     <Compile Include="Layers\DAL\DALModelo.cs" />
     <Compile Include="Layers\DAL\DALProducto.cs" />
     <Compile Include="Layers\DAL\DALRol.cs" />
+    <Compile Include="Layers\DAL\DALTarjeta.cs" />
     <Compile Include="Layers\DAL\DALTipoDispositivo.cs" />
     <Compile Include="Layers\DAL\DALUsuario.cs" />
     <Compile Include="Layers\Entities\Clientes.cs" />
@@ -133,8 +147,33 @@
     <Compile Include="Layers\Entities\Modelo.cs" />
     <Compile Include="Layers\Entities\Productos.cs" />
     <Compile Include="Layers\Entities\Rol.cs" />
+    <Compile Include="Layers\Entities\Tarjeta.cs" />
     <Compile Include="Layers\Entities\TipoDispositivo.cs" />
     <Compile Include="Layers\Entities\Usuario.cs" />
+    <Compile Include="Layers\UI\Reportes\frmGraficoVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layers\UI\Reportes\frmGraficoVentas.Designer.cs">
+      <DependentUpon>frmGraficoVentas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layers\UI\Reportes\frmReporteClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layers\UI\Reportes\frmReporteClientes.Designer.cs">
+      <DependentUpon>frmReporteClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layers\UI\Reportes\frmReporteFacturas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layers\UI\Reportes\frmReporteFacturas.Designer.cs">
+      <DependentUpon>frmReporteFacturas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layers\UI\Reportes\frmReporteProductosVendidos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layers\UI\Reportes\frmReporteProductosVendidos.Designer.cs">
+      <DependentUpon>frmReporteProductosVendidos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Layers\UI\Filtros\frmFiltroCliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -267,6 +306,9 @@
     <EmbeddedResource Include="Layers\UI\frmTipoDispositivo.resx">
       <DependentUpon>frmTipoDispositivo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Layers\UI\Reportes\frmReporteClientes.resx">
+      <DependentUpon>frmReporteClientes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
@@ -293,10 +335,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Layers\Reportes\" />
-    <Folder Include="Layers\UI\Reportes\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Connected Services\ServiceReference1\wsindicadoreseconomicos.disco" />
     <None Include="Connected Services\ServiceReference1\configuration91.svcinfo" />
@@ -309,14 +348,10 @@
     <Content Include="Resources\disquete.png" />
     <Content Include="Resources\editar.png" />
     <Content Include="Resources\eliminar-usuario.png" />
-    <Content Include="Resources\gerente.png" />
     <Content Include="Resources\imagen.png" />
     <Content Include="Resources\informacion.png" />
-    <Content Include="Resources\llave-inglesa.png" />
     <Content Include="Resources\logoLogin.png" />
     <Content Include="Resources\menuLogo %282%29.png" />
-    <Content Include="Resources\proceso.png" />
-    <Content Include="Resources\reporte.png" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />

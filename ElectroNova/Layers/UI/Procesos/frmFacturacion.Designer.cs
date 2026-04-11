@@ -51,6 +51,8 @@
             this.rbtTransferencia = new System.Windows.Forms.RadioButton();
             this.rbtTarjeta = new System.Windows.Forms.RadioButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
             this.lblTipoCambio = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.txtNumeroFactura = new System.Windows.Forms.TextBox();
@@ -138,6 +140,7 @@
             this.btnGuardarFactura.TabIndex = 135;
             this.btnGuardarFactura.Text = "Guardar Factura ✓";
             this.btnGuardarFactura.UseVisualStyleBackColor = false;
+            this.btnGuardarFactura.Click += new System.EventHandler(this.btnGuardarFactura_Click);
             // 
             // btnLimpiarFirma
             // 
@@ -334,6 +337,8 @@
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.SystemColors.Control;
+            this.groupBox2.Controls.Add(this.txtEmail);
+            this.groupBox2.Controls.Add(this.label12);
             this.groupBox2.Controls.Add(this.lblTipoCambio);
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.txtNumeroFactura);
@@ -352,6 +357,23 @@
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Facturación de Venta";
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.Location = new System.Drawing.Point(131, 110);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(385, 27);
+            this.txtEmail.TabIndex = 49;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(16, 110);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(54, 19);
+            this.label12.TabIndex = 48;
+            this.label12.Text = "Email:";
             // 
             // lblTipoCambio
             // 
@@ -407,7 +429,7 @@
             // 
             // txtCliente
             // 
-            this.txtCliente.Location = new System.Drawing.Point(131, 92);
+            this.txtCliente.Location = new System.Drawing.Point(131, 65);
             this.txtCliente.Name = "txtCliente";
             this.txtCliente.Size = new System.Drawing.Size(385, 27);
             this.txtCliente.TabIndex = 5;
@@ -447,7 +469,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(16, 99);
+            this.label5.Location = new System.Drawing.Point(16, 68);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(64, 19);
             this.label5.TabIndex = 0;
@@ -777,5 +799,7 @@
         private System.Windows.Forms.TextBox txtPrecioUnitario;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnBorrarProducto;
+        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.Label label12;
     }
 }

@@ -9,8 +9,12 @@ namespace ElectroNova.Interfaces
 {
     interface IDALFactura
     {
-        Factura ObtenerFacturaPorId(int pId_Factura);
-        int GuardarFactura(Factura pFactura);
+        Factura GuardarFactura(Factura pFactura, List<DetalleFactura> pListaDetalle);
+        int ObtenerSiguienteNumeroFactura();
+        int ObtenerNumeroActualFactura();
+        Factura ObtenerFacturaPorId(string pId_Factura);
+        List<Factura> ObtenerFacturas();
+        bool AnularFactura(string pId_Factura);
 
     }
 }

@@ -3,32 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{28B6F992-692C-4507-8E51-AA3C2A0D8013}|ElectroNova\\ElectroNova.csproj|c:\\users\\randy\\onedrive\\escritorio\\electronova\\electronova\\layers\\entities\\factura.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{28B6F992-692C-4507-8E51-AA3C2A0D8013}|ElectroNova\\ElectroNova.csproj|solutionrelative:electronova\\layers\\entities\\factura.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{28B6F992-692C-4507-8E51-AA3C2A0D8013}|ElectroNova\\ElectroNova.csproj|c:\\users\\randy\\onedrive\\escritorio\\electronova\\electronova\\layers\\ui\\reportes\\frmreporteclientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{28B6F992-692C-4507-8E51-AA3C2A0D8013}|ElectroNova\\ElectroNova.csproj|solutionrelative:electronova\\layers\\ui\\reportes\\frmreporteclientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{28B6F992-692C-4507-8E51-AA3C2A0D8013}|ElectroNova\\ElectroNova.csproj|c:\\users\\randy\\onedrive\\escritorio\\electronova\\electronova\\layers\\bll\\bllfactura.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{28B6F992-692C-4507-8E51-AA3C2A0D8013}|ElectroNova\\ElectroNova.csproj|solutionrelative:electronova\\layers\\bll\\bllfactura.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{28B6F992-692C-4507-8E51-AA3C2A0D8013}|ElectroNova\\ElectroNova.csproj|c:\\users\\randy\\onedrive\\escritorio\\electronova\\electronova\\layers\\dal\\dalfactura.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{28B6F992-692C-4507-8E51-AA3C2A0D8013}|ElectroNova\\ElectroNova.csproj|solutionrelative:electronova\\layers\\dal\\dalfactura.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{28B6F992-692C-4507-8E51-AA3C2A0D8013}|ElectroNova\\ElectroNova.csproj|c:\\users\\randy\\onedrive\\escritorio\\electronova\\electronova\\interfaces\\iblldetallefactura.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{28B6F992-692C-4507-8E51-AA3C2A0D8013}|ElectroNova\\ElectroNova.csproj|solutionrelative:electronova\\interfaces\\iblldetallefactura.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{28B6F992-692C-4507-8E51-AA3C2A0D8013}|ElectroNova\\ElectroNova.csproj|c:\\users\\randy\\onedrive\\escritorio\\electronova\\electronova\\interfaces\\idaldetallefactura.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{28B6F992-692C-4507-8E51-AA3C2A0D8013}|ElectroNova\\ElectroNova.csproj|solutionrelative:electronova\\interfaces\\idaldetallefactura.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{28B6F992-692C-4507-8E51-AA3C2A0D8013}|ElectroNova\\ElectroNova.csproj|c:\\users\\randy\\onedrive\\escritorio\\electronova\\electronova\\interfaces\\idalfactura.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{28B6F992-692C-4507-8E51-AA3C2A0D8013}|ElectroNova\\ElectroNova.csproj|solutionrelative:electronova\\interfaces\\idalfactura.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{28B6F992-692C-4507-8E51-AA3C2A0D8013}|ElectroNova\\ElectroNova.csproj|c:\\users\\randy\\onedrive\\escritorio\\electronova\\electronova\\interfaces\\ibllfactura.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{28B6F992-692C-4507-8E51-AA3C2A0D8013}|ElectroNova\\ElectroNova.csproj|solutionrelative:electronova\\interfaces\\ibllfactura.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{28B6F992-692C-4507-8E51-AA3C2A0D8013}|ElectroNova\\ElectroNova.csproj|c:\\users\\randy\\onedrive\\escritorio\\electronova\\electronova\\layers\\ui\\reportes\\frmreporteclientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28B6F992-692C-4507-8E51-AA3C2A0D8013}|ElectroNova\\ElectroNova.csproj|solutionrelative:electronova\\layers\\ui\\reportes\\frmreporteclientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,98 +18,32 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Factura.cs",
-              "DocumentMoniker": "C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\ElectroNova\\Layers\\Entities\\Factura.cs",
-              "RelativeDocumentMoniker": "ElectroNova\\Layers\\Entities\\Factura.cs",
-              "ToolTip": "C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\ElectroNova\\Layers\\Entities\\Factura.cs",
-              "RelativeToolTip": "ElectroNova\\Layers\\Entities\\Factura.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAuAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-09T03:00:33.207Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "BLLFactura.cs",
-              "DocumentMoniker": "C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\ElectroNova\\Layers\\BLL\\BLLFactura.cs",
-              "RelativeDocumentMoniker": "ElectroNova\\Layers\\BLL\\BLLFactura.cs",
-              "ToolTip": "C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\ElectroNova\\Layers\\BLL\\BLLFactura.cs",
-              "RelativeToolTip": "ElectroNova\\Layers\\BLL\\BLLFactura.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Title": "frmReporteClientes.cs",
+              "DocumentMoniker": "C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\ElectroNova\\Layers\\UI\\Reportes\\frmReporteClientes.cs",
+              "RelativeDocumentMoniker": "ElectroNova\\Layers\\UI\\Reportes\\frmReporteClientes.cs",
+              "ToolTip": "C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\ElectroNova\\Layers\\UI\\Reportes\\frmReporteClientes.cs",
+              "RelativeToolTip": "ElectroNova\\Layers\\UI\\Reportes\\frmReporteClientes.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-09T03:00:28.215Z",
+              "WhenOpened": "2026-04-11T05:02:24.905Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "DALFactura.cs",
-              "DocumentMoniker": "C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\ElectroNova\\Layers\\DAL\\DALFactura.cs",
-              "RelativeDocumentMoniker": "ElectroNova\\Layers\\DAL\\DALFactura.cs",
-              "ToolTip": "C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\ElectroNova\\Layers\\DAL\\DALFactura.cs",
-              "RelativeToolTip": "ElectroNova\\Layers\\DAL\\DALFactura.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "DocumentIndex": 0,
+              "Title": "frmReporteClientes.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\ElectroNova\\Layers\\UI\\Reportes\\frmReporteClientes.cs",
+              "RelativeDocumentMoniker": "ElectroNova\\Layers\\UI\\Reportes\\frmReporteClientes.cs",
+              "ToolTip": "C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\ElectroNova\\Layers\\UI\\Reportes\\frmReporteClientes.cs [Design]",
+              "RelativeToolTip": "ElectroNova\\Layers\\UI\\Reportes\\frmReporteClientes.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-09T03:00:01.711Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "IBLLDetalleFactura.cs",
-              "DocumentMoniker": "C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\ElectroNova\\Interfaces\\IBLLDetalleFactura.cs",
-              "RelativeDocumentMoniker": "ElectroNova\\Interfaces\\IBLLDetalleFactura.cs",
-              "ToolTip": "C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\ElectroNova\\Interfaces\\IBLLDetalleFactura.cs",
-              "RelativeToolTip": "ElectroNova\\Interfaces\\IBLLDetalleFactura.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-09T02:59:55.311Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "IDALDetalleFactura.cs",
-              "DocumentMoniker": "C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\ElectroNova\\Interfaces\\IDALDetalleFactura.cs",
-              "RelativeDocumentMoniker": "ElectroNova\\Interfaces\\IDALDetalleFactura.cs",
-              "ToolTip": "C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\ElectroNova\\Interfaces\\IDALDetalleFactura.cs",
-              "RelativeToolTip": "ElectroNova\\Interfaces\\IDALDetalleFactura.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-09T02:59:52.454Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "IDALFactura.cs",
-              "DocumentMoniker": "C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\ElectroNova\\Interfaces\\IDALFactura.cs",
-              "RelativeDocumentMoniker": "ElectroNova\\Interfaces\\IDALFactura.cs",
-              "ToolTip": "C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\ElectroNova\\Interfaces\\IDALFactura.cs",
-              "RelativeToolTip": "ElectroNova\\Interfaces\\IDALFactura.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-09T02:59:47.86Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "IBLLFactura.cs",
-              "DocumentMoniker": "C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\ElectroNova\\Interfaces\\IBLLFactura.cs",
-              "RelativeDocumentMoniker": "ElectroNova\\Interfaces\\IBLLFactura.cs",
-              "ToolTip": "C:\\Users\\randy\\OneDrive\\Escritorio\\ElectroNova\\ElectroNova\\Interfaces\\IBLLFactura.cs",
-              "RelativeToolTip": "ElectroNova\\Interfaces\\IBLLFactura.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-09T02:59:44.025Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-11T04:48:04.202Z",
+              "EditorCaption": " [Design]"
             }
           ]
         }

@@ -115,7 +115,8 @@ namespace ElectroNova.Layers.UI.Filtros
                     ID_Cliente = Convert.ToInt32(row.Cells[0].Value),
                     Identificacion = row.Cells[1].Value.ToString(),
                     Nombre = row.Cells[3].Value.ToString(),
-                    Apellidos = row.Cells[4].Value.ToString()
+                    Apellidos = row.Cells[4].Value.ToString(),
+                    Email = row.Cells["Email"].Value?.ToString()
                 };
 
                 this.DialogResult = DialogResult.OK;

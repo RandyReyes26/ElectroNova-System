@@ -120,6 +120,7 @@ CREATE TABLE TipoDispositivo (
     Estado BIT 
 );
 
+
 /* ================================
    Datos de ejemplo
 ================================ */
@@ -217,29 +218,45 @@ select * from IngresoStock
 ================================ */
 CREATE TABLE Factura (
     ID_Factura VARCHAR(20) PRIMARY KEY, -- Ej: FAC-0001
+
     ID_Cliente INT NOT NULL,
+    ID_Usuario INT NOT NULL,
     Fecha DATETIME NOT NULL,
 
-    SubtotalCRC DECIMAL(18,2),
-    ImpuestoCRC DECIMAL(18,2),
-    TotalCRC DECIMAL(18,2),
+    Subtotal DECIMAL(18,2) NOT NULL,
+    IVA DECIMAL(18,2) NOT NULL,
+    TotalCRC DECIMAL(18,2) NOT NULL,
+    TotalUSD DECIMAL(18,2) NOT NULL,
+    TipoCambio DECIMAL(18,2) NOT NULL,
 
-    TipoCambio DECIMAL(18,2),
-    SubtotalUSD DECIMAL(18,2),
-    ImpuestoUSD DECIMAL(18,2),
-    TotalUSD DECIMAL(18,2),
+    FirmaCliente VARBINARY(MAX) NULL,
+    DocumentoXML XML NULL,
 
-    MetodoPago VARCHAR(20) NOT NULL, -- TARJETA / TRANSFERENCIA / SINPE
-    XMLFactura XML, -- XML enviado al cliente
-    FirmaCliente VARBINARY(MAX), -- imagen de firma hecha con mouse
+    TipoPago VARCHAR(50) NULL,
+    Descuento DECIMAL(18,2) NULL,
+    Banco VARCHAR(100) NULL,
+    TipoTarjeta VARCHAR(50) NULL,
 
+    Estado BIT NOT NULL DEFAULT 1,
 
     CONSTRAINT FK_Factura_Cliente FOREIGN KEY (ID_Cliente)
-        REFERENCES Cliente(ID_Cliente)
+        REFERENCES Cliente(ID_Cliente),
+
+    CONSTRAINT FK_Factura_Usuario FOREIGN KEY (ID_Usuario)
+        REFERENCES Usuario(ID_Usuario)
 );
-
-
+ALTER TABLE Factura
+DROP COLUMN TipoTarjeta;
+ALTER TABLE Factura
+ADD ID_Tarjeta INT NULL;
+ALTER TABLE Factura
+ADD CONSTRAINT FK_Factura_Tarjeta
+FOREIGN KEY (ID_Tarjeta) REFERENCES Tarjeta(ID_Tarjeta);
 select * from Factura
+
+ALTER TABLE Factura DROP CONSTRAINT FK_Factura_Usuario;
+
+ALTER TABLE Factura DROP COLUMN ID_Usuario;
 
 /* ================================
    TABLA DETALLE FACTURA
@@ -251,11 +268,10 @@ CREATE TABLE DetalleFactura (
     ID_Producto INT NOT NULL,
 
     Cantidad INT NOT NULL,
-    PrecioUnitarioCRC DECIMAL(18,2) NOT NULL,
-    SubtotalLineaCRC DECIMAL(18,2) NOT NULL,
-
-    PrecioUnitarioUSD DECIMAL(18,2) NOT NULL,
-    SubtotalLineaUSD DECIMAL(18,2) NOT NULL,
+    Precio DECIMAL(18,2) NOT NULL,
+    Subtotal DECIMAL(18,2) NOT NULL,
+    IVA DECIMAL(18,2) NOT NULL,
+    Total DECIMAL(18,2) NOT NULL,
 
     CONSTRAINT FK_DetalleFactura_Factura FOREIGN KEY (ID_Factura)
         REFERENCES Factura(ID_Factura),
@@ -276,4 +292,52 @@ VALUES
 (1, 'Visa'),
 (2, 'Mastercard'),
 (3, 'American Express');
+
+select * from Tarjeta
 /*****************************************/
+
+USE ProyectoElectroNova1;
+GO
+
+-- =========================
+-- LIMPIEZA EN ORDEN CORRECTO
+-- =========================
+
+DELETE FROM DetalleFactura;
+DELETE FROM Factura;
+DELETE FROM IngresoStock;
+DELETE FROM Producto;
+DELETE FROM Cliente;
+DELETE FROM Modelo;
+DELETE FROM Marca;
+DELETE FROM TipoDispositivo;
+DELETE FROM Tarjeta;
+
+-- =========================
+-- RESEED DE IDENTITIES
+-- =========================
+
+DBCC CHECKIDENT ('DetalleFactura', RESEED, 0);
+DBCC CHECKIDENT ('IngresoStock', RESEED, 0);
+DBCC CHECKIDENT ('Producto', RESEED, 0);
+DBCC CHECKIDENT ('Cliente', RESEED, 0);
+DBCC CHECKIDENT ('Modelo', RESEED, 0);
+DBCC CHECKIDENT ('Marca', RESEED, 0);
+DBCC CHECKIDENT ('TipoDispositivo', RESEED, 0);
+
+-- Tarjeta no lleva IDENTITY en tu script, así que no ocupa reseed
+-- Factura tampoco, porque usa VARCHAR tipo FAC-0001
+
+-- =========================
+-- VERIFICACIÓN
+-- =========================
+
+SELECT * FROM DetalleFactura;
+SELECT * FROM Factura;
+SELECT * FROM IngresoStock;
+SELECT * FROM Producto;
+SELECT * FROM Cliente;
+SELECT * FROM Modelo;
+SELECT * FROM Marca;
+SELECT * FROM TipoDispositivo;
+SELECT * FROM Tarjeta;
