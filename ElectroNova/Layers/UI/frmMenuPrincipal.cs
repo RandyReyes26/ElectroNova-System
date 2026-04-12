@@ -1,5 +1,6 @@
 ﻿using ElectroNova.Layers.BLL;
 using ElectroNova.Layers.Entities;
+using ElectroNova.Layers.Reportes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -332,6 +333,70 @@ namespace ElectroNova.Layers.UI
 
 
                 AbrirFormulario((ToolStripMenuItem)sender, new frmImpuesto());
+            }
+
+        }
+
+        private void rEPORTESCLIENTESToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if(formularioActivo == null || !(formularioActivo is frmReporteClientes))
+            {
+
+                if (formularioActivo != null)
+                {
+                    CerrarFormulario(formularioActivo);
+                }
+
+
+                AbrirFormulario((ToolStripMenuItem)sender, new frmReporteClientes());
+            }
+
+        }
+
+        private void rEPORTESDEFACTURAToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (formularioActivo == null || !(formularioActivo is frmReporteFacturas))
+            {
+
+                if (formularioActivo != null)
+                {
+                    CerrarFormulario(formularioActivo);
+                }
+
+
+                AbrirFormulario((ToolStripMenuItem)sender, new frmReporteFacturas());
+            }
+
+        }
+
+        private void rEPORTEDELPRODUCTOToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (formularioActivo == null || !(formularioActivo is frmReporteProductosVendidos))
+            {
+
+                if (formularioActivo != null)
+                {
+                    CerrarFormulario(formularioActivo);
+                }
+
+
+                AbrirFormulario((ToolStripMenuItem)sender, new frmReporteProductosVendidos());
+            }
+
+        }
+
+        private void rEPORTEGRAFICOToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (formularioActivo == null || !(formularioActivo is frmGraficoVentas))
+            {
+
+                if (formularioActivo != null)
+                {
+                    CerrarFormulario(formularioActivo);
+                }
+
+
+                AbrirFormulario((ToolStripMenuItem)sender, new frmGraficoVentas());
             }
 
         }

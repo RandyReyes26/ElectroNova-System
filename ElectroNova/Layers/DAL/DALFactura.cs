@@ -197,13 +197,34 @@ namespace ElectroNova.Layers.DAL
                                     oFactura.TotalCRC = decimal.Parse(reader["TotalCRC"].ToString());
                                     oFactura.TotalUSD = decimal.Parse(reader["TotalUSD"].ToString());
                                     oFactura.TipoCambio = decimal.Parse(reader["TipoCambio"].ToString());
-                                    oFactura.FirmaCliente = (byte[])reader["FirmaCliente"];
-                                    oFactura.DocumentoXML = reader["DocumentoXML"] == DBNull.Value  ? null: reader["DocumentoXML"].ToString();
-                                    oFactura.TipoPago = reader["TipoPago"].ToString();
-                                    oFactura.Descuento = decimal.Parse(reader["Descuento"].ToString());
-                                    oFactura.Banco = reader["Banco"].ToString();
-                                    oFactura.Estado = bool.Parse(reader["Estado"].ToString());
-                                    oFactura.ID_Tarjeta = int.Parse(reader["ID_Tarjeta"].ToString());
+
+                                    oFactura.FirmaCliente = reader["FirmaCliente"] == DBNull.Value
+                                        ? null
+                                        : (byte[])reader["FirmaCliente"];
+
+                                    oFactura.DocumentoXML = reader["DocumentoXML"] == DBNull.Value
+                                        ? null
+                                        : reader["DocumentoXML"].ToString();
+
+                                    oFactura.TipoPago = reader["TipoPago"] == DBNull.Value
+                                        ? null
+                                        : reader["TipoPago"].ToString();
+
+                                    oFactura.Descuento = reader["Descuento"] == DBNull.Value
+                                        ? 0
+                                        : decimal.Parse(reader["Descuento"].ToString());
+
+                                    oFactura.Banco = reader["Banco"] == DBNull.Value
+                                        ? null
+                                        : reader["Banco"].ToString();
+
+                                    oFactura.Estado = reader["Estado"] == DBNull.Value
+                                        ? false
+                                        : bool.Parse(reader["Estado"].ToString());
+
+                                    oFactura.ID_Tarjeta = reader["ID_Tarjeta"] == DBNull.Value
+                                        ? 0
+                                        : int.Parse(reader["ID_Tarjeta"].ToString());
 
                                 }
                                 catch (Exception ex)

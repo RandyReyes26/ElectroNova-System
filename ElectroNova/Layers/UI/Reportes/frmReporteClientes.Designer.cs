@@ -62,7 +62,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(921, 565);
+            this.panel1.Size = new System.Drawing.Size(934, 576);
             this.panel1.TabIndex = 0;
             // 
             // groupBox2
@@ -100,6 +100,7 @@
             this.pblImagen.Location = new System.Drawing.Point(6, 21);
             this.pblImagen.Name = "pblImagen";
             this.pblImagen.Size = new System.Drawing.Size(213, 250);
+            this.pblImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pblImagen.TabIndex = 0;
             this.pblImagen.TabStop = false;
             // 
@@ -159,6 +160,7 @@
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(400, 22);
             this.txtNombre.TabIndex = 1;
+            this.txtNombre.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtNombre_KeyDown);
             // 
             // label2
             // 
@@ -178,7 +180,6 @@
             this.label1.Size = new System.Drawing.Size(279, 33);
             this.label1.TabIndex = 8;
             this.label1.Text = "Reporte de Clientes";
-        
             // 
             // btnSalir
             // 
@@ -208,10 +209,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(921, 565);
+            this.ClientSize = new System.Drawing.Size(934, 576);
             this.Controls.Add(this.panel1);
             this.Name = "frmReporteClientes";
             this.Text = "frmReporteClientes";
+            this.Load += new System.EventHandler(this.frmReporteClientes_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.groupBox2.ResumeLayout(false);

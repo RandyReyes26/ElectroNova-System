@@ -52,6 +52,10 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.pnlContenido = new System.Windows.Forms.Panel();
+            this.rEPORTESCLIENTESToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.rEPORTESDEFACTURAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.rEPORTEDELPRODUCTOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.rEPORTEGRAFICOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuVertical.SuspendLayout();
             this.panel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -205,6 +209,11 @@
             // 
             // ToolStripReportes
             // 
+            this.ToolStripReportes.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.rEPORTESCLIENTESToolStripMenuItem,
+            this.rEPORTESDEFACTURAToolStripMenuItem,
+            this.rEPORTEDELPRODUCTOToolStripMenuItem,
+            this.rEPORTEGRAFICOToolStripMenuItem});
             this.ToolStripReportes.Image = ((System.Drawing.Image)(resources.GetObject("ToolStripReportes.Image")));
             this.ToolStripReportes.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.ToolStripReportes.Name = "ToolStripReportes";
@@ -256,6 +265,34 @@
             this.pnlContenido.Size = new System.Drawing.Size(1296, 661);
             this.pnlContenido.TabIndex = 1;
             // 
+            // rEPORTESCLIENTESToolStripMenuItem
+            // 
+            this.rEPORTESCLIENTESToolStripMenuItem.Name = "rEPORTESCLIENTESToolStripMenuItem";
+            this.rEPORTESCLIENTESToolStripMenuItem.Size = new System.Drawing.Size(306, 28);
+            this.rEPORTESCLIENTESToolStripMenuItem.Text = "REPORTES CLIENTES";
+            this.rEPORTESCLIENTESToolStripMenuItem.Click += new System.EventHandler(this.rEPORTESCLIENTESToolStripMenuItem_Click);
+            // 
+            // rEPORTESDEFACTURAToolStripMenuItem
+            // 
+            this.rEPORTESDEFACTURAToolStripMenuItem.Name = "rEPORTESDEFACTURAToolStripMenuItem";
+            this.rEPORTESDEFACTURAToolStripMenuItem.Size = new System.Drawing.Size(334, 28);
+            this.rEPORTESDEFACTURAToolStripMenuItem.Text = "REPORTES DE FACTURA";
+            this.rEPORTESDEFACTURAToolStripMenuItem.Click += new System.EventHandler(this.rEPORTESDEFACTURAToolStripMenuItem_Click);
+            // 
+            // rEPORTEDELPRODUCTOToolStripMenuItem
+            // 
+            this.rEPORTEDELPRODUCTOToolStripMenuItem.Name = "rEPORTEDELPRODUCTOToolStripMenuItem";
+            this.rEPORTEDELPRODUCTOToolStripMenuItem.Size = new System.Drawing.Size(355, 28);
+            this.rEPORTEDELPRODUCTOToolStripMenuItem.Text = "REPORTE DEL PRODUCTO";
+            this.rEPORTEDELPRODUCTOToolStripMenuItem.Click += new System.EventHandler(this.rEPORTEDELPRODUCTOToolStripMenuItem_Click);
+            // 
+            // rEPORTEGRAFICOToolStripMenuItem
+            // 
+            this.rEPORTEGRAFICOToolStripMenuItem.Name = "rEPORTEGRAFICOToolStripMenuItem";
+            this.rEPORTEGRAFICOToolStripMenuItem.Size = new System.Drawing.Size(355, 28);
+            this.rEPORTEGRAFICOToolStripMenuItem.Text = "REPORTE GRAFICO";
+            this.rEPORTEGRAFICOToolStripMenuItem.Click += new System.EventHandler(this.rEPORTEGRAFICOToolStripMenuItem_Click);
+            // 
             // frmMenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -300,5 +337,9 @@
         private System.Windows.Forms.ToolStripMenuItem fACTURACÓNToolStripMenuItem;
         private System.Windows.Forms.Label lblTipoCambio;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ToolStripMenuItem rEPORTESCLIENTESToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem rEPORTESDEFACTURAToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem rEPORTEDELPRODUCTOToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem rEPORTEGRAFICOToolStripMenuItem;
     }
 }
