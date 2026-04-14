@@ -18,45 +18,29 @@ namespace ElectroNova.Layers.DAL
         public async Task<ControlStock> ActualizarStock(ControlStock pStock)
         {
             SqlCommand command = new SqlCommand();
-            ControlStock oIngresoStock = null;
 
             try
             {
                 command.CommandType = CommandType.StoredProcedure;
                 command.CommandText = "usp_UPDATE_IngresoStock";
 
+                command.Parameters.AddWithValue("@ID_IngresoStock", pStock.ID_IngresoStock);
                 command.Parameters.AddWithValue("@ID_Producto", pStock.ID_Producto);
                 command.Parameters.AddWithValue("@TipoMovimiento", pStock.TipoMovimiento);
                 command.Parameters.AddWithValue("@Cantidad", pStock.Cantidad);
                 command.Parameters.AddWithValue("@FacturaCompra", pStock.FacturaCompra);
                 command.Parameters.AddWithValue("@Observaciones", pStock.Observaciones);
 
-
                 using (IDataBase db = FactoryDatabase.CreateDataBase(FactoryConexion.CreateConnection()))
                 {
-                    using (IDataReader reader = db.ExecuteReader(command))
-                    {
-                        if (reader.Read())
-                        {
-                            oIngresoStock = new ControlStock
-                            {
-                            ID_IngresoStock = int.Parse(reader["ID_IngresoStock"].ToString()),
-                            ID_Producto = int.Parse(reader["ID_Producto"].ToString()),
-                            TipoMovimiento = reader["TipoMovimiento"].ToString(),
-                            Cantidad = int.Parse(reader["Cantidad"].ToString()),
-                            FacturaCompra = reader["FacturaCompra"].ToString(),
-                            Observaciones = reader["Observaciones"].ToString()
-
-                        };
-                        }
-                    }
+                    db.ExecuteNonQuery(command, IsolationLevel.ReadCommitted);
                 }
 
-                return oIngresoStock;
+                return pStock;
             }
             catch (Exception ex)
             {
-                _MyLogControlEventos.Error("Error al actualizar Marca", ex);
+                _MyLogControlEventos.Error("Error al actualizar Stock", ex);
                 throw;
             }
         }

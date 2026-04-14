@@ -18,7 +18,6 @@ namespace ElectroNova.Layers.DAL
         public async Task<Productos> ActualizarProducto(Productos pProducto)
         {
             SqlCommand command = new SqlCommand();
-            Productos oProducto = null;
 
             try
             {
@@ -39,40 +38,16 @@ namespace ElectroNova.Layers.DAL
                 command.Parameters.AddWithValue("@Fotografia", pProducto.Fotografia);
                 command.Parameters.AddWithValue("@Estado", pProducto.Estado);
 
-
                 using (IDataBase db = FactoryDatabase.CreateDataBase(FactoryConexion.CreateConnection()))
                 {
-                    using (IDataReader reader = db.ExecuteReader(command))
-                    {
-                        if (reader.Read())
-                        {
-                            oProducto = new Productos
-                            {
-                                ID_Producto = int.Parse(reader["ID_Producto"].ToString()),
-                                Codigo_Barras = reader["Codigo_Barras"].ToString(),
-                                ID_Marca = int.Parse(reader["ID_Marca"].ToString()),
-                                ID_Modelo = int.Parse(reader["ID_Modelo"].ToString()),
-                                ID_TipoDispositivo = int.Parse(reader["ID_TipoDispositivo"].ToString()),
-                                Informacion_General = reader["Informacion_General"].ToString(),
-                                Caracteristicas_Tecnicas = reader["Caracteristicas_Tecnicas"].ToString(),
-                                DocumentoEspecificaciones = reader["DocumentoEspecificaciones"].ToString(),
-                                Precio = reader["Precio"] == DBNull.Value ? 0 : Convert.ToDecimal(reader["Precio"]),
-                                Existencia = reader["Existencia"] == DBNull.Value ? 0 : Convert.ToInt32(reader["Existencia"]),
-                                Extras_Accesorios = reader["Extras_Accesorios"].ToString(),
-                                Fotografia = (byte[])reader["Fotografia"],
-                                Estado = bool.Parse(reader["Estado"].ToString())
-
-
-                            };
-                        }
-                    }
+                    db.ExecuteNonQuery(command, IsolationLevel.ReadCommitted);
                 }
 
-                return oProducto;
+                return pProducto;
             }
             catch (Exception ex)
             {
-                _MyLogControlEventos.Error("Error al actualizar Marca", ex);
+                _MyLogControlEventos.Error("Error al actualizar Producto", ex);
                 throw;
             }
         }

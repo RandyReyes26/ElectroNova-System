@@ -21,14 +21,11 @@ namespace ElectroNova.Layers.BLL
         public Task<ControlStock> GuardarStock(ControlStock pStock)
         {
             IDALControlStock _DALStock = new DALControlStock();
-            Task<ControlStock> oStock = null;
 
-            if (_DALStock.ObtenerStockPorId(pStock.ID_IngresoStock) == null)
-                oStock = _DALStock.GuardarStock(pStock);
+            if (pStock.ID_IngresoStock > 0)
+                return _DALStock.ActualizarStock(pStock);
             else
-                oStock = _DALStock.ActualizarStock(pStock);
-
-            return oStock;
+                return _DALStock.GuardarStock(pStock);
         }
 
         public Task<IEnumerable<ControlStock>> ObtenerStock()

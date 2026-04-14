@@ -4,9 +4,8 @@ using QuestPDF.Helpers;
 using QuestPDF.Infrastructure;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ElectroNova.Services
@@ -29,6 +28,8 @@ namespace ElectroNova.Services
                 decimal totalGeneral = listaProductos.Sum(x => x.TotalVendido);
                 int cantidadGeneral = listaProductos.Sum(x => x.CantidadVendida);
 
+                string rutaLogo = Path.Combine(Application.StartupPath, "Resources", "logoLogin.png");
+
                 Document.Create(document =>
                 {
                     document.Page(page =>
@@ -37,19 +38,50 @@ namespace ElectroNova.Services
                         page.Margin(30);
                         page.PageColor(Colors.White);
 
-                        page.Header().Column(col =>
+                        // 🔥 HEADER CON LOGO
+                        page.Header().Column(headerCol =>
                         {
-                            col.Item().Text("ElectroNova")
-                                .FontSize(18)
-                                .Bold()
-                                .FontColor(Colors.Blue.Darken2);
+                            headerCol.Item().Row(row =>
+                            {
+                                row.RelativeItem().Column(col =>
+                                {
+                                    col.Item().Text("ELECTRONOVA")
+                                        .FontSize(18)
+                                        .Bold()
+                                        .FontColor(Colors.Blue.Darken2);
 
-                            col.Item().Text($"Fecha: {DateTime.Now:dd/MM/yyyy HH:mm:ss}")
-                                .FontSize(10);
+                                    col.Item().Text("REPORTE DE PRODUCTOS VENDIDOS")
+                                        .FontSize(14)
+                                        .Bold();
 
-                            col.Item().PaddingTop(5).LineHorizontal(1);
+                                    col.Item().Text($"Fecha: {DateTime.Now:dd/MM/yyyy HH:mm:ss}")
+                                        .FontSize(10);
+                                });
+
+                                row.ConstantItem(100)
+                                    .Height(70)
+                                    .Border(1)
+                                    .AlignCenter()
+                                    .AlignMiddle()
+                                    .Element(contenedor =>
+                                    {
+                                        if (File.Exists(rutaLogo))
+                                        {
+                                            contenedor.Padding(5)
+                                                .Height(60)
+                                                .Image(rutaLogo, ImageScaling.FitArea);
+                                        }
+                                        else
+                                        {
+                                            contenedor.Text("LOGO").AlignCenter();
+                                        }
+                                    });
+                            });
+
+                            headerCol.Item().PaddingTop(8).LineHorizontal(1);
                         });
 
+                        // 🔥 CONTENIDO
                         page.Content().PaddingVertical(10).Column(col =>
                         {
                             col.Spacing(15);
@@ -113,6 +145,7 @@ namespace ElectroNova.Services
                             });
                         });
 
+                        // 🔥 FOOTER
                         page.Footer().AlignRight().Text(txt =>
                         {
                             txt.Span("Página ").FontSize(10);
@@ -128,14 +161,6 @@ namespace ElectroNova.Services
                 MessageBox.Show("Error al generar PDF: " + ex.Message,
                     "ElectroNova", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
-    
-
-        private static IContainer CellStyle(IContainer container)
-        {
-            return container.Padding(5)
-                .BorderBottom(1)
-                .BorderColor(Colors.Grey.Lighten2);
         }
     }
 }

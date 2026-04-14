@@ -120,6 +120,8 @@ CREATE TABLE TipoDispositivo (
     Estado BIT 
 );
 
+select * from TipoDispositivo
+
 
 /* ================================
    Datos de ejemplo
@@ -312,7 +314,7 @@ DELETE FROM Modelo;
 DELETE FROM Marca;
 DELETE FROM TipoDispositivo;
 DELETE FROM Tarjeta;
-
+DELETE FROM Usuario;
 -- =========================
 -- RESEED DE IDENTITIES
 -- =========================
@@ -324,6 +326,7 @@ DBCC CHECKIDENT ('Cliente', RESEED, 0);
 DBCC CHECKIDENT ('Modelo', RESEED, 0);
 DBCC CHECKIDENT ('Marca', RESEED, 0);
 DBCC CHECKIDENT ('TipoDispositivo', RESEED, 0);
+DBCC CHECKIDENT ('Usuario', RESEED, 0);
 
 -- Tarjeta no lleva IDENTITY en tu script, así que no ocupa reseed
 -- Factura tampoco, porque usa VARCHAR tipo FAC-0001
@@ -341,3 +344,4 @@ SELECT * FROM Modelo;
 SELECT * FROM Marca;
 SELECT * FROM TipoDispositivo;
 SELECT * FROM Tarjeta;
+SELECT * FROM Usuario;

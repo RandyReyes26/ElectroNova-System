@@ -41,10 +41,10 @@ namespace ElectroNova.Layers.UI.Filtros
 
             foreach (DataGridViewRow row in dgvDatos.Rows)
             {
-                if (
-                    row.Cells["Codigo_Barras"].Value.ToString().ToLower().Contains(filtro) ||
-                    row.Cells["Informacion_General"].Value.ToString().ToLower().Contains(filtro)
-                   )
+                string codigo = row.Cells["Codigo_Barras"].Value?.ToString().ToLower() ?? "";
+                string info = row.Cells["Informacion_General"].Value?.ToString().ToLower() ?? "";
+
+                if (codigo.Contains(filtro) || info.Contains(filtro))
                 {
                     row.Selected = true;
                     dgvDatos.CurrentCell = row.Cells["Codigo_Barras"];
@@ -78,25 +78,32 @@ namespace ElectroNova.Layers.UI.Filtros
             dgvDatos.AutoGenerateColumns = true;
             dgvDatos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
-            await Task.Delay(500);
+            await Task.Delay(300);
 
-            dgvDatos.DataSource = await _BLLProducto.ObtenerProducto();
+            var lista = await _BLLProducto.ObtenerProducto();
 
-            // Ocultar todo primero
+            var productosDisponibles = lista
+                .Where(p => p.Estado && p.Existencia > 0)
+                .ToList();
+
+            dgvDatos.DataSource = productosDisponibles;
+
             foreach (DataGridViewColumn col in dgvDatos.Columns)
             {
                 col.Visible = false;
             }
 
-            // Mostrar solo lo necesario
+            dgvDatos.Columns["ID_Producto"].Visible = true;
             dgvDatos.Columns["Codigo_Barras"].Visible = true;
             dgvDatos.Columns["Informacion_General"].Visible = true;
+            dgvDatos.Columns["Existencia"].Visible = true;
+            dgvDatos.Columns["Precio"].Visible = true;
 
-            // Encabezados bonitos
             dgvDatos.Columns["Codigo_Barras"].HeaderText = "Código de Barras";
-            dgvDatos.Columns["Informacion_General"].HeaderText = "Información General";
+            dgvDatos.Columns["Informacion_General"].HeaderText = "Producto";
+            dgvDatos.Columns["Existencia"].HeaderText = "Stock";
+            dgvDatos.Columns["Precio"].HeaderText = "Precio";
 
-            // Opcional: dejar el grid más limpio
             dgvDatos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvDatos.MultiSelect = false;
             dgvDatos.ReadOnly = true;

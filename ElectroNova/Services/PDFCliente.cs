@@ -3,6 +3,7 @@ using QuestPDF.Fluent;
 using QuestPDF.Helpers;
 using QuestPDF.Infrastructure;
 using System;
+using System.IO;
 using System.Windows.Forms;
 
 namespace ElectroNova.Services
@@ -22,41 +23,61 @@ namespace ElectroNova.Services
 
                 QuestPDF.Settings.License = LicenseType.Community;
 
+                string rutaLogo = Path.Combine(Application.StartupPath, "Resources", "logoLogin.png");
+
                 Document.Create(document =>
                 {
                     document.Page(page =>
                     {
                         page.Size(PageSizes.Letter);
-                        page.Margin(2, Unit.Centimetre);
-                        page.PageColor(Colors.White);
                         page.Margin(30);
+                        page.PageColor(Colors.White);
 
-                        page.Header().Row(row =>
+                        page.Header().Column(headerCol =>
                         {
-                            row.RelativeItem().Column(col =>
+                            headerCol.Item().Row(row =>
                             {
-                                col.Item().AlignLeft().Text("ElectroNova")
-                                    .Bold()
-                                    .FontSize(18)
-                                    .FontColor(Colors.Blue.Darken2);
+                                row.RelativeItem().Column(col =>
+                                {
+                                    col.Item().Text("ELECTRONOVA")
+                                        .Bold()
+                                        .FontSize(18)
+                                        .FontColor(Colors.Blue.Darken2);
 
-                                col.Item().AlignLeft().Text($"Fecha: {DateTime.Now:dd/MM/yyyy HH:mm}")
-                                    .FontSize(10);
+                                    col.Item().Text("REPORTE DE CLIENTE")
+                                        .FontSize(14)
+                                        .Bold();
 
-                                col.Item().LineHorizontal(1f);
+                                    col.Item().Text($"Fecha: {DateTime.Now:dd/MM/yyyy HH:mm}")
+                                        .FontSize(10);
+                                });
+
+                                row.ConstantItem(100)
+                                    .Height(70)
+                                    .Border(1)
+                                    .AlignCenter()
+                                    .AlignMiddle()
+                                    .Element(contenedor =>
+                                    {
+                                        if (File.Exists(rutaLogo))
+                                        {
+                                            contenedor.Padding(5)
+                                                .Height(60)
+                                                .Image(rutaLogo, ImageScaling.FitArea);
+                                        }
+                                        else
+                                        {
+                                            contenedor.Text("LOGO").AlignCenter();
+                                        }
+                                    });
                             });
+
+                            headerCol.Item().PaddingTop(8).LineHorizontal(1);
                         });
 
                         page.Content().PaddingVertical(10).Column(col =>
                         {
                             col.Spacing(15);
-
-                            col.Item().AlignCenter().Text("Reporte de Cliente")
-                                .FontSize(18)
-                                .Bold()
-                                .FontColor(Colors.Blue.Darken2);
-
-                            col.Item().LineHorizontal(1);
 
                             col.Item()
                                 .Border(1)

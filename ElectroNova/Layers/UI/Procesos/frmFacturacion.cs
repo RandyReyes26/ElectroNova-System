@@ -47,10 +47,10 @@ namespace ElectroNova.Layers.UI
             CargarTipoCambio();
             canvas = new Bitmap(pictureFirma.Width, pictureFirma.Height);
             pictureFirma.Image = canvas;
-            ConfigurarMetodoPago(); 
+            ConfigurarMetodoPago();
             CargarBancos();
             CargarBancosTransferencia();
-       
+
         }
         private void CargarBancos()
         {
@@ -684,8 +684,11 @@ namespace ElectroNova.Layers.UI
         {
             byte[] qrBytes = GenerarQR(factura.ID_Factura);
 
+            // 🔥 Ruta del logo
             string rutaLogo = Path.Combine(Application.StartupPath, "Resources", "logoLogin.png");
-            byte[] logoBytes = File.Exists(rutaLogo) ? File.ReadAllBytes(rutaLogo) : null;
+
+            // 🔥 Total en letras
+            string totalEnLetras = NumeroALetras.ConvertirNumeroALetras(factura.TotalCRC).ToUpper();
 
             using (MemoryStream stream = new MemoryStream())
             {
@@ -713,13 +716,19 @@ namespace ElectroNova.Layers.UI
                                     col.Item().Text($"Fecha: {factura.Fecha:dd/MM/yyyy}");
                                 });
 
-                                if (logoBytes != null)
-                                {
-                                    row.ConstantItem(95)
-                                        .Height(75)
-                                        .AlignRight()
-                                        .Image(logoBytes);
-                                }
+                                // 🔥 LOGO EN EL CUADRO DE ARRIBA
+                                row.ConstantItem(110)
+                                    .Height(85)
+                                    .Border(1)
+                                    .AlignCenter()
+                                    .AlignMiddle()
+                                    .Element(contenedor =>
+                                    {
+                                        if (File.Exists(rutaLogo))
+                                            contenedor.Padding(5).Image(rutaLogo);
+                                        else
+                                            contenedor.Text("SIN LOGO").AlignCenter();
+                                    });
                             });
 
                             header.Item().PaddingTop(10).LineHorizontal(1);
@@ -805,6 +814,11 @@ namespace ElectroNova.Layers.UI
                                     col.Item().AlignRight().Text($"Total USD: $ {factura.TotalUSD:N2}").Bold();
                                 });
                             });
+
+                            // 🔥 TOTAL EN LETRAS SIN TÍTULO
+                            content.Item().PaddingTop(8).Border(1).Padding(6)
+                                .Text($"TOTAL: {totalEnLetras} COLONES")
+                                .FontSize(9);
                         });
 
                         page.Footer().PaddingTop(8).Column(col =>

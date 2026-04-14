@@ -68,7 +68,6 @@ namespace ElectroNova.Layers.UI
         private void ToolStripMenuNuevo_Click(object sender, EventArgs e)
         {
             Limpiar();
-            txtID_Usuario.Focus();
         }
 
         private async void GuardartoolStripMenuItem1_Click(object sender, EventArgs e)
@@ -110,9 +109,7 @@ namespace ElectroNova.Layers.UI
 
                 Usuario oUsuario = new Usuario();
 
-                oUsuario.ID_Usuario = string.IsNullOrWhiteSpace(txtID_Usuario.Text)
-                    ? 0
-                    : Convert.ToInt32(txtID_Usuario.Text);
+            
 
                 oUsuario.NombreUsuario = txtNombreUsuario.Text.Trim();
                 oUsuario.Contrasena = txtContrasenia.Text.Trim();
@@ -152,7 +149,7 @@ namespace ElectroNova.Layers.UI
 
                     if (oUsuario != null)
                     {
-                        txtID_Usuario.Text = oUsuario.ID_Usuario.ToString();
+
                         txtNombreUsuario.Text = oUsuario.NombreUsuario;
                         txtContrasenia.Text = oUsuario.Contrasena;
                         cboRol.SelectedValue = oUsuario.ID_Rol;
@@ -221,7 +218,7 @@ namespace ElectroNova.Layers.UI
 
         private void Limpiar()
         {
-            txtID_Usuario.Clear();
+
             txtNombreUsuario.Clear();
             txtContrasenia.Clear();
             cboRol.SelectedIndex = -1;
@@ -249,7 +246,6 @@ namespace ElectroNova.Layers.UI
 
                 if (oUsuario != null)
                 {
-                    txtID_Usuario.Text = oUsuario.ID_Usuario.ToString();
                     txtNombreUsuario.Text = oUsuario.NombreUsuario;
                     txtContrasenia.Text = oUsuario.Contrasena;
                     cboRol.SelectedValue = oUsuario.ID_Rol;

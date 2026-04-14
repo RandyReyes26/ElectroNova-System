@@ -15,6 +15,7 @@ namespace ElectroNova.Layers.UI
 {
     public partial class frmModelos : Form
     {
+        private int _idModelo = 0;
         public frmModelos()
         {
             InitializeComponent();
@@ -26,6 +27,7 @@ namespace ElectroNova.Layers.UI
             //txtID_Modelo.ReadOnly = true;
             txtCodigoModelo.ForeColor = Color.Gray;
             txtCodigoModelo.Text = "Ej: SM-A54 o MOD-001";
+            EstiloDataGrid();
 
         }
 
@@ -43,8 +45,8 @@ namespace ElectroNova.Layers.UI
 
                 errorProvider1.Clear();
 
-                // Validación
-                if (string.IsNullOrWhiteSpace(txtCodigoModelo.Text))
+                if (string.IsNullOrWhiteSpace(txtCodigoModelo.Text) ||
+                    txtCodigoModelo.Text == "EJ: SM-A54 O MOD-001")
                 {
                     errorProvider1.SetError(txtCodigoModelo, "El código del modelo es requerido");
                     txtCodigoModelo.Focus();
@@ -58,34 +60,22 @@ namespace ElectroNova.Layers.UI
                     return;
                 }
 
-
-                // Si trae ID, entonces es edición
-                //if (!string.IsNullOrWhiteSpace(txtID_Modelo.Text))
-                //{
-                //    oModelo.ID_Modelo = int.Parse(txtID_Modelo.Text);
-                //}
-                if (string.IsNullOrWhiteSpace(txtCodigoModelo.Text) ||
-                   txtCodigoModelo.Text == "EJ: SM-A54 O MOD-001")
-                {
-                    errorProvider1.SetError(txtCodigoModelo, "El código del modelo es requerido");
-                    txtCodigoModelo.Focus();
-                    return;
-                }
-
-                // Asignar datos
+                oModelo.ID_Modelo = _idModelo;
                 oModelo.Codigo_Modelo = txtCodigoModelo.Text.Trim();
                 oModelo.Descripcion = txtDescripcion.Text.Trim();
-                oModelo.Estado = true;   // IMPORTANTE
+                oModelo.Estado = chkActivo.Checked;
 
-                // Guardar
-                var resultado = await _BLLModelo.GuardarModelo(oModelo);
+                await _BLLModelo.GuardarModelo(oModelo);
 
-                // Recargar grid
                 CargarDatos();
                 Limpiar();
 
-                MessageBox.Show("Modelo guardado correctamente.",
-                    "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (_idModelo > 0)
+                    MessageBox.Show("Modelo actualizado correctamente.",
+                        "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                else
+                    MessageBox.Show("Modelo guardado correctamente.",
+                        "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
@@ -108,9 +98,14 @@ namespace ElectroNova.Layers.UI
 
             if (oModelo != null)
             {
-                //txtID_Modelo.Text = oModelo.ID_Modelo.ToString();
+                _idModelo = oModelo.ID_Modelo;
+
                 txtCodigoModelo.Text = oModelo.Codigo_Modelo;
+                txtCodigoModelo.ForeColor = Color.Black;
                 txtDescripcion.Text = oModelo.Descripcion;
+
+                chkActivo.Checked = oModelo.Estado;
+                chkInactivo.Checked = !oModelo.Estado;
             }
 
         }
@@ -151,10 +146,14 @@ namespace ElectroNova.Layers.UI
         }
         private void Limpiar()
         {
-            //this.txtID_Modelo.Clear();
+            _idModelo = 0;
+
             txtCodigoModelo.Text = "EJ: SM-A54 O MOD-001";
             txtCodigoModelo.ForeColor = Color.Gray;
             txtDescripcion.Clear();
+
+            chkActivo.Checked = false;
+            chkInactivo.Checked = true;
         }
 
         private async void CargarDatos()
@@ -200,6 +199,33 @@ namespace ElectroNova.Layers.UI
                 txtCodigoModelo.Text = "EJ: SM-A54 O MOD-001";
                 txtCodigoModelo.ForeColor = Color.Gray;
             }
+        }
+
+        private void EstiloDataGrid()
+        {
+            dgvDatos.BorderStyle = BorderStyle.None;
+            dgvDatos.BackgroundColor = Color.White;
+            dgvDatos.EnableHeadersVisualStyles = false;
+
+            dgvDatos.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(47, 128, 237);
+            dgvDatos.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dgvDatos.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 10, FontStyle.Bold);
+            dgvDatos.ColumnHeadersHeight = 35;
+
+            dgvDatos.DefaultCellStyle.BackColor = Color.White;
+            dgvDatos.DefaultCellStyle.ForeColor = Color.FromArgb(31, 41, 55);
+
+            dgvDatos.DefaultCellStyle.SelectionBackColor = Color.FromArgb(209, 250, 229);
+            dgvDatos.DefaultCellStyle.SelectionForeColor = Color.FromArgb(6, 78, 59);
+
+     
+            dgvDatos.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(248, 250, 252);
+
+            dgvDatos.RowHeadersVisible = false;
+            dgvDatos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvDatos.MultiSelect = false;
+            dgvDatos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvDatos.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
         }
     }
 }

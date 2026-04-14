@@ -19,6 +19,7 @@ namespace ElectroNova.Layers.UI
 {
     public partial class frmClientes : Form
     {
+        private int _idCliente = 0;
         //Byte[] imagenbyte;
         private IDALCliente _DALCliente;
         IBLLFoto _bLLFoto = new BLLFoto();
@@ -31,6 +32,8 @@ namespace ElectroNova.Layers.UI
             txtIdentificacion.KeyDown += txtIdentificacion_KeyDown;
             //txtID.ReadOnly = true;
 
+            dgvDatos.CellFormatting += dgvDatos_CellFormatting;
+
             _DALCliente = new DALCliente();
 
         }
@@ -39,6 +42,8 @@ namespace ElectroNova.Layers.UI
         {
             CargarDatos();
             CargarProvincias();
+            AplicarEstiloUI();
+     
 
         }
         private async Task CargarProvincias()
@@ -59,24 +64,37 @@ namespace ElectroNova.Layers.UI
             pblImagen.Height = 171; // Alto del PictureBox
         }
 
-        private void eliminarToolStripMenuItem_Click(object sender, EventArgs e)
+        private async void eliminarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            IBLLCliente _IBLLGestionCliente = new BLLCliente();
+            BLLCliente _IBLLGestionCliente = new BLLCliente();
+
             try
             {
-                if (this.dgvDatos.SelectedRows.Count > 0)
+                if (dgvDatos.SelectedRows.Count == 0)
                 {
-                    Clientes oGestionCliente = this.dgvDatos.SelectedRows[0].DataBoundItem as Clientes;
-                    if (MessageBox.Show($"¿Seguro que desea borrar el registro de {oGestionCliente.ID_Cliente}?",
-                        "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                    {
-                        _IBLLGestionCliente.BorrarCliente(oGestionCliente.ID_Cliente);
-                        this.CargarDatos();
-                    }
+                    MessageBox.Show("Seleccione el registro.", "Atención",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
                 }
-                else
+
+                int id = Convert.ToInt32(dgvDatos.SelectedRows[0].Cells["ID_Cliente"].Value);
+
+                if (MessageBox.Show($"¿Seguro que desea borrar el registro de {id}?",
+                    "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    MessageBox.Show("Seleccione el registro !", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    bool borrado = await _IBLLGestionCliente.BorrarCliente(id);
+
+                    if (borrado)
+                    {
+                        CargarDatos();
+                        Limpiar();
+                        MessageBox.Show("Cliente eliminado correctamente.", "Éxito",
+                            MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se pudo eliminar el cliente.");
+                    }
                 }
             }
             catch (Exception er)
@@ -88,26 +106,32 @@ namespace ElectroNova.Layers.UI
         private async void CargarDatos()
         {
             IBLLCliente _BLLCliente = new BLLCliente();
-            //try
-            //{
 
             dgvDatos.AutoGenerateColumns = true;
-            // dgvDatos.RowTemplate.Height = 100;
-            dgvDatos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            dgvDatos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
-            // Delay forzado
-            await Task.Delay(500);
+            await Task.Delay(300);
 
-            // Cargar el DataGridView
-            this.dgvDatos.DataSource = await _BLLCliente.ObtenerClientes();
+            var clientes = await _BLLCliente.ObtenerClientes();
 
+            var listaMostrar = clientes.Select(c => new
+            {
+                c.ID_Cliente,
+                c.Identificacion,
+                c.Nombre,
+                c.Apellidos,
+                Sexo = c.Sexo == 1 ? "M" : c.Sexo == 2 ? "F" : "",
+                c.Telefono,
+                c.Email,
+                Estado = c.Estado ? "Activo" : "Inactivo"
+            }).ToList();
+
+            dgvDatos.DataSource = null;
+            dgvDatos.DataSource = listaMostrar;
+
+            dgvDatos.Columns["ID_Cliente"].HeaderText = "ID";
+            dgvDatos.Columns["Identificacion"].HeaderText = "Identificación";
         }
-        //    catch (Exception er)
-        //    {
-        //        MessageBox.Show($"Ocurrió un error: {er.Message}");
-
-        //    }
-        //}
 
         private void BuscarPorCedula()
         {
@@ -198,7 +222,11 @@ namespace ElectroNova.Layers.UI
                 return;
             }
 
-            Clientes oCliente = dgvDatos.SelectedRows[0].DataBoundItem as Clientes;
+            int id = Convert.ToInt32(dgvDatos.SelectedRows[0].Cells["ID_Cliente"].Value);
+            _idCliente = id;
+
+            IBLLCliente _BLLCliente = new BLLCliente();
+            Clientes oCliente = _BLLCliente.ObtenerClientePorId(id);
 
             if (oCliente == null)
             {
@@ -206,7 +234,6 @@ namespace ElectroNova.Layers.UI
                 return;
             }
 
-            //txtID.Text = oCliente.ID_Cliente.ToString();
             txtIdentificacion.Text = oCliente.Identificacion;
             txtNombre.Text = oCliente.Nombre;
             txtApellidos.Text = oCliente.Apellidos;
@@ -238,15 +265,25 @@ namespace ElectroNova.Layers.UI
         }
         private void Limpiar()
         {
-            //this.txtID.Clear();
-            this.txtApellidos.Clear();
-            this.txtDireccionExacta.Clear();
-            this.mtbTelefono.Clear();
-            this.txtNombre.Clear();
-            this.txtIdentificacion.Clear();
-            this.txtEmail.Clear(); ;
-            //cboEstadoCliente.SelectedIndex = -1;
+            _idCliente = 0;
+
+            txtApellidos.Clear();
+            txtDireccionExacta.Clear();
+            mtbTelefono.Clear();
+            txtNombre.Clear();
+            txtIdentificacion.Clear();
+            txtEmail.Clear();
+
             cmbProvincia.SelectedIndex = -1;
+
+            rbtMasculino.Checked = false;
+            rbtFemenino.Checked = false;
+
+            chkActivo.Checked = true;
+            chkInactivo.Checked = false;
+
+            pblImagen.Image = null;
+            pblImagen.Tag = null;
         }
 
         private void ToolStripMenuNuevo_Click(object sender, EventArgs e)
@@ -264,6 +301,8 @@ namespace ElectroNova.Layers.UI
                 IBLLCliente _BLLCliente = new BLLCliente();
                 Clientes oCliente = new Clientes();
 
+                oCliente.ID_Cliente = _idCliente;
+
                 errorProvider1.Clear();
 
                 if (string.IsNullOrWhiteSpace(txtIdentificacion.Text))
@@ -279,7 +318,7 @@ namespace ElectroNova.Layers.UI
                     txtNombre.Focus();
                     return;
                 }
-                // Validación teléfono
+
                 if (!mtbTelefono.MaskCompleted)
                 {
                     errorProvider1.SetError(mtbTelefono, "Ingrese un teléfono válido (8 dígitos).");
@@ -291,19 +330,18 @@ namespace ElectroNova.Layers.UI
                     errorProvider1.SetError(mtbTelefono, "");
                 }
 
-                //if (!string.IsNullOrWhiteSpace(txtID.Text))
-                //    oCliente.ID_Cliente = int.Parse(txtID.Text);
+                bool esEdicion = _idCliente > 0;
 
                 oCliente.Identificacion = txtIdentificacion.Text.Trim();
-
-                // 
                 oCliente.Pasaporte = "";
                 oCliente.Nombre = txtNombre.Text.Trim();
                 oCliente.Apellidos = txtApellidos.Text.Trim();
                 oCliente.DireccionExacta = txtDireccionExacta.Text.Trim();
                 oCliente.Provincia = cmbProvincia.Text;
+
                 mtbTelefono.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
                 oCliente.Telefono = mtbTelefono.Text;
+
                 oCliente.Email = txtEmail.Text.Trim();
                 oCliente.Estado = chkActivo.Checked;
 
@@ -325,8 +363,8 @@ namespace ElectroNova.Layers.UI
                 {
                     CargarDatos();
                     Limpiar();
-                    MessageBox.Show("Cliente guardado correctamente.", "Éxito",
-                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(esEdicion ? "Cliente actualizado correctamente." : "Cliente guardado correctamente.",
+                        "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
@@ -364,6 +402,106 @@ namespace ElectroNova.Layers.UI
         private void txtIdentificacion_Leave(object sender, EventArgs e)
         {
             BuscarPorCedula();
+        }
+
+        private void EstiloDataGrid()
+        {
+            dgvDatos.BorderStyle = BorderStyle.None;
+            dgvDatos.BackgroundColor = Color.White;
+            dgvDatos.EnableHeadersVisualStyles = false;
+
+            // HEADER (lo dejamos azul porque se ve fino)
+            dgvDatos.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(47, 128, 237);
+            dgvDatos.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dgvDatos.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 10, FontStyle.Bold);
+            dgvDatos.ColumnHeadersHeight = 35;
+
+            dgvDatos.DefaultCellStyle.BackColor = Color.White;
+            dgvDatos.DefaultCellStyle.ForeColor = Color.FromArgb(31, 41, 55);
+
+            // 💚 VERDE SUAVE BONITO
+            dgvDatos.DefaultCellStyle.SelectionBackColor = Color.FromArgb(209, 250, 229);
+            dgvDatos.DefaultCellStyle.SelectionForeColor = Color.FromArgb(6, 78, 59);
+
+            // FILAS ALTERNAS
+            dgvDatos.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(248, 250, 252);
+
+            dgvDatos.RowHeadersVisible = false;
+            dgvDatos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvDatos.MultiSelect = false;
+            dgvDatos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvDatos.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+        }
+
+        private void AplicarColorRecursivo(Control parent)
+        {
+            foreach (Control ctrl in parent.Controls)
+            {
+                if (ctrl is TextBox || ctrl is MaskedTextBox)
+                {
+                    ctrl.BackColor = Color.White;
+                    ctrl.ForeColor = Color.FromArgb(31, 41, 55);
+                    ((TextBoxBase)ctrl).BorderStyle = BorderStyle.FixedSingle;
+                }
+
+                if (ctrl is ComboBox)
+                {
+                    ctrl.BackColor = Color.White;
+                    ctrl.ForeColor = Color.FromArgb(31, 41, 55);
+                }
+
+                if (ctrl is Label)
+                {
+                    ctrl.ForeColor = Color.FromArgb(75, 85, 99);
+                    ctrl.Font = new Font("Segoe UI", 9);
+                }
+
+                if (ctrl.HasChildren)
+                    AplicarColorRecursivo(ctrl);
+            }
+        }
+
+        private void AplicarEstiloUI()
+        {
+            // FORM
+            this.BackColor = Color.FromArgb(244, 247, 251);
+            // GROUPBOX
+            groupBox1.BackColor = Color.White;
+            groupBox2.BackColor = Color.White;
+
+            groupBox1.ForeColor = Color.FromArgb(31, 41, 55);
+            groupBox2.ForeColor = Color.FromArgb(31, 41, 55);
+
+            // PICTUREBOX
+            pblImagen.BackColor = Color.FromArgb(248, 250, 252);
+
+            // TEXTOS
+            foreach (Control ctrl in this.Controls)
+            {
+                AplicarColorRecursivo(ctrl);
+            }
+
+            // DATAGRIDVIEW
+            EstiloDataGrid();
+        }
+
+        private void dgvDatos_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (dgvDatos.Columns[e.ColumnIndex].Name == "Sexo" && e.Value != null)
+            {
+                // Si ya es string (M o F), no hacer nada
+                if (e.Value is string)
+                    return;
+
+                int valor;
+                if (int.TryParse(e.Value.ToString(), out valor))
+                {
+                    if (valor == 1)
+                        e.Value = "M";
+                    else if (valor == 2)
+                        e.Value = "F";
+                }
+            }
         }
     }
 }

@@ -30,6 +30,7 @@ namespace ElectroNova.Layers.UI
             ConfigurarPermisos();
             MostrarInformacionUsuario();
             CargarTipoCambio();
+   
         }
         public void MostrarInformacionUsuario()
         {
@@ -400,5 +401,6 @@ namespace ElectroNova.Layers.UI
             }
 
         }
+        
     }
 }

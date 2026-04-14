@@ -15,6 +15,7 @@ namespace ElectroNova.Layers.UI
 {
     public partial class frmMarcas : Form
     {
+        private int _idMarca = 0;
         public frmMarcas()
         {
             InitializeComponent();
@@ -24,7 +25,8 @@ namespace ElectroNova.Layers.UI
         {
             CargarDatos();
             //txtID_Marca.ReadOnly = true;
-
+            EstiloDataGrid();
+   
         }
 
         private void ToolStripMenuNuevo_Click(object sender, EventArgs e)
@@ -41,7 +43,6 @@ namespace ElectroNova.Layers.UI
             {
                 errorProvider1.Clear();
 
-                // Validación
                 if (string.IsNullOrWhiteSpace(txtNombreMarca.Text))
                 {
                     errorProvider1.SetError(txtNombreMarca, "Nombre de marca requerido");
@@ -49,34 +50,25 @@ namespace ElectroNova.Layers.UI
                     return;
                 }
 
-                // Si hay ID → es edición
-                //if (!string.IsNullOrWhiteSpace(txtID_Marca.Text))
-                //{
-                //    oMarca.ID_Marca = int.Parse(txtID_Marca.Text);
-                //}
-
-                // Datos
+                oMarca.ID_Marca = _idMarca; // 🔥 CLAVE
                 oMarca.Nombre_Marca = txtNombreMarca.Text.Trim();
                 oMarca.Descripcion = txtDescripcion.Text.Trim();
                 oMarca.Estado = chkActivo.Checked;
 
-                // Guardar
-                var resultado = await _BLLMarca.GuardarMarca(oMarca);
+                await _BLLMarca.GuardarMarca(oMarca);
 
-                // 🔥 IMPORTANTE: aunque venga null, igual refrescamos
                 this.CargarDatos();
                 this.Limpiar();
 
-                if (resultado != null)
+                if (_idMarca > 0)
                 {
-                    MessageBox.Show("Marca guardada correctamente.", "Éxito",
+                    MessageBox.Show("Marca actualizada correctamente.", "Éxito",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    // Esto es temporal hasta que arregles DAL
-                    MessageBox.Show("Se guardó en la base, pero el método no retornó datos.",
-                        "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Marca guardada correctamente.", "Éxito",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             catch (Exception ex)
@@ -96,23 +88,17 @@ namespace ElectroNova.Layers.UI
                 return;
             }
 
-            Marca oMarca = null;
+            Marca oMarca = this.dgvDatos.SelectedRows[0].DataBoundItem as Marca;
 
-            oMarca = this.dgvDatos.SelectedRows[0].DataBoundItem as Marca;
-
-            //txtID_Marca.Text = oMarca.ID_Marca.ToString();
-            txtNombreMarca.Text = oMarca.Nombre_Marca;
-            txtDescripcion.Text = oMarca.Descripcion;
-
-            if (oMarca.Estado)
+            if (oMarca != null)
             {
-                chkActivo.Checked = true;
-                chkInactivo.Checked = false;
-            }
-            else
-            {
-                chkActivo.Checked = false;
-                chkInactivo.Checked = true;
+                _idMarca = oMarca.ID_Marca; // 🔥 ESTE ES EL FIX
+
+                txtNombreMarca.Text = oMarca.Nombre_Marca;
+                txtDescripcion.Text = oMarca.Descripcion;
+
+                chkActivo.Checked = oMarca.Estado;
+                chkInactivo.Checked = !oMarca.Estado;
             }
 
         }
@@ -148,9 +134,10 @@ namespace ElectroNova.Layers.UI
 
         private void Limpiar()
         {
-            //this.txtID_Marca.Clear();
-            this.txtNombreMarca.Clear();
-            this.txtDescripcion.Clear();
+            _idMarca = 0; // 🔥 IMPORTANTE
+
+            txtNombreMarca.Clear();
+            txtDescripcion.Clear();
 
             chkActivo.Checked = false;
             chkInactivo.Checked = false;
@@ -172,7 +159,36 @@ namespace ElectroNova.Layers.UI
             this.dgvDatos.DataSource = await _BLLMarca.ObtenerMarca();
 
         }
+        private void EstiloDataGrid()
+        {
+            dgvDatos.BorderStyle = BorderStyle.None;
+            dgvDatos.BackgroundColor = Color.White;
+            dgvDatos.EnableHeadersVisualStyles = false;
 
+
+            dgvDatos.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(47, 128, 237);
+            dgvDatos.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dgvDatos.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 10, FontStyle.Bold);
+            dgvDatos.ColumnHeadersHeight = 35;
+
+
+            dgvDatos.DefaultCellStyle.BackColor = Color.White;
+            dgvDatos.DefaultCellStyle.ForeColor = Color.FromArgb(31, 41, 55);
+
+         
+            dgvDatos.DefaultCellStyle.SelectionBackColor = Color.FromArgb(209, 250, 229);
+            dgvDatos.DefaultCellStyle.SelectionForeColor = Color.FromArgb(6, 78, 59); // verde oscuro
+
+ 
+            dgvDatos.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(248, 250, 252);
+
+            dgvDatos.RowHeadersVisible = false;
+            dgvDatos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvDatos.MultiSelect = false;
+            dgvDatos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvDatos.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+        }
+      
     }
     
 }

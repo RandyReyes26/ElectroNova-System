@@ -17,7 +17,6 @@ namespace ElectroNova.Layers.DAL
         public async Task<Modelo> ActualizarModelo(Modelo pModelo)
         {
             SqlCommand command = new SqlCommand();
-            Modelo oModelo = null;
 
             try
             {
@@ -31,27 +30,14 @@ namespace ElectroNova.Layers.DAL
 
                 using (IDataBase db = FactoryDatabase.CreateDataBase(FactoryConexion.CreateConnection()))
                 {
-                    using (IDataReader reader = db.ExecuteReader(command))
-                    {
-                        if (reader.Read())
-                        {
-                            oModelo = new Modelo
-                            {
-                            ID_Modelo = Convert.ToInt32(reader["ID_Modelo"]),
-                            Codigo_Modelo = reader["Codigo_Modelo"].ToString(),
-                            Descripcion = reader["Descripcion"].ToString(),
-                            Estado = bool.Parse(reader["Estado"].ToString())
-
-                        };
-                        }
-                    }
+                    db.ExecuteNonQuery(command, IsolationLevel.ReadCommitted);
                 }
 
-                return oModelo;
+                return pModelo; // devolvés el mismo
             }
             catch (Exception ex)
             {
-                _MyLogControlEventos.Error("Error al actualizar Marca", ex);
+                _MyLogControlEventos.Error("Error al actualizar Modelo", ex);
                 throw;
             }
         }

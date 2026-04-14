@@ -41,6 +41,7 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.pblImagen = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.mtbTelefono = new System.Windows.Forms.MaskedTextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.txtDireccionExacta = new System.Windows.Forms.TextBox();
             this.chkInactivo = new System.Windows.Forms.CheckBox();
@@ -61,7 +62,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.mtbTelefono = new System.Windows.Forms.MaskedTextBox();
             this.panel1.SuspendLayout();
             this.mnuStrip1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -159,6 +159,7 @@
             this.dgvDatos.RowHeadersWidth = 51;
             this.dgvDatos.Size = new System.Drawing.Size(1198, 343);
             this.dgvDatos.TabIndex = 0;
+            this.dgvDatos.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvDatos_CellFormatting);
             // 
             // groupBox2
             // 
@@ -211,6 +212,14 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos del cliente";
+            // 
+            // mtbTelefono
+            // 
+            this.mtbTelefono.Location = new System.Drawing.Point(117, 270);
+            this.mtbTelefono.Mask = "0000-0000";
+            this.mtbTelefono.Name = "mtbTelefono";
+            this.mtbTelefono.Size = new System.Drawing.Size(524, 27);
+            this.mtbTelefono.TabIndex = 24;
             // 
             // label10
             // 
@@ -396,14 +405,6 @@
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
-            // 
-            // mtbTelefono
-            // 
-            this.mtbTelefono.Location = new System.Drawing.Point(117, 270);
-            this.mtbTelefono.Mask = "0000-0000";
-            this.mtbTelefono.Name = "mtbTelefono";
-            this.mtbTelefono.Size = new System.Drawing.Size(524, 27);
-            this.mtbTelefono.TabIndex = 24;
             // 
             // frmClientes
             // 

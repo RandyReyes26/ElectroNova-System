@@ -15,6 +15,7 @@ namespace ElectroNova.Layers.UI
 {
     public partial class frmControlStock : Form
     {
+        private int _idIngresoStock = 0;
         public frmControlStock()
         {
             InitializeComponent();
@@ -32,6 +33,8 @@ namespace ElectroNova.Layers.UI
             {
                 IBLLControlStock _BLLControlStock = new BLLControlStock();
                 ControlStock oControlStock = new ControlStock();
+
+                oControlStock.ID_IngresoStock = _idIngresoStock;
 
                 errorProvider1.Clear();
 
@@ -65,16 +68,9 @@ namespace ElectroNova.Layers.UI
                     return;
                 }
 
-                if (cboMovimientos.Text == "Entrada" && string.IsNullOrWhiteSpace(txtFacturaCompra.Text))
-                {
-                    errorProvider1.SetError(txtFacturaCompra, "La factura de compra es requerida para entrada.");
-                    txtFacturaCompra.Focus();
-                    return;
-                }
                 if (cboMovimientos.Text == "Entrada")
                 {
-                    if (string.IsNullOrWhiteSpace(txtFacturaCompra.Text) ||
-                        txtFacturaCompra.Text == "Ej: FAC-001")
+                    if (string.IsNullOrWhiteSpace(txtFacturaCompra.Text) || txtFacturaCompra.Text == "Ej: FAC-001")
                     {
                         errorProvider1.SetError(txtFacturaCompra, "La factura de compra es requerida.");
                         txtFacturaCompra.Focus();
@@ -85,6 +81,8 @@ namespace ElectroNova.Layers.UI
                         errorProvider1.SetError(txtFacturaCompra, "");
                     }
                 }
+
+                bool esEdicion = _idIngresoStock > 0;
 
                 oControlStock.ID_Producto = Convert.ToInt32(cboProductos.SelectedValue);
                 oControlStock.FacturaCompra = txtFacturaCompra.Text.Trim();
@@ -97,8 +95,11 @@ namespace ElectroNova.Layers.UI
                 CargarDatos();
                 Limpiar();
 
-                MessageBox.Show("Movimiento guardado correctamente.", "Éxito",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(
+                    esEdicion ? "Movimiento actualizado correctamente." : "Movimiento guardado correctamente.",
+                    "Éxito",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
@@ -119,7 +120,11 @@ namespace ElectroNova.Layers.UI
                     return;
                 }
 
-                ControlStock oControlStock = dgvDatos.SelectedRows[0].DataBoundItem as ControlStock;
+                int id = Convert.ToInt32(dgvDatos.SelectedRows[0].Cells["ID_IngresoStock"].Value);
+                _idIngresoStock = id;
+
+                IBLLControlStock _BLLControlStock = new BLLControlStock();
+                ControlStock oControlStock = _BLLControlStock.ObtenerStockPorId(id);
 
                 if (oControlStock != null)
                 {
@@ -144,31 +149,34 @@ namespace ElectroNova.Layers.UI
 
             try
             {
-                if (dgvDatos.SelectedRows.Count > 0)
-                {
-                    ControlStock oControlStock = dgvDatos.SelectedRows[0].DataBoundItem as ControlStock;
-
-                    if (oControlStock != null)
-                    {
-                        if (MessageBox.Show(
-                            $"¿Seguro que desea eliminar este movimiento?",
-                            "Confirmación",
-                            MessageBoxButtons.YesNo,
-                            MessageBoxIcon.Question) == DialogResult.Yes)
-                        {
-                            await _BLLControlStock.BorrarStock(oControlStock.ID_IngresoStock);
-                            CargarDatos();
-                            Limpiar();
-
-                            MessageBox.Show("Movimiento eliminado correctamente.", "Éxito",
-                                MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
-                    }
-                }
-                else
+                if (dgvDatos.SelectedRows.Count == 0)
                 {
                     MessageBox.Show("Debe seleccionar un registro.",
                         "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                int id = Convert.ToInt32(dgvDatos.SelectedRows[0].Cells["ID_IngresoStock"].Value);
+
+                if (MessageBox.Show("¿Seguro que desea eliminar este movimiento?",
+                    "Confirmación",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    bool borrado = await _BLLControlStock.BorrarStock(id);
+
+                    if (borrado)
+                    {
+                        CargarDatos();
+                        Limpiar();
+
+                        MessageBox.Show("Movimiento eliminado correctamente.", "Éxito",
+                            MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se pudo eliminar el movimiento.");
+                    }
                 }
             }
             catch (Exception ex)
@@ -186,6 +194,7 @@ namespace ElectroNova.Layers.UI
             CargarComboMovimiento();
             txtFacturaCompra.ForeColor = Color.Gray;
             txtFacturaCompra.Text = "Ej: FAC-001";
+            EstiloDataGrid();
 
         }
 
@@ -194,11 +203,26 @@ namespace ElectroNova.Layers.UI
             try
             {
                 IBLLControlStock _BLLControlStock = new BLLControlStock();
+                IBLLProducto _BLLProducto = new BLLProducto();
 
                 dgvDatos.AutoGenerateColumns = true;
-                dgvDatos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
+                dgvDatos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
-                dgvDatos.DataSource = await _BLLControlStock.ObtenerStock();
+                var stock = await _BLLControlStock.ObtenerStock();
+                var productos = await _BLLProducto.ObtenerProducto();
+
+                var listaMostrar = stock.Select(s => new
+                {
+                    s.ID_IngresoStock,
+                    Producto = productos.FirstOrDefault(p => p.ID_Producto == s.ID_Producto)?.Informacion_General,
+                    s.TipoMovimiento,
+                    s.Cantidad,
+                    s.FacturaCompra,
+                    s.Observaciones
+                }).ToList();
+
+                dgvDatos.DataSource = null;
+                dgvDatos.DataSource = listaMostrar;
             }
             catch (Exception ex)
             {
@@ -237,6 +261,8 @@ namespace ElectroNova.Layers.UI
         }
         private void Limpiar()
         {
+            _idIngresoStock = 0;
+
             txtCantidad.Clear();
             txtFacturaCompra.Clear();
             txtObservaciones.Clear();
@@ -297,6 +323,34 @@ namespace ElectroNova.Layers.UI
                 txtFacturaCompra.Text = "Ej: FAC-001";
                 txtFacturaCompra.ForeColor = Color.Gray;
             }
+        }
+        private void EstiloDataGrid()
+        {
+            dgvDatos.BorderStyle = BorderStyle.None;
+            dgvDatos.BackgroundColor = Color.White;
+            dgvDatos.EnableHeadersVisualStyles = false;
+
+            // HEADER (lo dejamos azul porque se ve fino)
+            dgvDatos.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(47, 128, 237);
+            dgvDatos.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dgvDatos.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 10, FontStyle.Bold);
+            dgvDatos.ColumnHeadersHeight = 35;
+
+            dgvDatos.DefaultCellStyle.BackColor = Color.White;
+            dgvDatos.DefaultCellStyle.ForeColor = Color.FromArgb(31, 41, 55);
+
+            // 💚 VERDE SUAVE BONITO
+            dgvDatos.DefaultCellStyle.SelectionBackColor = Color.FromArgb(209, 250, 229);
+            dgvDatos.DefaultCellStyle.SelectionForeColor = Color.FromArgb(6, 78, 59);
+
+            // FILAS ALTERNAS
+            dgvDatos.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(248, 250, 252);
+
+            dgvDatos.RowHeadersVisible = false;
+            dgvDatos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvDatos.MultiSelect = false;
+            dgvDatos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvDatos.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
         }
     }
 }

@@ -88,8 +88,8 @@ namespace ElectroNova
 
         private void frmLogin_Load(object sender, EventArgs e)
         {
-            txtLogin.Text = "admin";
-            mskContrasena.Text = "123";
+            mskContrasena.UseSystemPasswordChar = true;
+
 
         }
         private Rol ObtenerRolUsuario(Usuario usuario)

@@ -93,10 +93,11 @@
             // 
             // mskContrasena
             // 
+            this.mskContrasena.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mskContrasena.Location = new System.Drawing.Point(346, 219);
             this.mskContrasena.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.mskContrasena.Name = "mskContrasena";
-            this.mskContrasena.Size = new System.Drawing.Size(514, 22);
+            this.mskContrasena.Size = new System.Drawing.Size(514, 34);
             this.mskContrasena.TabIndex = 5;
             // 
             // errorProvider1
@@ -116,7 +117,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "Login";
             this.Load += new System.EventHandler(this.frmLogin_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

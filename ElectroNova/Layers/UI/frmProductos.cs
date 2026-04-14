@@ -16,6 +16,7 @@ namespace ElectroNova.Layers.UI
 {
     public partial class frmProductos : Form
     {
+        private int _idProducto = 0;
         IBLLFoto _bLLFoto = new BLLFoto();
         public frmProductos()
         {
@@ -89,6 +90,7 @@ namespace ElectroNova.Layers.UI
             CargarComboTipoDispositivo();
             txtCodigoBarras.ForeColor = Color.Gray;
             txtCodigoBarras.Text = "Ej: 7501234567890";
+            EstiloDataGrid();
         }
         private async void CargarComboMarca()
         {
@@ -163,6 +165,9 @@ namespace ElectroNova.Layers.UI
                 IBLLProducto _BLLProducto = new BLLProducto();
                 Productos oProducto = new Productos();
 
+                // 🔥 IMPORTANTE: si viene con ID, actualiza; si viene en 0, inserta
+                oProducto.ID_Producto = _idProducto;
+
                 errorProvider1.Clear();
 
                 if (string.IsNullOrWhiteSpace(txtCodigoBarras.Text))
@@ -195,6 +200,7 @@ namespace ElectroNova.Layers.UI
                     cboTipoProducto.Focus();
                     return;
                 }
+
                 if (string.IsNullOrWhiteSpace(txtCodigoBarras.Text) ||
                     txtCodigoBarras.Text == "Ej: 7501234567890")
                 {
@@ -206,6 +212,7 @@ namespace ElectroNova.Layers.UI
                 {
                     errorProvider1.SetError(txtCodigoBarras, "");
                 }
+
                 if (txtCodigoBarras.Text.Trim().Length < 8)
                 {
                     errorProvider1.SetError(txtCodigoBarras, "Ingrese un código de barras válido.");
@@ -213,21 +220,21 @@ namespace ElectroNova.Layers.UI
                     return;
                 }
 
-                if (string.IsNullOrWhiteSpace(txtPrecio.Text) || !decimal.TryParse(txtPrecio.Text, out _))
+                if (string.IsNullOrWhiteSpace(txtPrecio.Text) || !decimal.TryParse(txtPrecio.Text, out decimal precio))
                 {
                     errorProvider1.SetError(txtPrecio, "Ingrese un precio válido");
                     txtPrecio.Focus();
                     return;
                 }
 
-                if (string.IsNullOrWhiteSpace(txtExistencia.Text) || !int.TryParse(txtExistencia.Text, out _))
+                if (string.IsNullOrWhiteSpace(txtExistencia.Text) || !int.TryParse(txtExistencia.Text, out int existencia))
                 {
                     errorProvider1.SetError(txtExistencia, "Ingrese una existencia válida");
                     txtExistencia.Focus();
                     return;
                 }
 
-
+                bool esEdicion = _idProducto > 0;
 
                 oProducto.Codigo_Barras = txtCodigoBarras.Text.Trim();
                 oProducto.ID_Marca = Convert.ToInt32(cboMarca.SelectedValue);
@@ -236,8 +243,8 @@ namespace ElectroNova.Layers.UI
                 oProducto.Informacion_General = txtInformacion.Text.Trim();
                 oProducto.Caracteristicas_Tecnicas = txtCaracteristicas.Text.Trim();
                 oProducto.DocumentoEspecificaciones = txtDocumentoEspecificaciones.Text.Trim();
-                oProducto.Precio = Convert.ToDecimal(txtPrecio.Text);
-                oProducto.Existencia = Convert.ToInt32(txtExistencia.Text);
+                oProducto.Precio = precio;
+                oProducto.Existencia = existencia;
                 oProducto.Extras_Accesorios = txtExtrasAccesorios.Text.Trim();
                 oProducto.Estado = chkActivo.Checked;
 
@@ -251,16 +258,11 @@ namespace ElectroNova.Layers.UI
                 CargarDatos();
                 Limpiar();
 
-                if (resultado != null)
-                {
-                    MessageBox.Show("Producto guardado correctamente.", "Éxito",
-                        MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    MessageBox.Show("Se guardó el producto, pero el método no retornó datos.",
-                        "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
+                MessageBox.Show(
+                    esEdicion ? "Producto actualizado correctamente." : "Producto guardado correctamente.",
+                    "Éxito",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
@@ -281,10 +283,10 @@ namespace ElectroNova.Layers.UI
                     return;
                 }
 
-                // 🔥 Obtener ID desde el DataGrid
                 int id = Convert.ToInt32(dgvDatos.SelectedRows[0].Cells["ID_Producto"].Value);
 
-                // 🔥 Traer el producto real desde la BD
+                _idProducto = id; // 🔥 ESTE ES EL FIX
+
                 IBLLProducto _BLLProducto = new BLLProducto();
                 Productos oProducto = _BLLProducto.ObtenerProductoPorId(id);
 
@@ -297,21 +299,15 @@ namespace ElectroNova.Layers.UI
 
                     txtInformacion.Text = oProducto.Informacion_General;
                     txtCaracteristicas.Text = oProducto.Caracteristicas_Tecnicas;
-
-                    // 🔥 DOCUMENTO
                     txtDocumentoEspecificaciones.Text = oProducto.DocumentoEspecificaciones;
 
-                    // 🔥 PRECIO
                     txtPrecio.Text = oProducto.Precio.ToString();
-
                     txtExistencia.Text = oProducto.Existencia.ToString();
-
                     txtExtrasAccesorios.Text = oProducto.Extras_Accesorios;
 
                     chkActivo.Checked = oProducto.Estado;
                     chkInactivo.Checked = !oProducto.Estado;
 
-                    // 🔥 IMAGEN
                     if (oProducto.Fotografia != null)
                     {
                         using (MemoryStream ms = new MemoryStream(oProducto.Fotografia))
@@ -320,17 +316,11 @@ namespace ElectroNova.Layers.UI
                             pblImagen.Tag = oProducto.Fotografia;
                         }
                     }
-                    else
-                    {
-                        pblImagen.Image = null;
-                        pblImagen.Tag = null;
-                    }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al cargar el producto para edición: " + ex.Message,
-                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error al cargar el producto: " + ex.Message);
             }
 
         }
@@ -372,8 +362,24 @@ namespace ElectroNova.Layers.UI
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al eliminar el producto: " + ex.Message,
-                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                string mensaje = ex.Message.ToLower();
+
+                if (mensaje.Contains("reference") || mensaje.Contains("constraint"))
+                {
+                    MessageBox.Show(
+                        "Este producto no se puede eliminar porque ya está relacionado con una factura.\n\n" +
+                        "💡 Sugerencia: Marcarlo como Inactivo.",
+                        "Acción no permitida",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Error al eliminar el producto: " + ex.Message,
+                        "Error",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                }
             }
 
         }
@@ -401,13 +407,17 @@ namespace ElectroNova.Layers.UI
         }
         private void Limpiar()
         {
-            //txtID_Producto.Clear();
+            _idProducto = 0;
+
             txtCodigoBarras.Text = "Ej: 7501234567890";
             txtCodigoBarras.ForeColor = Color.Gray;
+
             txtInformacion.Clear();
             txtCaracteristicas.Clear();
             txtExtrasAccesorios.Clear();
             txtExistencia.Clear();
+            txtPrecio.Clear(); // 🔥 ESTE FALTABA
+            txtDocumentoEspecificaciones.Clear(); // 🔥 ESTE TAMBIÉN
 
             if (cboMarca.Items.Count > 0)
                 cboMarca.SelectedIndex = -1;
@@ -471,6 +481,35 @@ namespace ElectroNova.Layers.UI
 
                 txtDocumentoEspecificaciones.Text = nuevaRuta;
             }
+        }
+
+        private void EstiloDataGrid()
+        {
+            dgvDatos.BorderStyle = BorderStyle.None;
+            dgvDatos.BackgroundColor = Color.White;
+            dgvDatos.EnableHeadersVisualStyles = false;
+
+            // HEADER (lo dejamos azul porque se ve fino)
+            dgvDatos.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(47, 128, 237);
+            dgvDatos.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dgvDatos.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 10, FontStyle.Bold);
+            dgvDatos.ColumnHeadersHeight = 35;
+
+            dgvDatos.DefaultCellStyle.BackColor = Color.White;
+            dgvDatos.DefaultCellStyle.ForeColor = Color.FromArgb(31, 41, 55);
+
+            // 💚 VERDE SUAVE BONITO
+            dgvDatos.DefaultCellStyle.SelectionBackColor = Color.FromArgb(209, 250, 229);
+            dgvDatos.DefaultCellStyle.SelectionForeColor = Color.FromArgb(6, 78, 59);
+
+            // FILAS ALTERNAS
+            dgvDatos.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(248, 250, 252);
+
+            dgvDatos.RowHeadersVisible = false;
+            dgvDatos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvDatos.MultiSelect = false;
+            dgvDatos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvDatos.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
         }
     }
 }

@@ -59,6 +59,7 @@
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -150,6 +151,7 @@
     <Compile Include="Layers\Entities\Impuesto.cs" />
     <Compile Include="Layers\Entities\Marca.cs" />
     <Compile Include="Layers\Entities\Modelo.cs" />
+    <Compile Include="Layers\Entities\NumeroALetras.cs" />
     <Compile Include="Layers\Entities\Productos.cs" />
     <Compile Include="Layers\Entities\Rol.cs" />
     <Compile Include="Layers\Entities\Tarjeta.cs" />
@@ -271,6 +273,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\PDFCliente.cs" />
     <Compile Include="Services\PDFFactura.cs" />
+    <Compile Include="Services\PDFGraficoVentas.cs" />
     <Compile Include="Services\PDFProductoVendido.cs" />
     <EmbeddedResource Include="Layers\UI\Filtros\frmFiltroCliente.resx">
       <DependentUpon>frmFiltroCliente.cs</DependentUpon>
@@ -313,6 +316,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Layers\UI\frmTipoDispositivo.resx">
       <DependentUpon>frmTipoDispositivo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layers\UI\Reportes\frmGraficoVentas.resx">
+      <DependentUpon>frmGraficoVentas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Layers\UI\Reportes\frmReporteClientes.resx">
       <DependentUpon>frmReporteClientes.cs</DependentUpon>
@@ -364,7 +370,9 @@
     <Content Include="Resources\eliminar-usuario.png" />
     <Content Include="Resources\imagen.png" />
     <Content Include="Resources\informacion.png" />
-    <Content Include="Resources\logoLogin.png" />
+    <Content Include="Resources\logoLogin.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\menuLogo %282%29.png" />
   </ItemGroup>
   <ItemGroup>

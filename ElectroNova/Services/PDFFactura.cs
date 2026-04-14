@@ -4,9 +4,8 @@ using QuestPDF.Helpers;
 using QuestPDF.Infrastructure;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ElectroNova.Services
@@ -29,6 +28,8 @@ namespace ElectroNova.Services
                 decimal totalCRC = listaFacturas.Sum(x => x.TotalCRC);
                 decimal totalUSD = listaFacturas.Sum(x => x.TotalUSD);
 
+                string rutaLogo = Path.Combine(Application.StartupPath, "Resources", "logoLogin.png");
+
                 Document.Create(document =>
                 {
                     document.Page(page =>
@@ -37,24 +38,49 @@ namespace ElectroNova.Services
                         page.Margin(25);
                         page.PageColor(Colors.White);
 
-                        page.Header().Column(col =>
+                        page.Header().Column(headerCol =>
                         {
-                            col.Item().Text("ElectroNova")
-                                .FontSize(18)
-                                .Bold()
-                                .FontColor(Colors.Blue.Darken2);
+                            headerCol.Item().Row(row =>
+                            {
+                                row.RelativeItem().Column(col =>
+                                {
+                                    col.Item().Text("ELECTRONOVA")
+                                        .FontSize(18)
+                                        .Bold()
+                                        .FontColor(Colors.Blue.Darken2);
 
-                            col.Item().Text("Reporte de Facturas")
-                                .FontSize(15)
-                                .Bold();
+                                    col.Item().Text("REPORTE DE FACTURAS")
+                                        .FontSize(15)
+                                        .Bold();
 
-                            col.Item().Text($"Rango de fechas: {fechaInicio:dd/MM/yyyy} - {fechaFin:dd/MM/yyyy}")
-                                .FontSize(10);
+                                    col.Item().Text($"Rango de fechas: {fechaInicio:dd/MM/yyyy} - {fechaFin:dd/MM/yyyy}")
+                                        .FontSize(10);
 
-                            col.Item().Text($"Fecha de generación: {DateTime.Now:dd/MM/yyyy HH:mm}")
-                                .FontSize(10);
+                                    col.Item().Text($"Fecha de generación: {DateTime.Now:dd/MM/yyyy HH:mm}")
+                                        .FontSize(10);
+                                });
 
-                            col.Item().PaddingTop(5).LineHorizontal(1);
+                                row.ConstantItem(100)
+                                    .Height(70)
+                                    .Border(1)
+                                    .AlignCenter()
+                                    .AlignMiddle()
+                                    .Element(contenedor =>
+                                    {
+                                        if (File.Exists(rutaLogo))
+                                        {
+                                            contenedor.Padding(5)
+                                                .Height(60)
+                                                .Image(rutaLogo, ImageScaling.FitArea);
+                                        }
+                                        else
+                                        {
+                                            contenedor.Text("LOGO").AlignCenter();
+                                        }
+                                    });
+                            });
+
+                            headerCol.Item().PaddingTop(8).LineHorizontal(1);
                         });
 
                         page.Content().PaddingVertical(10).Column(col =>
@@ -110,16 +136,16 @@ namespace ElectroNova.Services
                                         .Text(item.Fecha.ToString("dd/MM/yyyy")).FontSize(9);
 
                                     tabla.Cell().BorderBottom(0.5f).BorderColor(Colors.Grey.Lighten2).Padding(4)
-                                        .AlignRight().Text(item.Subtotal.ToString("N2")).FontSize(9);
+                                        .AlignRight().Text($"₡ {item.Subtotal:N2}").FontSize(9);
 
                                     tabla.Cell().BorderBottom(0.5f).BorderColor(Colors.Grey.Lighten2).Padding(4)
-                                        .AlignRight().Text(item.IVA.ToString("N2")).FontSize(9);
+                                        .AlignRight().Text($"₡ {item.IVA:N2}").FontSize(9);
 
                                     tabla.Cell().BorderBottom(0.5f).BorderColor(Colors.Grey.Lighten2).Padding(4)
-                                        .AlignRight().Text(item.TotalCRC.ToString("N2")).FontSize(9);
+                                        .AlignRight().Text($"₡ {item.TotalCRC:N2}").FontSize(9);
 
                                     tabla.Cell().BorderBottom(0.5f).BorderColor(Colors.Grey.Lighten2).Padding(4)
-                                        .AlignRight().Text(item.TotalUSD.ToString("N2")).FontSize(9);
+                                        .AlignRight().Text($"$ {item.TotalUSD:N2}").FontSize(9);
                                 }
                             });
 
@@ -129,11 +155,11 @@ namespace ElectroNova.Services
                                     .FontSize(11)
                                     .Bold();
 
-                                tot.Item().Text($"Total CRC: ₡{totalCRC:N2}")
+                                tot.Item().Text($"Total CRC: ₡ {totalCRC:N2}")
                                     .FontSize(11)
                                     .Bold();
 
-                                tot.Item().Text($"Total USD: ${totalUSD:N2}")
+                                tot.Item().Text($"Total USD: $ {totalUSD:N2}")
                                     .FontSize(11)
                                     .Bold();
                             });

@@ -17,7 +17,6 @@ namespace ElectroNova.Layers.DAL
         public async Task<TipoDispositivo> ActualizarTipoDispositivo(TipoDispositivo pTipoDispositivo)
         {
             SqlCommand command = new SqlCommand();
-            TipoDispositivo oTipoDispositivo = null;
 
             try
             {
@@ -29,32 +28,16 @@ namespace ElectroNova.Layers.DAL
                 command.Parameters.AddWithValue("@Descripcion", pTipoDispositivo.Descripcion);
                 command.Parameters.AddWithValue("@Estado", pTipoDispositivo.Estado);
 
-
                 using (IDataBase db = FactoryDatabase.CreateDataBase(FactoryConexion.CreateConnection()))
                 {
-                    using (IDataReader reader = db.ExecuteReader(command))
-                    {
-                        if (reader.Read())
-                        {
-                            oTipoDispositivo = new TipoDispositivo
-                            {
-
-                            ID_TipoDispositivo = int.Parse(reader["ID_TipoDispositivo"].ToString()),
-                            Nombre_TipoDispositivo = reader["Nombre_TipoDispositivo"].ToString(),
-                            Descripcion = reader["Descripcion"].ToString(),
-                            Estado = bool.Parse(reader["Estado"].ToString())
-
-
-                        };
-                        }
-                    }
+                    db.ExecuteNonQuery(command, IsolationLevel.ReadCommitted);
                 }
 
-                return oTipoDispositivo;
+                return pTipoDispositivo;
             }
             catch (Exception ex)
             {
-                _MyLogControlEventos.Error("Error al actualizar Marca", ex);
+                _MyLogControlEventos.Error("Error al actualizar TipoDispositivo", ex);
                 throw;
             }
         }
@@ -100,7 +83,6 @@ namespace ElectroNova.Layers.DAL
                 command.CommandType = CommandType.StoredProcedure;
                 command.CommandText = "usp_INSERT_TipoDispositivo";
 
-                command.Parameters.AddWithValue("@ID_TipoDispositivo", pTipoDispositivo.ID_TipoDispositivo);
                 command.Parameters.AddWithValue("@Nombre_TipoDispositivo", pTipoDispositivo.Nombre_TipoDispositivo);
                 command.Parameters.AddWithValue("@Descripcion", pTipoDispositivo.Descripcion);
                 command.Parameters.AddWithValue("@Estado", pTipoDispositivo.Estado);
@@ -126,7 +108,7 @@ namespace ElectroNova.Layers.DAL
             }
             catch (Exception ex)
             {
-                _MyLogControlEventos.Error("Error al guardar Marca", ex);
+                _MyLogControlEventos.Error("Error al guardar TipoDispositivo", ex);
                 throw;
             }
         }

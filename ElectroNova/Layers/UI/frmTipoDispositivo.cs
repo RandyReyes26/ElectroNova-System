@@ -15,6 +15,7 @@ namespace ElectroNova.Layers.UI
 {
     public partial class frmTipoDispositivo : Form
     {
+        private int _idTipoDispositivo = 0;
         public frmTipoDispositivo()
         {
             InitializeComponent();
@@ -24,6 +25,7 @@ namespace ElectroNova.Layers.UI
         {
             CargarDatos();
             //txtID_TipoDispositivo.ReadOnly = true;
+            EstiloDataGrid();
         }
 
         private void ToolStripMenuNuevo_Click(object sender, EventArgs e)
@@ -32,9 +34,11 @@ namespace ElectroNova.Layers.UI
         }
         private void Limpiar()
         {
-            //this.txtID_TipoDispositivo.Clear();
-            this.txtNombre_TipoDispositivo.Clear();
-            this.txtDescripcion.Clear();
+            _idTipoDispositivo = 0;
+            txtNombre_TipoDispositivo.Clear();
+            txtDescripcion.Clear();
+            chkActivo.Checked = false;
+            chkInactivo.Checked = false;
         }
 
         private async void CargarDatos()
@@ -63,7 +67,6 @@ namespace ElectroNova.Layers.UI
 
                 errorProvider1.Clear();
 
-                // Validación
                 if (string.IsNullOrWhiteSpace(txtNombre_TipoDispositivo.Text))
                 {
                     errorProvider1.SetError(txtNombre_TipoDispositivo, "El nombre del dispositivo es requerido");
@@ -78,30 +81,27 @@ namespace ElectroNova.Layers.UI
                     return;
                 }
 
-                // Si trae ID, entonces es edición
-                //if (!string.IsNullOrWhiteSpace(txtID_TipoDispositivo.Text))
-                //{
-                //    oTipoDispositivo.ID_TipoDispositivo = int.Parse(txtID_TipoDispositivo.Text);
-                //}
-
-                // Asignar datos
+                oTipoDispositivo.ID_TipoDispositivo = _idTipoDispositivo;
                 oTipoDispositivo.Nombre_TipoDispositivo = txtNombre_TipoDispositivo.Text.Trim();
                 oTipoDispositivo.Descripcion = txtDescripcion.Text.Trim();
-                oTipoDispositivo.Estado = true;   // IMPORTANTE
+                oTipoDispositivo.Estado = chkActivo.Checked;
 
-                // Guardar
-                var resultado = await _BLLTipoDispositivo.GuardarTipoDispositivo(oTipoDispositivo);
+                await _BLLTipoDispositivo.GuardarTipoDispositivo(oTipoDispositivo);
 
-                // Recargar grid
+                bool eraEdicion = _idTipoDispositivo > 0;
+
                 CargarDatos();
                 Limpiar();
 
-                MessageBox.Show("Modelo guardado correctamente.",
-                    "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(
+                    eraEdicion ? "Tipo de dispositivo actualizado correctamente." : "Tipo de dispositivo guardado correctamente.",
+                    "Éxito",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al guardar el modelo: " + ex.Message,
+                MessageBox.Show("Error al guardar el tipo de dispositivo: " + ex.Message,
                     "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
@@ -120,9 +120,13 @@ namespace ElectroNova.Layers.UI
 
             if (oTipoDispositivo != null)
             {
-                //txtID_TipoDispositivo.Text = oTipoDispositivo.ID_TipoDispositivo.ToString();
+                _idTipoDispositivo = oTipoDispositivo.ID_TipoDispositivo;
+
                 txtNombre_TipoDispositivo.Text = oTipoDispositivo.Nombre_TipoDispositivo;
                 txtDescripcion.Text = oTipoDispositivo.Descripcion;
+
+                chkActivo.Checked = oTipoDispositivo.Estado;
+                chkInactivo.Checked = !oTipoDispositivo.Estado;
             }
 
         }
@@ -159,6 +163,34 @@ namespace ElectroNova.Layers.UI
                 MessageBox.Show($"Ocurrió un error: {er.Message}",
                     "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+        private void EstiloDataGrid()
+        {
+            dgvDatos.BorderStyle = BorderStyle.None;
+            dgvDatos.BackgroundColor = Color.White;
+            dgvDatos.EnableHeadersVisualStyles = false;
+
+          
+            dgvDatos.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(47, 128, 237);
+            dgvDatos.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dgvDatos.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 10, FontStyle.Bold);
+            dgvDatos.ColumnHeadersHeight = 35;
+
+            dgvDatos.DefaultCellStyle.BackColor = Color.White;
+            dgvDatos.DefaultCellStyle.ForeColor = Color.FromArgb(31, 41, 55);
+
+       
+            dgvDatos.DefaultCellStyle.SelectionBackColor = Color.FromArgb(209, 250, 229);
+            dgvDatos.DefaultCellStyle.SelectionForeColor = Color.FromArgb(6, 78, 59);
+
+       
+            dgvDatos.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(248, 250, 252);
+
+            dgvDatos.RowHeadersVisible = false;
+            dgvDatos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvDatos.MultiSelect = false;
+            dgvDatos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvDatos.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
         }
     }
 }

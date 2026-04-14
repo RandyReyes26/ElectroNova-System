@@ -21,14 +21,11 @@ namespace ElectroNova.Layers.BLL
         public Task<Clientes> GuardarCliente(Clientes pCliente)
         {
             IDALCliente _DALCliente = new DALCliente();
-            Task<Clientes> oCliente = null;
 
-            if (_DALCliente.ObtenerClientePorId(pCliente.ID_Cliente) == null)
-                oCliente = _DALCliente.GuardarCliente(pCliente);
+            if (pCliente.ID_Cliente > 0)
+                return _DALCliente.ActualizarCliente(pCliente);
             else
-                oCliente = _DALCliente.ActualizarCliente(pCliente);
-
-            return oCliente;
+                return _DALCliente.GuardarCliente(pCliente);
         }
 
         public Clientes ObtenerClientePorId(int pId_Cliente)
