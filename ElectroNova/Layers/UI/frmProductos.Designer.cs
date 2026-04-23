@@ -41,6 +41,8 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgvDatos = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtExistencia = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.btnPDF = new System.Windows.Forms.Button();
             this.txtPrecio = new System.Windows.Forms.TextBox();
             this.txtDocumentoEspecificaciones = new System.Windows.Forms.TextBox();
@@ -64,8 +66,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.label11 = new System.Windows.Forms.Label();
-            this.txtExistencia = new System.Windows.Forms.TextBox();
+            this.btnVerPDF = new System.Windows.Forms.Button();
             this.toolStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -185,6 +186,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnVerPDF);
             this.groupBox1.Controls.Add(this.txtExistencia);
             this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.btnPDF);
@@ -217,9 +219,26 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos del producto";
             // 
+            // txtExistencia
+            // 
+            this.txtExistencia.Location = new System.Drawing.Point(214, 450);
+            this.txtExistencia.Name = "txtExistencia";
+            this.txtExistencia.Size = new System.Drawing.Size(255, 27);
+            this.txtExistencia.TabIndex = 31;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(10, 460);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(75, 17);
+            this.label11.TabIndex = 30;
+            this.label11.Text = "Existencia";
+            // 
             // btnPDF
             // 
-            this.btnPDF.Location = new System.Drawing.Point(510, 315);
+            this.btnPDF.Location = new System.Drawing.Point(475, 315);
             this.btnPDF.Name = "btnPDF";
             this.btnPDF.Size = new System.Drawing.Size(105, 30);
             this.btnPDF.TabIndex = 29;
@@ -425,22 +444,15 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // label11
+            // btnVerPDF
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(10, 460);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(75, 17);
-            this.label11.TabIndex = 30;
-            this.label11.Text = "Existencia";
-            // 
-            // txtExistencia
-            // 
-            this.txtExistencia.Location = new System.Drawing.Point(214, 450);
-            this.txtExistencia.Name = "txtExistencia";
-            this.txtExistencia.Size = new System.Drawing.Size(255, 27);
-            this.txtExistencia.TabIndex = 31;
+            this.btnVerPDF.Location = new System.Drawing.Point(586, 315);
+            this.btnVerPDF.Name = "btnVerPDF";
+            this.btnVerPDF.Size = new System.Drawing.Size(53, 30);
+            this.btnVerPDF.TabIndex = 32;
+            this.btnVerPDF.Text = "ver";
+            this.btnVerPDF.UseVisualStyleBackColor = true;
+            this.btnVerPDF.Click += new System.EventHandler(this.btnVerPDF_Click);
             // 
             // frmProductos
             // 
@@ -505,5 +517,6 @@
         private System.Windows.Forms.TextBox txtDocumentoEspecificaciones;
         private System.Windows.Forms.TextBox txtExistencia;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Button btnVerPDF;
     }
 }

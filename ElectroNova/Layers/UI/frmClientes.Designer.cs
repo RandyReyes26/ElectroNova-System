@@ -81,7 +81,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1222, 1055);
+            this.panel1.Size = new System.Drawing.Size(1222, 923);
             this.panel1.TabIndex = 0;
             // 
             // mnuStrip1
@@ -147,7 +147,7 @@
             this.panel2.Controls.Add(this.dgvDatos);
             this.panel2.Location = new System.Drawing.Point(12, 709);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1198, 343);
+            this.panel2.Size = new System.Drawing.Size(1178, 195);
             this.panel2.TabIndex = 4;
             // 
             // dgvDatos
@@ -157,7 +157,7 @@
             this.dgvDatos.Location = new System.Drawing.Point(0, 0);
             this.dgvDatos.Name = "dgvDatos";
             this.dgvDatos.RowHeadersWidth = 51;
-            this.dgvDatos.Size = new System.Drawing.Size(1198, 343);
+            this.dgvDatos.Size = new System.Drawing.Size(1178, 195);
             this.dgvDatos.TabIndex = 0;
             this.dgvDatos.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvDatos_CellFormatting);
             // 
@@ -410,7 +410,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1222, 1055);
+            this.ClientSize = new System.Drawing.Size(1222, 923);
             this.Controls.Add(this.panel1);
             this.Name = "frmClientes";
             this.Text = "frmClientes";

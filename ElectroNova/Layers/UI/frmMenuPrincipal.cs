@@ -30,7 +30,7 @@ namespace ElectroNova.Layers.UI
             ConfigurarPermisos();
             MostrarInformacionUsuario();
             CargarTipoCambio();
-   
+
         }
         public void MostrarInformacionUsuario()
         {
@@ -61,12 +61,13 @@ namespace ElectroNova.Layers.UI
                     break;
 
                 case "REPORTES":
-                    // Configuración para Reportes
+                    // Solo mostrar Reportes
                     toolStripMantenimiento.Visible = false;
-                    toolStripProcesos.Visible = true;
-                    ToolStripReportes.Enabled = false;
-                    //facturaToolStripMenuItem.Enabled = false;
+                    toolStripProcesos.Visible = false;
                     ToolStripAdministracion.Visible = false;
+
+                    ToolStripReportes.Visible = true;
+                    ToolStripReportes.Enabled = true;
                     break;
 
                 default:
@@ -153,7 +154,7 @@ namespace ElectroNova.Layers.UI
             formularioActivo.Show();
         }
 
-       
+
 
         private void clientesToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
@@ -340,7 +341,7 @@ namespace ElectroNova.Layers.UI
 
         private void rEPORTESCLIENTESToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if(formularioActivo == null || !(formularioActivo is frmReporteClientes))
+            if (formularioActivo == null || !(formularioActivo is frmReporteClientes))
             {
 
                 if (formularioActivo != null)
@@ -401,6 +402,38 @@ namespace ElectroNova.Layers.UI
             }
 
         }
-        
+
+        private void btnCerrarSesion_Click(object sender, EventArgs e)
+        {
+            DialogResult r = MessageBox.Show(
+        "¿Desea cerrar la sesión actual?",
+        "Cerrar sesión",
+        MessageBoxButtons.YesNo,
+        MessageBoxIcon.Question);
+
+            if (r == DialogResult.Yes)
+            {
+                // Limpiar datos del usuario actual
+                UsuarioNombre = string.Empty;
+                usuarioRol = null;
+
+                // Cerrar formulario activo dentro del panel
+                if (formularioActivo != null)
+                {
+                    CerrarFormulario(formularioActivo);
+                    formularioActivo = null;
+                }
+
+                // Ocultar menú principal
+                this.Hide();
+
+                // Abrir login
+                frmLogin login = new frmLogin();
+                login.Show();
+
+                // Cerrar este formulario cuando termine
+                this.Close();
+            }
+        }
     }
 }

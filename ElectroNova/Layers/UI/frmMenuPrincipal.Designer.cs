@@ -46,16 +46,17 @@
             this.toolStripProcesos = new System.Windows.Forms.ToolStripMenuItem();
             this.fACTURACÓNToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripReportes = new System.Windows.Forms.ToolStripMenuItem();
+            this.rEPORTESCLIENTESToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.rEPORTESDEFACTURAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.rEPORTEDELPRODUCTOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.rEPORTEGRAFICOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripAdministracion = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem6 = new System.Windows.Forms.ToolStripMenuItem();
             this.lblUsuario = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.pnlContenido = new System.Windows.Forms.Panel();
-            this.rEPORTESCLIENTESToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.rEPORTESDEFACTURAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.rEPORTEDELPRODUCTOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.rEPORTEGRAFICOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnCerrarSesion = new System.Windows.Forms.Button();
             this.MenuVertical.SuspendLayout();
             this.panel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -64,7 +65,7 @@
             // 
             // MenuVertical
             // 
-            this.MenuVertical.BackColor = System.Drawing.SystemColors.Control;
+            this.MenuVertical.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.MenuVertical.Controls.Add(this.lblTipoCambio);
             this.MenuVertical.Controls.Add(this.label1);
             this.MenuVertical.Controls.Add(this.panel1);
@@ -96,6 +97,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnCerrarSesion);
             this.panel1.Controls.Add(this.menuStrip1);
             this.panel1.Location = new System.Drawing.Point(12, 150);
             this.panel1.Name = "panel1";
@@ -105,7 +107,7 @@
             // menuStrip1
             // 
             this.menuStrip1.AutoSize = false;
-            this.menuStrip1.BackColor = System.Drawing.SystemColors.Control;
+            this.menuStrip1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.menuStrip1.Dock = System.Windows.Forms.DockStyle.Left;
             this.menuStrip1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
@@ -220,6 +222,34 @@
             this.ToolStripReportes.Size = new System.Drawing.Size(274, 36);
             this.ToolStripReportes.Text = "REPORTES";
             // 
+            // rEPORTESCLIENTESToolStripMenuItem
+            // 
+            this.rEPORTESCLIENTESToolStripMenuItem.Name = "rEPORTESCLIENTESToolStripMenuItem";
+            this.rEPORTESCLIENTESToolStripMenuItem.Size = new System.Drawing.Size(355, 28);
+            this.rEPORTESCLIENTESToolStripMenuItem.Text = "REPORTES CLIENTES";
+            this.rEPORTESCLIENTESToolStripMenuItem.Click += new System.EventHandler(this.rEPORTESCLIENTESToolStripMenuItem_Click);
+            // 
+            // rEPORTESDEFACTURAToolStripMenuItem
+            // 
+            this.rEPORTESDEFACTURAToolStripMenuItem.Name = "rEPORTESDEFACTURAToolStripMenuItem";
+            this.rEPORTESDEFACTURAToolStripMenuItem.Size = new System.Drawing.Size(355, 28);
+            this.rEPORTESDEFACTURAToolStripMenuItem.Text = "REPORTES DE FACTURA";
+            this.rEPORTESDEFACTURAToolStripMenuItem.Click += new System.EventHandler(this.rEPORTESDEFACTURAToolStripMenuItem_Click);
+            // 
+            // rEPORTEDELPRODUCTOToolStripMenuItem
+            // 
+            this.rEPORTEDELPRODUCTOToolStripMenuItem.Name = "rEPORTEDELPRODUCTOToolStripMenuItem";
+            this.rEPORTEDELPRODUCTOToolStripMenuItem.Size = new System.Drawing.Size(355, 28);
+            this.rEPORTEDELPRODUCTOToolStripMenuItem.Text = "REPORTE DEL PRODUCTO";
+            this.rEPORTEDELPRODUCTOToolStripMenuItem.Click += new System.EventHandler(this.rEPORTEDELPRODUCTOToolStripMenuItem_Click);
+            // 
+            // rEPORTEGRAFICOToolStripMenuItem
+            // 
+            this.rEPORTEGRAFICOToolStripMenuItem.Name = "rEPORTEGRAFICOToolStripMenuItem";
+            this.rEPORTEGRAFICOToolStripMenuItem.Size = new System.Drawing.Size(355, 28);
+            this.rEPORTEGRAFICOToolStripMenuItem.Text = "REPORTE GRAFICO";
+            this.rEPORTEGRAFICOToolStripMenuItem.Click += new System.EventHandler(this.rEPORTEGRAFICOToolStripMenuItem_Click);
+            // 
             // ToolStripAdministracion
             // 
             this.ToolStripAdministracion.Image = ((System.Drawing.Image)(resources.GetObject("ToolStripAdministracion.Image")));
@@ -265,33 +295,16 @@
             this.pnlContenido.Size = new System.Drawing.Size(1296, 661);
             this.pnlContenido.TabIndex = 1;
             // 
-            // rEPORTESCLIENTESToolStripMenuItem
+            // btnCerrarSesion
             // 
-            this.rEPORTESCLIENTESToolStripMenuItem.Name = "rEPORTESCLIENTESToolStripMenuItem";
-            this.rEPORTESCLIENTESToolStripMenuItem.Size = new System.Drawing.Size(306, 28);
-            this.rEPORTESCLIENTESToolStripMenuItem.Text = "REPORTES CLIENTES";
-            this.rEPORTESCLIENTESToolStripMenuItem.Click += new System.EventHandler(this.rEPORTESCLIENTESToolStripMenuItem_Click);
-            // 
-            // rEPORTESDEFACTURAToolStripMenuItem
-            // 
-            this.rEPORTESDEFACTURAToolStripMenuItem.Name = "rEPORTESDEFACTURAToolStripMenuItem";
-            this.rEPORTESDEFACTURAToolStripMenuItem.Size = new System.Drawing.Size(334, 28);
-            this.rEPORTESDEFACTURAToolStripMenuItem.Text = "REPORTES DE FACTURA";
-            this.rEPORTESDEFACTURAToolStripMenuItem.Click += new System.EventHandler(this.rEPORTESDEFACTURAToolStripMenuItem_Click);
-            // 
-            // rEPORTEDELPRODUCTOToolStripMenuItem
-            // 
-            this.rEPORTEDELPRODUCTOToolStripMenuItem.Name = "rEPORTEDELPRODUCTOToolStripMenuItem";
-            this.rEPORTEDELPRODUCTOToolStripMenuItem.Size = new System.Drawing.Size(355, 28);
-            this.rEPORTEDELPRODUCTOToolStripMenuItem.Text = "REPORTE DEL PRODUCTO";
-            this.rEPORTEDELPRODUCTOToolStripMenuItem.Click += new System.EventHandler(this.rEPORTEDELPRODUCTOToolStripMenuItem_Click);
-            // 
-            // rEPORTEGRAFICOToolStripMenuItem
-            // 
-            this.rEPORTEGRAFICOToolStripMenuItem.Name = "rEPORTEGRAFICOToolStripMenuItem";
-            this.rEPORTEGRAFICOToolStripMenuItem.Size = new System.Drawing.Size(355, 28);
-            this.rEPORTEGRAFICOToolStripMenuItem.Text = "REPORTE GRAFICO";
-            this.rEPORTEGRAFICOToolStripMenuItem.Click += new System.EventHandler(this.rEPORTEGRAFICOToolStripMenuItem_Click);
+            this.btnCerrarSesion.BackColor = System.Drawing.Color.Red;
+            this.btnCerrarSesion.Location = new System.Drawing.Point(13, 364);
+            this.btnCerrarSesion.Name = "btnCerrarSesion";
+            this.btnCerrarSesion.Size = new System.Drawing.Size(121, 38);
+            this.btnCerrarSesion.TabIndex = 45;
+            this.btnCerrarSesion.Text = "Cerrar Sesión";
+            this.btnCerrarSesion.UseVisualStyleBackColor = false;
+            this.btnCerrarSesion.Click += new System.EventHandler(this.btnCerrarSesion_Click);
             // 
             // frmMenuPrincipal
             // 
@@ -301,7 +314,7 @@
             this.Controls.Add(this.pnlContenido);
             this.Controls.Add(this.MenuVertical);
             this.Name = "frmMenuPrincipal";
-            this.Text = "frmMenuPrincipal";
+            this.Text = "Menú Principal";
             this.Load += new System.EventHandler(this.frmMenuPrincipal_Load);
             this.MenuVertical.ResumeLayout(false);
             this.MenuVertical.PerformLayout();
@@ -341,5 +354,6 @@
         private System.Windows.Forms.ToolStripMenuItem rEPORTESDEFACTURAToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem rEPORTEDELPRODUCTOToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem rEPORTEGRAFICOToolStripMenuItem;
+        private System.Windows.Forms.Button btnCerrarSesion;
     }
 }

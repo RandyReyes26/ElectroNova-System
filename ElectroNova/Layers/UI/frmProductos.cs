@@ -511,5 +511,39 @@ namespace ElectroNova.Layers.UI
             dgvDatos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvDatos.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
         }
+
+        private void btnVerPDF_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (string.IsNullOrWhiteSpace(txtDocumentoEspecificaciones.Text))
+                {
+                    MessageBox.Show("No hay documento cargado.",
+                        "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                string ruta = txtDocumentoEspecificaciones.Text;
+
+                if (!File.Exists(ruta))
+                {
+                    MessageBox.Show("El archivo no existe en la ruta especificada.",
+                        "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo()
+                {
+                    FileName = ruta,
+                    UseShellExecute = true
+                });
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al abrir el documento: " + ex.Message,
+                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
     }
 }

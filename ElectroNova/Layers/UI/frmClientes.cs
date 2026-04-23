@@ -42,8 +42,8 @@ namespace ElectroNova.Layers.UI
         {
             CargarDatos();
             CargarProvincias();
-            AplicarEstiloUI();
-     
+            EstiloDataGrid();
+
 
         }
         private async Task CargarProvincias()
@@ -108,9 +108,9 @@ namespace ElectroNova.Layers.UI
             IBLLCliente _BLLCliente = new BLLCliente();
 
             dgvDatos.AutoGenerateColumns = true;
-            dgvDatos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvDatos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
 
-            await Task.Delay(300);
+            await Task.Delay(500);
 
             var clientes = await _BLLCliente.ObtenerClientes();
 
@@ -410,7 +410,6 @@ namespace ElectroNova.Layers.UI
             dgvDatos.BackgroundColor = Color.White;
             dgvDatos.EnableHeadersVisualStyles = false;
 
-            // HEADER (lo dejamos azul porque se ve fino)
             dgvDatos.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(47, 128, 237);
             dgvDatos.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
             dgvDatos.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 10, FontStyle.Bold);
@@ -419,11 +418,9 @@ namespace ElectroNova.Layers.UI
             dgvDatos.DefaultCellStyle.BackColor = Color.White;
             dgvDatos.DefaultCellStyle.ForeColor = Color.FromArgb(31, 41, 55);
 
-            // 💚 VERDE SUAVE BONITO
             dgvDatos.DefaultCellStyle.SelectionBackColor = Color.FromArgb(209, 250, 229);
             dgvDatos.DefaultCellStyle.SelectionForeColor = Color.FromArgb(6, 78, 59);
 
-            // FILAS ALTERNAS
             dgvDatos.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(248, 250, 252);
 
             dgvDatos.RowHeadersVisible = false;
