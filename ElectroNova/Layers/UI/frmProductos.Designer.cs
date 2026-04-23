@@ -41,6 +41,7 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgvDatos = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnVerPDF = new System.Windows.Forms.Button();
             this.txtExistencia = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.btnPDF = new System.Windows.Forms.Button();
@@ -66,7 +67,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.btnVerPDF = new System.Windows.Forms.Button();
             this.toolStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -140,7 +140,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 71);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1158, 771);
+            this.panel1.Size = new System.Drawing.Size(1158, 984);
             this.panel1.TabIndex = 5;
             // 
             // groupBox3
@@ -170,7 +170,7 @@
             this.groupBox2.Controls.Add(this.dgvDatos);
             this.groupBox2.Location = new System.Drawing.Point(12, 570);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1135, 189);
+            this.groupBox2.Size = new System.Drawing.Size(1135, 411);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             // 
@@ -181,7 +181,7 @@
             this.dgvDatos.Location = new System.Drawing.Point(3, 18);
             this.dgvDatos.Name = "dgvDatos";
             this.dgvDatos.RowHeadersWidth = 51;
-            this.dgvDatos.Size = new System.Drawing.Size(1129, 168);
+            this.dgvDatos.Size = new System.Drawing.Size(1129, 390);
             this.dgvDatos.TabIndex = 0;
             // 
             // groupBox1
@@ -218,6 +218,16 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos del producto";
+            // 
+            // btnVerPDF
+            // 
+            this.btnVerPDF.Location = new System.Drawing.Point(586, 315);
+            this.btnVerPDF.Name = "btnVerPDF";
+            this.btnVerPDF.Size = new System.Drawing.Size(53, 30);
+            this.btnVerPDF.TabIndex = 32;
+            this.btnVerPDF.Text = "ver";
+            this.btnVerPDF.UseVisualStyleBackColor = true;
+            this.btnVerPDF.Click += new System.EventHandler(this.btnVerPDF_Click);
             // 
             // txtExistencia
             // 
@@ -444,21 +454,11 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // btnVerPDF
-            // 
-            this.btnVerPDF.Location = new System.Drawing.Point(586, 315);
-            this.btnVerPDF.Name = "btnVerPDF";
-            this.btnVerPDF.Size = new System.Drawing.Size(53, 30);
-            this.btnVerPDF.TabIndex = 32;
-            this.btnVerPDF.Text = "ver";
-            this.btnVerPDF.UseVisualStyleBackColor = true;
-            this.btnVerPDF.Click += new System.EventHandler(this.btnVerPDF_Click);
-            // 
             // frmProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1158, 842);
+            this.ClientSize = new System.Drawing.Size(1158, 1055);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.toolStrip1);
             this.Name = "frmProductos";
